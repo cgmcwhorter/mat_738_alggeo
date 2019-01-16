@@ -1,5 +1,5 @@
 % !TEX root = mat_738_alggeo.tex
-\newcommand{\mc}{M\textsuperscript{c}Kay }
+
 % Symbols
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -7,57 +7,19 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\C}{\mathbb{C}}
-\newcommand{\bbI}{\mathbb{I}}
-\newcommand{\bP}{\mathbb{P}}
-\newcommand{\bbT}{\mathbb{T}}
-\newcommand{\bfT}{\mathbf{T}}
-\newcommand{\bbO}{\mathbb{O}}
-\newcommand{\cI}{\mathcal{I}}
-\newcommand{\cB}{\mathcal{B}}
-\newcommand{\cD}{\mathcal{D}}
-\newcommand{\cT}{\mathcal{T}}
-\newcommand{\cO}{\mathcal{O}}
-\newcommand{\cH}{\mathcal{H}}
-\newcommand{\cC}{\mathcal{C}}
-\newcommand{\cP}{\mathbb{P}}
-\newcommand{\bD}{\mathbf{D}}
-\newcommand{\bT}{\mathbf{T}}
-\newcommand{\bI}{\mathbf{I}}
-\newcommand{\cA}{\mathcal{A}}
-\newcommand{\fX}{\mathfrak{X}}
-\newcommand{\fm}{\mathfrak{m}}
-\newcommand{\fn}{\mathfrak{n}}
-\newcommand{\fp}{\mathfrak{p}}
-\newcommand{\fq}{\mathfrak{q}}
 
+\newcommand{\A}{\mathbb{A}}
+
+\newcommand{\fa}{\mathfrak{a}}
 
 
 
 % Math Operators
-\DeclareMathOperator{\SL}{SL}
-\DeclareMathOperator{\GL}{GL}
-\DeclareMathOperator{\SO}{SO}
-\DeclareMathOperator{\SU}{SU}
 \DeclareMathOperator{\spec}{Spec}
-\DeclareMathOperator{\stab}{stab}
 \DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\sym}{Sym}
-\DeclareMathOperator{\sgn}{sgn}
-\DeclareMathOperator{\Proj}{Proj}
-\DeclareMathOperator{\dep}{depth}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\mcm}{MCM}
-\DeclareMathOperator{\add}{add}
-\DeclareMathOperator{\coker}{coker}
-\DeclareMathOperator{\height}{height}
-\DeclareMathOperator{\soc}{soc}
-\DeclareMathOperator{\ann}{ann}
-\DeclareMathOperator{\Ext}{Ext}
 \DeclareMathOperator{\End}{End}
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\Der}{Der}
-\DeclareMathOperator{\rank}{rank}
-\DeclareMathOperator{\gldim}{gldim}
+
 
 
 % Commands
@@ -76,8 +38,8 @@
 \newcommand{\tss}[1]{\textsuperscript{#1}}
 \newcommand{\ma}[1]{\stackrel{#1}{\longrightarrow}}
 \renewcommand{\char}{\text{char }}
-\newcommand{\sing}[1]{#1_{\text{sing}}}
-\newcommand{\smoo}[1]{#1_{\text{smooth}}}
+
+
 
 \makeatletter
 \newcommand{\extp}{\@ifnextchar^\@extp{\@extp^{\,}}}
@@ -100,7 +62,15 @@
 
 
 % Tikz
+\usepackage{tikz}
 
+%\usetikzlibrary{hobby}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+%\usepackage{pgfplots}
+%\usepgfplotslibrary{fillbetween}
+%\pgfplotsset{compat=1.10}
 
 
 %https://tex.stackexchange.com/questions/6388/how-to-scale-a-tikzpicture-to-textwidth
@@ -134,6 +104,9 @@
 \newtheorem{nex}{Non-Example}[section]
 \newtheorem*{dfn}{Definition}
 \newtheorem*{conject}{Conjecture}
+\newtheorem*{exc}{Exercise}
+
+
 
 %\theoemstyle{remark}
 \newtheorem*{rem}{Remark}
