@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.27)  15 JAN 2019 19:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.27)  17 JAN 2019 16:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -904,23 +904,23 @@ ks.code.tex
 File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
 )))
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 96.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 94.
 
 \c@thm=\count159
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 97.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 95.
 
 \c@prop=\count160
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 98.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 96.
 
 \c@lem=\count161
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 99.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 97.
 
 \c@cor=\count162
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 100.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 98.
 
 \c@ex=\count163
 \c@nex=\count164
@@ -1529,39 +1529,40 @@ l.58 \begin{dfn}[Algebraic Set]
                                 [2]
 Package hyperref Info: bookmark level for unknown ex defaults to 0 on input lin
 e 66.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.126 
+l.106 
        [3pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.126 
-      ] [4pdfTeX warning (ext4): destination with the same identifier (name{fig
-ure.2}) has been already used, duplicate ignored
+l.106 
+      ]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.129 	\[
-         pdfTeX warning (ext4): destination with the same identifier (name{figu
-re.3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.129 	\[
-         ]
+l.138 \end{enumerate}
+                     ]
 Package hyperref Info: bookmark level for unknown exc defaults to 0 on input li
 ne 145.
 Package hyperref Info: bookmark level for unknown prop defaults to 0 on input l
 ine 159.
- [5]
+ [5pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.162 \item E
+             very algebraic set in $\A^n$ is of the form $Z(T)$ for some fin...
+]
 Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
@@ -1571,7 +1572,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 203--205
 
  []
 
-) [7]
+[7] [8pdfTeX warning (ext4): destination with the same identifier (name{figure.
+4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.268 \end{dfn}
+               ]
+Underfull \hbox (badness 10000) in paragraph at lines 284--286
+
+ []
+
+
+LaTeX Warning: Command \i invalid in math mode on input line 320.
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
+
+ []
+
+Package hyperref Info: bookmark level for unknown thm defaults to 0 on input li
+ne 330.
+) [10]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
  (./mat_738_alggeo.aux)
@@ -1583,13 +1605,13 @@ Package logreq Info: Writing requests to 'mat_738_alggeo.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
  ) 
 Here is how much of TeX's memory you used:
- 40026 strings out of 492646
- 876028 string characters out of 6129563
- 1657104 words of memory out of 5000000
- 42990 multiletter control sequences out of 15000+600000
- 55491 words of font info for 221 fonts, out of 8000000 for 9000
+ 40101 strings out of 492646
+ 876899 string characters out of 6129563
+ 1655330 words of memory out of 5000000
+ 43000 multiletter control sequences out of 15000+600000
+ 59000 words of font info for 245 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,13n,138p,3237b,2436s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 85i,15n,138p,3237b,2436s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -1601,10 +1623,10 @@ xmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2018/texmf-
 dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2018/texmf-dist/fo
 nts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
 e1/urw/palatino/uplri8a.pfb>
-Output written on mat_738_alggeo.pdf (10 pages, 280394 bytes).
+Output written on mat_738_alggeo.pdf (13 pages, 295292 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
- 51 named destinations out of 1000 (max. 500000)
- 30282 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 238 PDF objects out of 1000 (max. 8388607)
+ 209 compressed objects within 3 object streams
+ 83 named destinations out of 1000 (max. 500000)
+ 31306 words of extra memory for PDF output out of 35830 (max. 10000000)
 

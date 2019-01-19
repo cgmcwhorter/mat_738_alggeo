@@ -56,11 +56,11 @@ We now have enough to define the basic building block of Algebraic Geometry.
 
 
 \begin{dfn}[Algebraic Set]
-A subset $Y \subseteq \A^n$ is called an algebraic set if and only if there exists a subset $T \subseteq A$ such that $Y= Z(T)$. We also refer to such sets as affine (algebraic) varieties. 
+A subset $Y \subseteq \A^n$ is called an algebraic set if and only if there exists a subset $T \subseteq A$ such that $Y= Z(T)$.  
 \end{dfn}
 
 
-That is, a set of points $Y$ is an algebraic set if $Y$ is a set of common zeros for a collection of polynomials $T$. 
+That is, a set of points $Y$ is an algebraic set if $Y$ is a set of common zeros for a collection of polynomials $T$. This is the start of the bridge between Algebraic Geometry, describing geometric objects using algebraic terms, as some of the following examples shall being to show (though one will have to wait for coordinate rings and much later material to see the deeper connections). 
 
 
 \begin{ex} \label{ex:emptyandwhole} \hfill
@@ -214,17 +214,141 @@ The Zariski topology on $\A^n$ is defined by taking the open sets to be the comp
 
 
 \begin{ex}
-What is the Zariski topology on $\A^1$? Since $k$ is a field, $A= k[x]$ is a PID, so every ideal in $A$ is principal. But by Propositon~\ref{prop:basic_affine}, every algebraic set $Y$ is of the form $Y= Z(J)$ for some ideal $J$. But then $Y=Z(f)$ for some polynomial. Since $k$ is algebraically closed, we can factor $f(x)$ as $f(x)= c(x-a_1)\cdots(x-a_n)$, where $c, a_1,\ldots,a_n \in k$. Therefore, $Z(f)= \{a_1,\ldots,a_n\}$. The closed sets in the Zariski topology are then $\emptyset$, $\A^1$, and all finite subsets. Therefore, the Zariski topology on $\A^1$ consists of $\emptyset$, $\A^1$, and the complements of finite subsets. But then every set which is not the whole set or $\emptyset$ contain all but finitely many elements of $k$. In particular, every two open sets intersect so that the Zarisiki topology on $\A^1$ is (extremely) not Hausdorff. \xqed
+What is the Zariski topology on $\A^1$? Since $k$ is a field, $A= k[x]$ is a PID, so every ideal in $A$ is principal. But by Propositon~\ref{prop:basic_affine}, every algebraic set $Y$ is of the form $Y= Z(J)$ for some ideal $J$. But then $Y=Z(f)$ for some polynomial. Since $k$ is algebraically closed, we can factor $f(x)$ as $f(x)= c(x-a_1)\cdots(x-a_n)$, where $c, a_1,\ldots,a_n \in k$. Therefore, $Z(f)= \{a_1,\ldots,a_n\}$. We know also from Example~\ref{ex:emptyandwhole} that any finite set in $\A^n$ is algebraic. The closed sets in the Zariski topology are then $\emptyset$, $\A^1$, and all finite subsets. Therefore, the Zariski topology on $\A^1$ consists of $\emptyset$, $\A^1$, and the complements of finite subsets. But then every set which is not the whole set or $\emptyset$ contain all but finitely many elements of $k$. In particular, every two open sets intersect so that the Zarisiki topology on $\A^1$ is (extremely) not Hausdorff. Note that one did not need the fact that $k[x]$ a PID. Any algebraic set is if the form $\bigcap_{i \in \mathcal{I}} Z(f_i)$, where $f_i \in k[x]$. However, $f_i$ can only be 0, in which case $Z(f_i)= \A^1$, a nonzero constant, in which case $Z(f_i)= \emptyset$, or a nonconstant polynomial in which case $Z(f_i)$ consists on finitely many points. In particular, the intersection consists of finitely many points. \xqed
 \end{ex}
 
 
+When studying objects geometrically, one breaks them into their constituent pieces and studies them individually, as well as how they fit together. So when studying geometric objects from an algebraic or topological structure, we will also want to break pieces into smaller structures.
+
+
+\begin{dfn}[Irreducible]
+A nonempty subset $Y$ of a topological space $X$ is irreducible if and only if it cannot be expressed as the union $Y= Y_1 \cup Y_2$ of two proper subsets each of which is closed in $Y$ (in the induced topology). The empty set is not considered to be irreducible. A set which is not irreducible is reducible. 
+\end{dfn}
+
+
+\begin{ex}
+Whenever $k$ is infinite, e.g. when $k$ is algebraically closed, $\A^1$ is irreducible as the only proper closed subsets are finite, so $\A^1$ could not be written as a finite union of closed sets. 
+\end{ex}
+
+
+\begin{ex}
+In  $\A^2$, the set $Z(xy)$ is reducible as we can write $Z(xy)= Z(x) \cup Z(y)$, i.e. for $xy$ to vanish either $x$ must vanish or $y$ must vanish. This should be expected since the coordinate axes can be broken up into the $x$-axis and $y$-axis individually, c.f. Example~\ref{ex:emptyandwhole}(iv). 
+	\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[scale=0.9]
+	\coordinate (Origin)   at (0,0);
+    	\coordinate (XAxisMin) at (-3,0);
+    	\coordinate (XAxisMax) at (3,0);
+    	\coordinate (YAxisMin) at (0,-3);
+    	\coordinate (YAxisMax) at (0,3);	
+	
+	\draw [thin,-latex] (XAxisMin) -- (XAxisMax) node[right] {\footnotesize$x$};
+    	\draw [thin,-latex] (YAxisMin) -- (YAxisMax) node[above] {\footnotesize$y$};
+	
+	\node at (4,0) {`$=$'};
+	\node at (6,0) {$+$};
+	\draw[thin,-latex] (5,-3) -- (5,3) node at (5,3.2) {\footnotesize$y$};
+	\draw[thin,-latex] (7,0) -- (13,0) node at (13.2,0) {\footnotesize$x$};
+	\end{tikzpicture}
+	\caption{The decomposition $Z(xy)= Z(x) \cup Z(y)$.}
+	\end{figure}
+\end{ex}
+
+
+\begin{dfn}[Affine Algebraic Variety]
+An affine algebraic variety is an irreducible closed subset of $\A^n$ (with the induced topology). This is also sometimes referred to as simply an affine variety. An open subset of an affine variety is a quasi-affine variety. 
+\end{dfn}
+
+
+Notice all the proceeding definitions and examples connected subsets of $\A^n$ and ideals in $A$. Before moving forward, we first need to examine this correspondence more closely. Notice before one began with a collection of polynomials and then obtained a collection of points. One can go in the other direction as well, which gives the following definition. 
+
+
+\begin{dfn}[$I(Y)$]
+Let $Y \subseteq \A^n$ be a subset. Define the ideal of $Y$, denoted $I(Y)$, by $I(Y):= \{ f\in A \colon f(P)= 0 \text{ for all } P \in Y \}$. 
+\end{dfn}
+
+
+Of course, one should actually check that this is an ideal.
+
+
+\begin{prop}
+Let $Y \subseteq \A^n$ be any subset. Then $I(Y)$ is an ideal. 
+\end{prop}
+
+\pf We know that $0 \in I(Y)$ since 0 vanishes everywhere. Now suppose that $f,g \in I(Y)$ and $h \in A$.  For any $P \in Y$, 
+	\[
+	\begin{split}
+	(f+g)(P)&= f(P) + g(P)= 0 + 0= 0 \\
+	(hf)(P)&= h(P)f(P)= h(P)(0)= 0
+	\end{split}
+	\]
+so that $f+g, hf \in I(Y)$. \qed \\
+
+
+We then have two functions between two different important sets, namely
+        \begin{align}
+        \left\{ 
+        \parbox[c]{1.1in}{\centering Subsets of $\A^n$}
+        \right\}
+        \rightarrow
+        \left\{ 
+        \parbox[c]{1.1in}{\centering subsets of \\ $k[x_1,\ldots,x_n]$}
+        \right\}
+        \end{align}
+
+
+To find the 
 
 
 
+\begin{prop} \hfill
+\begin{enumerate}[(i)]
+\item If $T_1 \subseteq T_2$ are subsets of $A$, then $Z(T_1) \supseteq Z(T_2)$.
+\item If $Y_1 \subseteq Y_2$ are subsets of $\A^n$, then $I(Y_1) \supseteq I(Y_2)$.
+\item For any two subsets $Y_1,Y_2$ of $\A_1^2$, we have $I(Y_1 \cup Y_2)= I(Y_1) \cap I(Y_2)$. 
+\item For any ideal $J \subseteq A$, $I(Z(J))= \sqrt{J}$, where $\sqrt{J}:= \{ f \in A \colon f^r \in J \text{ for some } r>0 \}$ is the radical of $J$. 
+\item For any subset $Y \subseteq \A^n$, $Z(I(Y))= \overline{Y}$, the closure of $Y$ in the Zariski topology. 
+\end{enumerate}
+\end{prop}
+
+\pf \hfill
+\begin{enumerate}[(i)]
+\item If $P \in Z(T_2)$, then $f(P)= 0$ for all $f \in T_2$. But then $f(P)= 0$ for all $f \in T_1$, showing that $P \in Z(T_1)$.
+
+\item If $f \in I(Y_2)$, then $f(P)= 0$ for all $P \in Y_2$. But then $f(P)= 0$ for all $P \in Y_1$, showing that $f \in I(Y_1)$. 
+
+\item We know that $f \in I(Y_1 \cup Y_2)$ if and only if $f(P)= 0$ for all $P \in Y_1 \cup Y_2$ if and only if $f(P)= 0$ for all $P \i nY_1$ and $f(P)= 0$ for all $P \in Y_2$ if and only if $f \in I(Y_1)$ and $f \in I(Y_2)$ if and only if $f \in I(Y_1) \cap I(Y_2)$. 
+
+\item This follows immediately from Hilbert's Nullstellensatz, c.f. Theorem~\ref{thm:hilberN}:  $f \in \sqrt{J}$ if and only if $f^r \in J$ for some $r>0$ if and only if $f^r(P)=0$ for all $P \in Z(J)$, where the last ``if and only if'' follows from the definition of $Z$ and the Nullstellensatz. 
+
+\item We know that $Z(I(Y))$ is closed because it is algebraic. We know also that $Z(I(Y)) \supseteq Y$ because if $P \in Y$, then $f(P)= 0$ for all $f \in I(Y)$, showing $P \in Z(I(Y))$. Now if $W$ is any closed set, say $W= Z(J)$, then $I(W) \supseteq J$ because if $f \in J$, then $f(P)= 0$ for all $P \in Z(J)= W$, showing $f \in I(W)$. Thus, $Z(I(W)) \subseteq Z(J)= W$. We know that $Y=W$ and $Z(I(W)) \supseteq W$. But then $W= Z(I(W))$. 
+
+Now suppose $W$ is any closed subset containing $Y$. From (ii), we have $I(W) \subseteq I(Y)$. But then from (i), we know that $Z(I(W)) \supseteq Z(I(Y))$. Then from (iii), we know $W= Z(I(W))$ so that $W \supseteq Z(I(Y))$. Therefore, $Z(I(Y))$ is a closed set containing $Y$ and contained in any closed set containing $Y$. Therefore, $Z(I(Y))= \overline{Y}$. \qed \\
+\end{enumerate}
 
 
+\begin{thm}[Hilbert's Nullstellensatz] \label{thm:hilberN}
+Let $k$ be an algebraically closed field, $J$ be an ideal in $A= k[x_1,\ldots,x_n]$, and $f \in A$ be a polynomial vanishing at all points of $Z(J)$. Then $f^r \in J$ for some $r>0$. 
+\end{thm}
 
 
+Note for Hilbert's Nullstellensatz, one does need $k$ to be algebraically closed, as the following examples show:
+
+
+\begin{ex} \hfill
+\begin{enumerate}[(i)]
+\item If $k= \R$ and $J= (x^2+x+1) \subseteq \R[x]$, then $Z(J)= \emptyset$. Now 1 vanishes at all points of $\emptyset= Z(J)$, but no power of 1 is in $(x^2+x+1)$. 
+
+\item If $k= \R$ and $J= (x^2+y^2) \subseteq \R[x,y]$, then $Z(J)= \{(0,0)\}$. Now $x$ vanishes at $(0,0)$ but no power of $x$ is in $(x^2+y^2)$. \xqed
+\end{enumerate}
+\end{ex}
+
+
+As a result, we can now see the connection between the the subsets of $\A^n$ and the subsets of $k[x_1,\ldots,x_n]$  that we had discussed earlier. 
+
+previous diagram plut closed subsets beneath with subset containments, i.e.U. radical ideal on right I arrow to right and Z arrow to left. 
+
+Cor 1.4
 
 
 
