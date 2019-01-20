@@ -286,22 +286,16 @@ so that $f+g, hf \in I(Y)$. \qed \\
 
 
 We then have two functions between two different important sets, namely
-        \begin{align}
-        \left\{ 
-        \parbox[c]{1.1in}{\centering Subsets of $\A^n$}
-        \right\}
-        \rightarrow
-        \left\{ 
-        \parbox[c]{1.1in}{\centering subsets of \\ $k[x_1,\ldots,x_n]$}
-        \right\}
-        \end{align}
+	\[
+	\begin{tikzcd}
+	\left\{\parbox[c]{1.1in}{\centering Subsets of $\A^n$} \right\} \arrow[yshift=1ex]{r}{I(-)} & 
+        \left\{ \parbox[c]{1.1in}{\centering subsets of \\ $k[x_1,\ldots,x_n]$} \right\} \arrow[yshift=-1ex]{l}{Z(-)}
+	\end{tikzcd}
+	\]
+To find the relationship between this connection, we will need the following result.
 
 
-To find the 
-
-
-
-\begin{prop} \hfill
+\begin{prop} \label{prop:ziproperties} \hfill
 \begin{enumerate}[(i)]
 \item If $T_1 \subseteq T_2$ are subsets of $A$, then $Z(T_1) \supseteq Z(T_2)$.
 \item If $Y_1 \subseteq Y_2$ are subsets of $\A^n$, then $I(Y_1) \supseteq I(Y_2)$.
@@ -327,9 +321,14 @@ Now suppose $W$ is any closed subset containing $Y$. From (ii), we have $I(W) \s
 \end{enumerate}
 
 
+As a reminder for the reader,
+
+
 \begin{thm}[Hilbert's Nullstellensatz] \label{thm:hilberN}
 Let $k$ be an algebraically closed field, $J$ be an ideal in $A= k[x_1,\ldots,x_n]$, and $f \in A$ be a polynomial vanishing at all points of $Z(J)$. Then $f^r \in J$ for some $r>0$. 
 \end{thm}
+
+\pf See any `standard' introductory text on Commutative Algebra. \qed \\
 
 
 Note for Hilbert's Nullstellensatz, one does need $k$ to be algebraically closed, as the following examples show:
@@ -345,13 +344,34 @@ Note for Hilbert's Nullstellensatz, one does need $k$ to be algebraically closed
 
 
 As a result, we can now see the connection between the the subsets of $\A^n$ and the subsets of $k[x_1,\ldots,x_n]$  that we had discussed earlier. 
+	\[
+	\begin{tikzcd}
+	\left\{\parbox[c]{1.1in}{\centering Subsets of $\A^n$} \right\} \arrow[yshift=1ex]{r}{I(-)} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\supseteq$}}  & 
+        \left\{ \parbox[c]{1.1in}{\centering subsets of \\ $k[x_1,\ldots,x_n]$} \right\} \arrow[yshift=-1ex]{l}{Z(-)} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\supseteq$}}  \\
+	\left\{\parbox[c]{1.1in}{\centering Closed subsets \\ of $\A^n$} \right\} \arrow[yshift=1ex]{r}{I(-)}[swap]{\sim} & 
+        \left\{ \parbox[c]{1.1in}{\centering Radical ideals \\ of $k[x_1,\ldots,x_n]$} \right\} \arrow[yshift=-1ex]{l}{Z(-)} \\        
+	\end{tikzcd}
+	\]
 
-previous diagram plut closed subsets beneath with subset containments, i.e.U. radical ideal on right I arrow to right and Z arrow to left. 
 
-Cor 1.4
+\begin{cor}
+There is a one-to-one (inclusion-reversing) correspondence between algebraic sets in $\A^n$ and radical ideals in $A$ given by $Y \mapsto I(Y)$ and $\fa \mapsto Z(\fa)$. Furthermore, an algebraic set is irreducible if and only if its ideal is a prime ideal. 
+\end{cor}
+
+\pf All of this was shown in Proposition~\ref{prop:ziproperties} with the exception of the final statement. Now suppose that $Y$ is irreducible. We need show $I(Y)$ is prime. Suppose that $fg \in I(Y)$. Then $Y \subseteq Z(fg)= Z(f) \cup Z(g)$. But then $Y= Y \cap Z(fg)= (Y \cap Z(f)) \cup (Y \cap Z(g))$, both of which are closed subsets of $Y$ (in the subspace topology). Since $Y$ is irreducible, $Y$ must be one of the sets in this union. Without loss of generality, assume $Y= Y \cap Z(f)$. But then $f \in I(Y)$, as desired. Now suppose that $\fp$ is a prime ideal, and $Z(\fp)= Y_1 \cup Y_2$. Then we must have $\fp= I(Y_1) \cap I(Y_2)$. But then $\fp= I(Y_1)$ or $\fp= I(Y_2)$. Without loss of generality, assume $\fp= I(Y_1)$. Then we have $Z(\fp)= Z(I(Y_1))= Y_1$. Therefore, $Z(\fp)$ is irreducible. \qed \\
 
 
-
+This gives the most complete diagram as
+	\[
+	\begin{tikzcd}
+	\left\{\parbox[c]{1.1in}{\centering Subsets of $\A^n$} \right\} \arrow[yshift=1ex]{r}{I(-)} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\supseteq$}}  & 
+        \left\{ \parbox[c]{1.1in}{\centering subsets of \\ $k[x_1,\ldots,x_n]$} \right\} \arrow[yshift=-1ex]{l}{Z(-)} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\supseteq$}}  \\
+	\left\{\parbox[c]{1.1in}{\centering Closed subsets \\ of $\A^n$} \right\} \arrow[yshift=1ex]{r}{I(-)}[swap]{\sim} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\supseteq$}} & 
+        \left\{ \parbox[c]{1.1in}{\centering Radical ideals \\ of $k[x_1,\ldots,x_n]$} \right\} \arrow[yshift=-1ex]{l}{Z(-)} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\supseteq$}} \\        
+\left\{\parbox[c]{1.1in}{\centering Subvarieties \\ of $\A^n$} \right\} \arrow[yshift=1ex]{r}{I(-)}[swap]{\sim} & 
+        \left\{ \parbox[c]{1.1in}{\centering Prime ideals \\ of $k[x_1,\ldots,x_n]$} \right\} \arrow[yshift=-1ex]{l}{Z(-)} \\ 
+	\end{tikzcd}
+	\]
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.27)  17 JAN 2019 16:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.27)  20 JAN 2019 00:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -779,6 +779,26 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 s/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+Package: tikz-cd 2014/10/30 v0.9e Commutative diagrams with tikz
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.4)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2014/03/21 v3.0.1a (rcs-revision 1.4)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
+meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1a (rcs-revision 1.13)
+\pgfarrowinset=\dimen191
+\pgfarrowlength=\dimen192
+\pgfarrowwidth=\dimen193
+\pgfarrowlinewidth=\dimen194
+)))
 (/usr/local/texlive/2018/texmf-dist/tex/latex/pgfplots/pgfplots.sty
 (/usr/local/texlive/2018/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
@@ -787,7 +807,7 @@ Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
 \t@pgfplots@toka=\toks46
 \t@pgfplots@tokb=\toks47
 \t@pgfplots@tokc=\toks48
-\pgfplots@tmpa=\dimen191
+\pgfplots@tmpa=\dimen195
 \c@pgfplots@coordindex=\count151
 \c@pgfplots@scanlineindex=\count152
 
@@ -868,14 +888,14 @@ x)
 s/tikzlibrarydecorations.code.tex
 (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
 s.code.tex
-\pgfdecoratedcompleteddistance=\dimen192
-\pgfdecoratedremainingdistance=\dimen193
-\pgfdecoratedinputsegmentcompleteddistance=\dimen194
-\pgfdecoratedinputsegmentremainingdistance=\dimen195
-\pgf@decorate@distancetomove=\dimen196
+\pgfdecoratedcompleteddistance=\dimen196
+\pgfdecoratedremainingdistance=\dimen197
+\pgfdecoratedinputsegmentcompleteddistance=\dimen198
+\pgfdecoratedinputsegmentremainingdistance=\dimen199
+\pgf@decorate@distancetomove=\dimen256
 \pgf@decorate@repeatstate=\count157
-\pgfdecorationsegmentamplitude=\dimen197
-\pgfdecorationsegmentlength=\dimen198
+\pgfdecorationsegmentamplitude=\dimen257
+\pgfdecorationsegmentlength=\dimen258
 )
 \tikz@lib@dec@box=\box67
 )
@@ -888,12 +908,12 @@ s/tikzlibrarydecorations.pathreplacing.code.tex
 (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.pathreplacing.code.tex))
 \pgfplots@numplots=\count158
-\pgfplots@xmin@reg=\dimen199
-\pgfplots@xmax@reg=\dimen256
-\pgfplots@ymin@reg=\dimen257
-\pgfplots@ymax@reg=\dimen258
-\pgfplots@zmin@reg=\dimen259
-\pgfplots@zmax@reg=\dimen260
+\pgfplots@xmin@reg=\dimen259
+\pgfplots@xmax@reg=\dimen260
+\pgfplots@ymin@reg=\dimen261
+\pgfplots@ymax@reg=\dimen262
+\pgfplots@zmin@reg=\dimen263
+\pgfplots@zmax@reg=\dimen264
 )
 (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibraryplotmarks.code.tex
@@ -904,23 +924,23 @@ ks.code.tex
 File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
 )))
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 94.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 96.
 
 \c@thm=\count159
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 95.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 97.
 
 \c@prop=\count160
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 96.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 98.
 
 \c@lem=\count161
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 97.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 99.
 
 \c@cor=\count162
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 98.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 100.
 
 \c@ex=\count163
 \c@nex=\count164
@@ -1164,45 +1184,45 @@ catcodes, docmode,
  Xy-pic is free software: see the User's Guide for details.
 
 Loading kernel: messages; fonts; allocations: state,
-\X@c=\dimen261
-\Y@c=\dimen262
-\U@c=\dimen263
-\D@c=\dimen264
-\L@c=\dimen265
-\R@c=\dimen266
+\X@c=\dimen265
+\Y@c=\dimen266
+\U@c=\dimen267
+\D@c=\dimen268
+\L@c=\dimen269
+\R@c=\dimen270
 \Edge@c=\toks50
-\X@p=\dimen267
-\Y@p=\dimen268
-\U@p=\dimen269
-\D@p=\dimen270
-\L@p=\dimen271
-\R@p=\dimen272
+\X@p=\dimen271
+\Y@p=\dimen272
+\U@p=\dimen273
+\D@p=\dimen274
+\L@p=\dimen275
+\R@p=\dimen276
 \Edge@p=\toks51
-\X@origin=\dimen273
-\Y@origin=\dimen274
-\X@xbase=\dimen275
-\Y@xbase=\dimen276
-\X@ybase=\dimen277
-\Y@ybase=\dimen278
-\X@min=\dimen279
-\Y@min=\dimen280
-\X@max=\dimen281
-\Y@max=\dimen282
+\X@origin=\dimen277
+\Y@origin=\dimen278
+\X@xbase=\dimen279
+\Y@xbase=\dimen280
+\X@ybase=\dimen281
+\Y@ybase=\dimen282
+\X@min=\dimen283
+\Y@min=\dimen284
+\X@max=\dimen285
+\Y@max=\dimen286
 \lastobjectbox@=\box68
 \zerodotbox@=\box69
-\almostz@=\dimen283
+\almostz@=\dimen287
  direction,
-\d@X=\dimen284
-\d@Y=\dimen285
+\d@X=\dimen288
+\d@Y=\dimen289
 \K@=\count353
 \KK@=\count354
 \Direction=\count355
-\K@dXdY=\dimen286
-\K@dYdX=\dimen287
+\K@dXdY=\dimen290
+\K@dYdX=\dimen291
 \xyread@=\read3
 \xywrite@=\write6
 \csp@=\count356
-\quotPTK@=\dimen288
+\quotPTK@=\dimen292
 
 utility macros; pictures: \xy, positions,
 \swaptoks@@=\toks52
@@ -1221,12 +1241,12 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
 \crv@cnt@=\count357
 \crvpts@=\toks54
 \splinebox@=\box71
-\splineval@=\dimen289
-\splinedepth@=\dimen290
-\splinetol@=\dimen291
-\splinelength@=\dimen292
+\splineval@=\dimen293
+\splinedepth@=\dimen294
+\splinetol@=\dimen295
+\splinelength@=\dimen296
  circles,
-\L@=\dimen293
+\L@=\dimen297
  loaded)
 (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xyframe.tex
  Xy-pic option: Frame and Bracket extension v.3.14 loaded)
@@ -1236,7 +1256,7 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
  Xy-pic option: More Tips extension v.3.11 loaded) loaded)
 (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xyline.tex
  Xy-pic option: Line styles extension v.3.10
-\xylinethick@=\dimen294
+\xylinethick@=\dimen298
  loaded)
 (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xyrotate.tex
  Xy-pic option: Rotate and Scale extension v.3.8 loaded)
@@ -1362,13 +1382,13 @@ File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count366
-\scratchdimen=\dimen295
+\scratchdimen=\dimen299
 \scratchbox=\box73
 \nofMPsegments=\count367
 \nofMParguments=\count368
 \everyMPshowfont=\toks57
 \MPscratchCnt=\count369
-\MPscratchDim=\dimen296
+\MPscratchDim=\dimen300
 \MPnumerator=\count370
 \makeMPintoPDFobject=\count371
 \everyMPtoPDFconversion=\toks58
@@ -1584,16 +1604,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--286
  []
 
 
-LaTeX Warning: Command \i invalid in math mode on input line 320.
+LaTeX Warning: Command \i invalid in math mode on input line 314.
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 326--327
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
 
  []
 
 Package hyperref Info: bookmark level for unknown thm defaults to 0 on input li
-ne 330.
+ne 327.
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
+
+ []
+
+Package hyperref Info: bookmark level for unknown cor defaults to 0 on input li
+ne 358.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-euf.cfg
+File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
+
 ) [10]
+Underfull \hbox (badness 10000) in paragraph at lines 361--362
+
+ []
+
+) [11]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
  (./mat_738_alggeo.aux)
@@ -1605,28 +1640,29 @@ Package logreq Info: Writing requests to 'mat_738_alggeo.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
  ) 
 Here is how much of TeX's memory you used:
- 40101 strings out of 492646
- 876899 string characters out of 6129563
- 1655330 words of memory out of 5000000
- 43000 multiletter control sequences out of 15000+600000
- 59000 words of font info for 245 fonts, out of 8000000 for 9000
+ 41196 strings out of 492646
+ 910954 string characters out of 6129563
+ 1683026 words of memory out of 5000000
+ 44061 multiletter control sequences out of 15000+600000
+ 60177 words of font info for 254 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,15n,138p,3237b,2436s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 85i,18n,138p,3237b,2506s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
 live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
-e/2018/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/20
-18/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2018/te
-xmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2018/texmf-
-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2018/texmf-dist/fo
-nts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
-e1/urw/palatino/uplri8a.pfb>
-Output written on mat_738_alggeo.pdf (13 pages, 295292 bytes).
+e/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/
+2018/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2018/
+texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2018/texm
+f-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2018/texmf-dist/
+fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
+ype1/urw/palatino/uplri8a.pfb>
+Output written on mat_738_alggeo.pdf (14 pages, 303561 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 209 compressed objects within 3 object streams
- 83 named destinations out of 1000 (max. 500000)
+ 249 PDF objects out of 1000 (max. 8388607)
+ 218 compressed objects within 3 object streams
+ 85 named destinations out of 1000 (max. 500000)
  31306 words of extra memory for PDF output out of 35830 (max. 10000000)
 
