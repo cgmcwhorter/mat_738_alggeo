@@ -313,7 +313,7 @@ To find the relationship between this connection, we will need the following res
 
 \item We know that $f \in I(Y_1 \cup Y_2)$ if and only if $f(P)= 0$ for all $P \in Y_1 \cup Y_2$ if and only if $f(P)= 0$ for all $P \i nY_1$ and $f(P)= 0$ for all $P \in Y_2$ if and only if $f \in I(Y_1)$ and $f \in I(Y_2)$ if and only if $f \in I(Y_1) \cap I(Y_2)$. 
 
-\item This follows immediately from Hilbert's Nullstellensatz, c.f. Theorem~\ref{thm:hilberN}:  $f \in \sqrt{J}$ if and only if $f^r \in J$ for some $r>0$ if and only if $f^r(P)=0$ for all $P \in Z(J)$, where the last ``if and only if'' follows from the definition of $Z$ and the Nullstellensatz. 
+\item This follows immediately from Hilbert's Nullstellensatz, c.f. Theorem~\ref{thm:hilberN}:  $f \in \sqrt{J}$ if and only if $f^r \in J$ for some $r>0$ if and only if $f^r(P)=0$ for all $P \in Z(J)$, where the last ``if and only if'' follows from the definition of $Z(-)$ and the Nullstellensatz. 
 
 \item We know that $Z(I(Y))$ is closed because it is algebraic. We know also that $Z(I(Y)) \supseteq Y$ because if $P \in Y$, then $f(P)= 0$ for all $f \in I(Y)$, showing $P \in Z(I(Y))$. Now if $W$ is any closed set, say $W= Z(J)$, then $I(W) \supseteq J$ because if $f \in J$, then $f(P)= 0$ for all $P \in Z(J)= W$, showing $f \in I(W)$. Thus, $Z(I(W)) \subseteq Z(J)= W$. We know that $Y=W$ and $Z(I(W)) \supseteq W$. But then $W= Z(I(W))$. 
 
@@ -369,11 +369,86 @@ This gives the most complete diagram as
 	\left\{\parbox[c]{1.1in}{\centering Closed subsets \\ of $\A^n$} \right\} \arrow[yshift=1ex]{r}{I(-)}[swap]{\sim} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\supseteq$}} & 
         \left\{ \parbox[c]{1.1in}{\centering Radical ideals \\ of $k[x_1,\ldots,x_n]$} \right\} \arrow[yshift=-1ex]{l}{Z(-)} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\supseteq$}} \\        
 \left\{\parbox[c]{1.1in}{\centering Subvarieties \\ of $\A^n$} \right\} \arrow[yshift=1ex]{r}{I(-)}[swap]{\sim} & 
-        \left\{ \parbox[c]{1.1in}{\centering Prime ideals \\ of $k[x_1,\ldots,x_n]$} \right\} \arrow[yshift=-1ex]{l}{Z(-)} \\ 
+        \left\{ \parbox[c]{1.1in}{\centering Prime ideals \\ of $k[x_1,\ldots,x_n]$} \right\} \arrow[yshift=-1ex]{l}{Z(-)}
 	\end{tikzcd}
 	\]
 
 
+\begin{ex} \hfill
+\begin{enumerate}[(i)]
+\item $\A^n$ is irreducible because it corresponds to the zero ideal in $A$, which is prime.
+\item If $f$ is an irreducible polynomial in $A= k[x,y]$ (a UFD), then $f$ generates a prime ideal (irreducibles are primes in a UFD). Then it must be that $Y= Z(f)$ is irreducible. This is called the affine curve defined by the equation $f(x,y)=0$. If the degree of $f$ is $d$, we say that $Y$ is a curve of degree $d$. Generally, if $f$ is an irreducible polynomial in $A= k[x_1,\ldots,x_n]$, the affine variety $Y= Z(f)$ is called a hypersurface for n>3 (or simply a surface if $n=3$). 
+\item A maximal ideal $\fm$ of $A= k[x_1,\ldots,x_n]$ corresponds to a minimal irreducible set (by `inclusion-reversingness') of $\A^n$, which must be a point, say $P= (a_1,\ldots,a_n)$ is the corresponding point. Then every maximal ideal of $A$ is of the form $\fm= (x_1-a_1,\ldots,x_n-a_n)$ for some $a_1,\ldots,a_n \in k$. Note that we can express $\{P\}= Z(\langle x_1-a_1,\ldots,x_n-a_n \rangle )$, $\langle x_1-a_1,\ldots,x_n-a_n \rangle$ is maximal as $k[x_1,\ldots,x_n]/\langle x_1-a_1,\ldots,x_n-a_n \rangle \cong k$ is a field, and that this result requires that $k$ be algebraically closed. \xqed
+\end{enumerate} 
+\end{ex}
+
+
+Note that polynomials in more than one variable can have infinitely many roots. For example, $f(x,y)= xy$ has zeros whenever $x=0$ or $y=0$. Clearly, $Z(xy)= \{ (x,0) \; x \in \R \} \cup \{ (0,y) \;|\; y \in \R \}$. But in the case where $k$ is infinite, there will always exist a point where the polynomial does not have a root. 
+
+
+\begin{prop}
+Let $k$ be an infinite field and $0 \neq f \in k[x_1,\ldots,x_n]$. Then there exists a point $P \in \A^n$ such that $f(P) \neq 0$. 
+\end{prop}
+
+\pf We proceed by induction on $n$. The case where $n=1$ is routine since any polynomial in a single variable has finitely many roots by degree considerations. Assume then that the result is true for $n$, and let $f \in k[x_1,\ldots,x_{n+1}]$. Write $f$ as $a_m x_{n+1}^m + a_{m-1} x_{n+1}^{n-1} + \cdots + a_1 x_{n+1} + a_0$, where $a_i \in k[x_1,\ldots,x_n]$. Since $f$ is nonzero, some $a_i \neq 0$. Recalling $k[x_1,\ldots,x_{n+1}]= k[x_1,\ldots,x_n][x_{n+1}]$ and using the induction hypothesis, there exists $Q=(b_1,\ldots,b_n)$, where $b_i \in k$, such that $a_i(Q) \neq 0$. Now $f(b_1,\ldots,b_n,x_{n+1})$ is a nonzero polynomial in a single variable, which can have only finitely many roots. Because $k$ is infinite, there must then be $b_{n+1} \in k$ so that $f(b_1,\ldots,b_n,b_{n+1}) \neq 0$, as desired. \qed \\
+
+
+Of course, this is not true  when $k$ is finite. For example, if $k= \{ k_1,\ldots,k_{p^n} \}$, then $f(x)= \prod_{i=1}^{p^n} (x-k_i)$ is a nonzero polynomial with every element of $k$ as a root. 
+
+
+\begin{dfn}[(Affine) Coordinate Ring]
+If $Y \subseteq \A^n$ is an algebraic set, we define the affine coordinate ring, denoted $A(Y)$, to be $A/I(Y)$. 
+\end{dfn}
+
+
+One can think of elements of $A(Y)$ to be functions from $Y \to k$: if $Y \subseteq \A^n, f \in A=k[x_1,\ldots,x_n[$, then $f$ certainly gives a function $f: \A^n \to k$ via restriction. Note that $f,g \in k[x_1,\ldots,x_n]$ induce the same function from $Y \to k$ if and only if $f-g \in I(Y)$. Hence, $A(Y)$ is the ring of all functions $f: Y \to k$ that are restrictions of polynomials. 
+
+
+\begin{ex}
+Let $Y \subseteq \A^2$ be the set given by $xy=1$, i.e. $Z(xy - 1)$. It is routine to verify that $\sqrt{\langle xy - 1 \rangle}= \langle xy - 1 \rangle$. But then we have
+	\[
+	k[x,y]/(xy - 1)= k[x,x^{-1}],
+	\]
+the ring of Laurent polynomials. \xqed
+\end{ex}
+
+
+\begin{rem}
+We know that $A(Y)$ is an integral domain if and only if $I(Y)$ is prime if and only if $Y$ is irreducible. Now $A(Y)$ is finitely generated as a $k$-algebra because it is a quotient of $k[x_1,\ldots,x_n]$, which is finitely generated as a $k$-algebra (one can take the image of the generators to be a generating set). On the other hand, any finitely generated $k$-algebra, say $B$, which is a domain is the affine coordinate ring of some variety. Why? Consider a map $\psi: k[x_1,\ldots,x_n] \to B$ is a surjection with kernel $I$. Then taking $Y= Z(I)$, we have $A(Y) = B$. 
+\end{rem}
+
+
+To study the topology of the affine varieties we have defined, we will need to introduce an important class of topological spaces, which is just the topological variant of its algebraic cousin.
+
+
+\begin{dfn}[Noetherian]
+A topological space $X$ is called noetherian if it satisfies the ascending chain condition on open subsets (every chain of open subsets stabilizes), i.e. for any chain of open subsets $U_1 \subseteq U_2 \subseteq \cdots \subseteq U_r \subseteq \cdots$, there exists an $n$ such that $U_n=U_{n+1}=\cdots$. Equivalently, a topological space $X$ is noetherian if it satisfies the descending chain condition on closed subsets. 
+\end{dfn}
+
+
+\begin{ex}
+The topological space $\A^n$, with the Zariski topology, is noetherian as given a set of closed subsets $Y_1 \supseteq Y_2 \supseteq \cdots$, applying $Y(-)$ (noting it is inclusion-reversing), we have $I(Y_1) \subseteq I(Y_2) \subseteq \cdots$. But this is an ascending chain of ideals in $A= k[x_1,\ldots,x_n]$. As $A$ is noetherian (by the Hilbert Basis Theorem), the chain of ideals must stabilize, say at $n$. Finally as $Y_i= Z(I(Y_i))$, so too must the chain $Y_1 \supseteq Y_2 \supseteq \cdots$ stabilize at $n$. \xqed
+\end{ex}
+
+
+\begin{ex}
+The topological space $\R^n$, with the usual Euclidean topology, is not noetherian. Let $\{a_n\}$ be a strictly monotone decreasing set with $a_n \to 0$. Letting $Y_i$ be the closed sphere centered at the origin with radius $a_i$, we see that $\{Y_i\}$ is a chain of closed subsets that does not stabilize. \xqed
+\end{ex}
+
+
+\begin{prop}
+In a noetherian topological space, every nonempty set of closed subsets has a minimal element.
+\end{prop}
+
+\pf Let $S$ be a nonempty collection of closed subsets. Choose $Y_1 \in S_1$. If $Y_1$ is minimal, we are done. If not, choose $Y_2 \subseteq Y_1$. If $Y_2$ is minimal, we are done. If not, choose $Y_3$ such that $Y_3 \subseteq Y_2$. Continuing in this process, we construct a chain $Y_1 \supseteq Y_2 \subseteq Y_3 \supseteq \cdots$. Since the space is noetherian, this chain must stabilize, say at $n$. But then $Y_n$ must be a minimal element of $S$. \qed \\
+
+
+This is equivalent to the algebraic property that every collection of submodules (or ideals) must contain a maximal element. 
+
+
+\begin{prop}
+In a noetherian topological space $X$, every nonempty closed subset $Y$ can be expressed a finite union $Y= Y_1 \cup \cdots \cup Y_r$ of irreducible closed subsets of $Y$. If requires $Y_i \supsetneq Y_j$ for $i \neq j$ (which is possible), the $Y_i$ are uniquely determined up to reordering. In this case, the $Y_i$ are called the irreducible components of $Y$. 
+\end{prop}
 
 
 
@@ -381,14 +456,17 @@ This gives the most complete diagram as
 
 
 
-%\begin{ex}
-% any point algebraic
-% V(y-x^2,x-y^2) two points in \R^2 but 4 points in \C^2. Generally, B\'ezouts theorem number intersections curve degree m with degree n is mn in prokective space.
-% twisted cubic: (t,t^2,t^3), V(y-x^2,z-x^3)
-% Note all curves in \R^ are algebraic X= \{(x,y) \colon y- \sin x=0\}. SuppoSe X=V(S) for sume S subset R[x,y]. Then there is F \in S with F \neq 0 so X=V(S)= \cap f \in S V(f) \subseteq V(F). But the intersection of $X$ with horizontal line y-c=0 is infinteily for -1 \leq c \leq 1. Choose c with F(x,c) not zero polynomial and notice number of solutions is finite so not algebraic. 
 
-%Method above works generally, if $C$ is algebaric affine plane curve and $L$ is line not contained in C, then L \cap C is iether empty or finite set of points 
-%\end{ex}
+
+
+
+
+
+
+
+
+
+
 
 
 

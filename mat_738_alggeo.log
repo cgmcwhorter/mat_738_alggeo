@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.27)  20 JAN 2019 00:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.27)  22 JAN 2019 16:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -924,23 +924,23 @@ ks.code.tex
 File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
 )))
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 96.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 97.
 
 \c@thm=\count159
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 97.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 98.
 
 \c@prop=\count160
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 98.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 99.
 
 \c@lem=\count161
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 99.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 100.
 
 \c@cor=\count162
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 100.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 101.
 
 \c@ex=\count163
 \c@nex=\count164
@@ -1628,7 +1628,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 361--362
 
  []
 
-) [11]
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
+
+ []
+
+Package hyperref Info: bookmark level for unknown rem defaults to 0 on input li
+ne 417.
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
+
+ []
+
+) [13]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
  (./mat_738_alggeo.aux)
@@ -1640,11 +1652,11 @@ Package logreq Info: Writing requests to 'mat_738_alggeo.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
  ) 
 Here is how much of TeX's memory you used:
- 41196 strings out of 492646
- 910954 string characters out of 6129563
- 1683026 words of memory out of 5000000
- 44061 multiletter control sequences out of 15000+600000
- 60177 words of font info for 254 fonts, out of 8000000 for 9000
+ 41244 strings out of 492646
+ 911508 string characters out of 6129563
+ 1683034 words of memory out of 5000000
+ 44063 multiletter control sequences out of 15000+600000
+ 62541 words of font info for 271 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  85i,18n,138p,3237b,2506s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1656,13 +1668,14 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texl
 ive/2018/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/
 2018/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2018/
 texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2018/texm
-f-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2018/texmf-dist/
-fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
-ype1/urw/palatino/uplri8a.pfb>
-Output written on mat_738_alggeo.pdf (14 pages, 303561 bytes).
+f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/
+texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2018/texmf-d
+ist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-dist/fon
+ts/type1/urw/palatino/uplri8a.pfb>
+Output written on mat_738_alggeo.pdf (16 pages, 320858 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 218 compressed objects within 3 object streams
- 85 named destinations out of 1000 (max. 500000)
+ 284 PDF objects out of 1000 (max. 8388607)
+ 250 compressed objects within 3 object streams
+ 107 named destinations out of 1000 (max. 500000)
  31306 words of extra memory for PDF output out of 35830 (max. 10000000)
 
