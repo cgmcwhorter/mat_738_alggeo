@@ -227,7 +227,7 @@ A nonempty subset $Y$ of a topological space $X$ is irreducible if and only if i
 
 
 \begin{ex}
-Whenever $k$ is infinite, e.g. when $k$ is algebraically closed, $\A^1$ is irreducible as the only proper closed subsets are finite, so $\A^1$ could not be written as a finite union of closed sets. 
+Whenever $k$ is infinite, e.g. when $k$ is algebraically closed, $\A^1$ is irreducible as the only proper closed subsets are finite, so $\A^1$ could not be written as a finite union of closed sets. \xqed
 \end{ex}
 
 
@@ -251,7 +251,17 @@ In  $\A^2$, the set $Z(xy)$ is reducible as we can write $Z(xy)= Z(x) \cup Z(y)$
 	\draw[thin,-latex] (7,0) -- (13,0) node at (13.2,0) {\footnotesize$x$};
 	\end{tikzpicture}
 	\caption{The decomposition $Z(xy)= Z(x) \cup Z(y)$.}
-	\end{figure}
+	\end{figure} \xqed
+\end{ex}
+
+
+\begin{ex} \hfill
+\begin{enumerate}[(i)]
+\item Any nonempty open subset of an irreducible space is irreducible and dense. This confirms our intuition that Zariski open sets are very `big'. 
+\item If $Y$ is an irreducible subset of $X$, then its closure $\overline{Y}$ in $X$ is also irreducible. 
+\item If $Y$ is irreducible and $U_1,U_2$ are nonempty open subsets of $Y$, then $U_1 \cap U_2\neq \emptyset$. Why? If the intersection were not empty, then $Y \setminus U$ would be a closed proper subset of $Y$ containing $U_2$, which contradicts the fact that $Y_2$ is dense. 
+\item If $Y$ is irreducible and $U$ is nonempty and open in $Y$, then $U$ is both dense and irreducible. Why? If $\overline{U} \subsetneq Y$, then $Y \setminus U \subsetneq Y$ so that $Y= \overline{U} \cup (Y \setminus U)$, contradicting the irreducibility of $Y$. Now if $U$ were reducible, then there would be closed subsets $Y_1,Y_2$ of $Y$ with $U= (U \cap Y_1) \cup (U \cap Y_2)$. Each $U \cap Y_i$ is a proper subset of $U$ and $U \subsetneq Y_i$. % LEFT OFF HERE!
+\end{enumerate}
 \end{ex}
 
 
@@ -450,20 +460,85 @@ This is equivalent to the algebraic property that every collection of submodules
 In a noetherian topological space $X$, every nonempty closed subset $Y$ can be expressed a finite union $Y= Y_1 \cup \cdots \cup Y_r$ of irreducible closed subsets of $Y$. If requires $Y_i \supsetneq Y_j$ for $i \neq j$ (which is possible), the $Y_i$ are uniquely determined up to reordering. In this case, the $Y_i$ are called the irreducible components of $Y$. 
 \end{prop}
 
+\pf Let $S$ be the set of all closed subsets of $X$ that cannot be expressed as a finite union of irreducible closed sets. We wish to show that $S= \emptyset$. Since $X$ is noetherian, $S$ must have a minimal element (this is an equivalent property to being noetherian), say $Y$. Now $Y$ cannot be irreducible, or it would be a finite union of irreducibles: if $Y= A \cup B$, with $A, B$ proper closed subsets of $Y$ with $A,B \notin S$. By minimality, $A= A_1 \cup \cdots \cup A_s$ is irreducible and $B= B_1 \cup \cdots \cup B_t$ irreducible. Then $Y= A_1 \cup \cdots \cup A_s \cup B_1 \cup \cdots \cup B_t$, a contradiction. Such a decomposition then exists. Suppose $Y= Y_1 \cup \cdots \cup Y_s$, where $Y_i$ is irreducible. If $Y_i \supseteq Y_j$ for $i \neq j$, you could drop $Y_j$ from the expression, then do just that. We can then assume that $Y_i \not\supseteq Y_j$ for $i \neq j$. 
+
+It remains to show that this expression is unique. Assume $Y= Y_1 \cup \cdots \cup Y_s= Y_1' \cup \cdots \cup Y_t'$ as expressions as in the theorem. If $i=j$, $Y_i \not\supseteq Y_j$ and $Y_i' \not\supseteq Y_j'$. Then $Y_1= Y_1 \cap Y= Y_1 \cap (Y_1' \cup \cdots \cup Y_t')= (Y_1 \cap Y_1') \cup \cdots \cup (Y_1 \cap Y_t'$. But $Y_1$ is irreducible, so these cannot all be closed proper subsets. Therefore, $Y_1= Y_1 \cap Y_i'$ for some $i$, i.e. $Y_1 \subseteq Y_i'$. Mutatis mutandis, $Y_i' \subseteq Y_j$ for some $j$. Then $Y_1 \subseteq Y_i' \subseteq Y_j$. Then $j=1$ and $Y_1= Y_i'$. One then reindexes so that $Y_1= Y_1'$. 
+
+We claim that $\overline{Y \setminus Y_1}= Y_2 \cup \cdots \cup Y_s$ and $\overline{Y \setminus Y_1}= Y_2' \cup \cdots \cup Y_t'$. Now $Y_2 \cup \cdots \cup Y_s$ is a closed set containing $Y \setminus Y_1$. Let $W$ be any closed set containing $Y \setminus Y_1$. Fix any $i \geq 2$, then $W \supseteq Y_i \setminus Y_1$. Then $Y_i= (Y_i \cap W) \cup (Y_i \cap Y_1)$. But as $Y_i$ is irreducible, either $Y_i= Y_i \cap W$ or $Y_i= Y_i \cap Y_1$. If $Y_i= Y_i \cap Y_1$ then $Y_i \subseteq Y_1$, a contradiction. It must then be that $Y_i= Y_i \cap W$ so that $Y_i \subseteq W$. But then $Y_2 \cup \cdots \cup Y_s \subseteq W$.
+
+Therefore, we have shown $Y_2 \cup \cdots \cup Y_s= Y_2' \cup \cdots \cup Y_t'$. Clearly, this process must terminate: without loss of generality assume $s \leq t$. We then have $Y_{s+1}' \cup \cdots \cup Y_t'= \emptyset$ and $Y_i= Y_i'$ for all $i$, as desired. \qed \\
 
 
+\begin{cor}
+Every algebraic set in $\A^n$ can be uniquely expressed as a union of varieties, no one containing another. 
+\end{cor}
 
 
+\begin{dfn}[Dimension]
+If $X$ is a topological space, we say that the dimension of $X$, denoted $\dim X$, is the supremum of all integers $n$ such that there exists a chain $Z_0 \subset Z_1 \subset \cdots \subset Z_n$ of distinct irreducible closed subsets of $X$. We define the dimension of an affine or quasi-affine variety to be the its dimension as a topological space.  
+\end{dfn}
 
 
+\begin{ex}
+The dimension of $\A^1$ is 1 because the only irreducible closed subsets of $\A^1$ are single points or the whole space. \xqed
+\end{ex}
 
 
+\begin{rem}
+In general, it is not a simple feat to compute the dimension of a space directly from its definition. One can find lower bounds by finding an example of a chain of length $n$. However, it is difficult to prove that there is not a longest chain or that even a given chain is \emph{the} longest. This approach generally only works if one has a strong description of what the irreducible closed sets in the space are. Note that a maximal chain does not have to be a maximum chain. Meaning that just because a chain cannot be refined to a longer chain does not mean there does not exist some other longer chain of sets. 
+\end{rem}
 
 
+\begin{dfn}[(Krull) Dimension]
+If $A$ is a ring, the height of a prime ideal $\fp$ is the supremum of all $n$ such that there exists a chain $\fp_0 \subset \fp_1 \subset \cdots \subset \fp_n= \fp$ of distinct prime ideals. We define the (Krull) dimension of $A$ to be the supremum of all the heights of all prime ideals.
+\end{dfn}
 
 
+This turns out to give us a much more practical method of computing the dimension of a space.
 
 
+\begin{prop} \label{prop:coord_rng}
+If $Y$ is an affine algebraic set, then the dimension of $Y$ is the dimension of its affine coordinate ring $A(Y)$.
+\end{prop}
+
+\pf If $Y \subseteq \A^n$ is an affine algebraic set, then the irreducible closed subsets of $Y$ correspond to prime ideals of $A= k[x_1,\ldots,x_n]$ containing $I(Y)$. But these correspond to prime ideals in $A(Y)$. Therefore, $\dim Y$ is the length of the longest chain of prime ideals in $A(Y)$, which is precisely its dimension. \qed \\
+
+
+Generally, tools from Commutative Algebra are the typical approach to computing the dimension of a space. 
+
+
+\begin{thm} \label{thm:dimcomalg}
+Let $k$ be a field, and let $B$ be an integral domain which is a finitely generated $k$-algebra. Then
+	\begin{enumerate}[(i)]
+	\item the dimension of $B$ is equal to the  transcendence degree of the quotient field $K(B)$ of $B$ over $k$
+	\item for any prime ideal $\fp$ in $B$, we have
+		\[
+		\dim B= \height \fp + \dim B/\fp
+		\]
+	\end{enumerate}
+\end{thm}
+
+
+\begin{prop}
+The dimension of $\A^n$ is $n$.
+\end{prop}
+
+\pf By Proposition~\ref{prop:coord_rng}, the dimension of the polynomial ring $k[x_1,\ldots,x_n]$ is $n$. But then the result follows from (i) in Theorem~\ref{thm:dimcomalg} because $k(x_1,\ldots,x_n$ has transcendence degree $n$. \qed \\
+
+
+\begin{rem}
+When you have $Y \subseteq X$ closed, and one knows $\dim X < \infty$, then $\dim Y \leq \dim X$. Furthermore in special cases, one can use $\dim X$ to obtain $\dim Y$ without too much difficulty by finding lower bounds on $\dim Y$, upper bounds on $\dim Y$ by finding chains in $X$ starting at $Y$, and `squeezing'. 
+\end{rem}
+
+
+\begin{prop}
+If $Y$ is a quasi-affine variety, then $\dim Y= \dim \overline{Y}$.
+\end{prop}
+
+% \pf Include!
+
+
+Note this is something special about varieties since, generally, there are topological spaces $X$ and dense open sets $U$ with $\dim U < \dim X$, c.f. Hartshorne Ex.1.10. 
 
 
 
