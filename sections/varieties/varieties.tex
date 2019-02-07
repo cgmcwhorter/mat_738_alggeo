@@ -678,10 +678,155 @@ A projective algebraic variety (or simply projective variety) is an irreducible 
 Note that $I(Y)$ is a homogeneous ideal so $S(Y)$ is a graded ring. These are similar to old algebraic sets with one funny difference. $S$ is clearly a homogeneous ideal of $S$. $Z(S)= \emptyset$, $S= k[x_0,\ldots,x_n]$ $(x_0,\ldots,x_n)$ is also clearly a homogeneous ideal of $S$. It is often called $S_+$ because it contains all homogeneous elements of positive degree $Z(S_+)= \emptyset$. This is the only thing which goes awry. $S_+$ is sometimes called the irrelevant maximal ideal since it removed from the correspondence we saw in the affine case. 
 
 
-We now work on showing $\bP^n$ is $\A^{n+1}$ with points added at $\infty$. In $\bP^n$, consider closed sets of the form $Z(f)$ with $f$ a nonconstant polynomial These are called hypersurfaces. When $f$ is linear, it is called a hyperplane. Of particular interest is when $f= x_i$ for some $i$. Set $H_i= Z(x_i)$ and $U_i= \bP^n \setminus H_i$, $i=0,\ldots,n$, $U_i$ open. The $U_i$ are an open cover of $\bP^n$
+We now work on showing $\bP^n$ is $\A^{n+1}$ with points added at $\infty$. In $\bP^n$, consider closed sets of the form $Z(f)$ with $f$ a nonconstant polynomial These are called hypersurfaces. When $f$ is linear, it is called a hyperplane. Of particular interest is when $f= x_i$ for some $i$. Set $H_i= Z(x_i)= \{[a_0,\ldots,a_n] \;|\; a_i=0 \}$ and $U_i= \bP^n \setminus H_i$, $i=0,\ldots,n$, $U_i$ open. The $U_i$ are an open cover of $\bP^n$
 	\[
 	(\cup_i^n U_i)^C= \cap_0^n U_i^C= \cap_0^n H_i= \{[a_0,\ldots,a_N] \colon a_i= 0 \text{ all }i\}= \emptyset. 
 	\]
+
+
+
+%%%%
+
+$P= [a_0,\ldots,a_n] \in U_i$ if and only if $P= [a_0/a_i,\ldots,a_{i-1}/a_i,1,a_{i+1}/a_i,\ldots,a_n/a_i]$. Each point in $U_i$ has a unique set of homogeneous coordinates such that the $i$th coordinate is 1. Define a map $\phi_i: \A^n \to U_u$  by $\phi_i(a_1,\ldots,a_n)= [a_1,a_2,\ldots,1,\ldots,a_n]$. Moreover, this is clearly a bijection. 
+
+
+
+\begin{prop}
+The map $\phi_i$ is a homeomorphism of $U_i$ with its induced topology to $\A^n$ with its Zariski topology. 
+\end{prop}
+
+The proof is based on homogenization and dehomogenization of polynomials. To make notation simpler, we assume $i=0$. Let $S= k[x_0,\ldots,x_n]$, $A= k[x_1,\ldots,x_n]$, and $S^h$ denote the homogeneous elements of $S$. There is a ring homomorphism $\alpha: S \to A$, defined as evaluation at $x_0= 1$: $\alpha(f(x_0,\ldots,x_n))= f(1,x_1,\ldots,x_n)$. Since $\alpha$ is a ring homomorphism
+	\[
+	\begin{split}
+	\alpha(f+g)&= \alpha(f)+\alpha(g) \\
+	\alpha(fg)&= \alpha(f)\alpha(g),
+	\end{split}
+	\]
+called dehomogenization because even if $f$ is homogeneous, $\alpha(f)$ may not be: $\alpha(x_0^2+x_0x_1)= 1+x_1$. 
+
+
+Homogenization: $\beta: A \to S^h$: $\beta(f(x_1,\ldots,x_n))= x_0^{\deg f} f(x_1/x_0,\ldots,x_n/x_0)$, $\beta(f)$ is homogeneous of degree $\deg f$. Look at a monomial of $f$: $x_1^{i_1} x_2^{i_2} \cdots x_n^{i_n}$, $i_1+\cdots+i_n \leq \deg f$.
+	\[
+	x_0^{\deg f} (x_1/x_0)^{i_1} \cdots (x_n/x_0)^{i_n}= x_0^{\deg f - (i_1+\cdots+i_n)} x_1^{i_1} \cdots x_n^{i_n}
+	\]
+has degree $\deg f$.
+
+
+$\beta(fg)= \beta(f) \beta(g)$.
+$\beta(fg)= x_0^{\deg f + \deg g} f(x_1/x_0,\ldots,x_n/x_0) g(x_1/x_0,\ldots,x_n/x_0)= x_0^{\deg f} f(x_1/x_0,\ldots,x_n/x_0) x_0^{\deg g} g(x_1/x_0,\ldots,x_n/x_0)= \beta(f) \beta(g)$. $\beta(f+g)$ might not equal $\beta(f) + \beta(g)$. 
+
+If $\deg f \neq \deg g$, $\beta(f) + \beta(g)$ will not even be homogeneous. 
+
+If $\deg f= \deg g= \deg(f+g)$, then $\beta(f+g)= \beta(f) + \beta(g)$. 
+	\[
+	\alpha(\beta(f))= \alpha(x_0^{\deg f} f(x_1/x_0,\ldots,x_n/x_0)= 1^{\deg f} f(x_1/x_0,\ldots,x_n/x_0)= f
+	\]
+$\beta(\alpha(f))= \beta(\alpha(x_0^l f))$. Assume you have a homogeneous $F$ that is not divisible by $x_0$.
+	\[
+	F= \sum a_{i_0 \cdots i_n} x_0^{i_0} \cdots x_n^{i_n}
+	\]
+where $i_0 + \cdots + i_n= d$. 
+
+
+$\alpha(F)= \sum a_{i_0 \cdots i_n} x_1^{i_0} \cdots x_n^{i_n}$ and in at least one case $i_1+ \cdots + i_n = d$. 
+
+$\beta(\alpha(F))= x_0^d a_{i_0 \cdots i_n} ((x_1/x_0)^{i_0} \cdots (x_n/x_0)^{i_n}= F$. Consider a point $(a_1,\ldots,a_n) \in \A^n$. $\phi_0(a_1,\ldots,a_n)= [1,a_1,\ldots,a_n] \in U_0 \subseteq \P^n$. 
+
+$f \in k[x_1,\ldots,x_n]$
+$F \in k[x_0,\ldots,x_n]$ $F$ homogeneous
+$f(a_1,\ldots,a_n)= 1^{\deg f} f(a_1/1,\ldots,a_n/1)= \beta(f)(1,a_1,\ldots,a_n)$.
+$F(1,a_1,\ldots,a_n)= \alpha(F)(a_1,\ldots,a_n)$.
+$f$ vanishes at $P \in \A^n$ if and only if $\beta(f)$ vanishes on $\phi_0(P) \in U_0$
+$F$ vanishes at $\phi_0(P) \in U_0$ if and only if $\alpha(F)$ vanishes at $P \in \A^n$.
+
+It is now easy to see that $\phi_0: \A^n \to U_0 \subseteq \P^n$ is a homeomorphism. 
+
+Suppose $Y \subseteq \A^n$ is closed. $Y= Z(T)$, $T \subseteq k[x_1,\ldots,x_n]$. Set $\beta(T)= \{ \beta(f) \;|\; f \in T \}$, $\phi_0(Y)= Z(\beta(T)) \cap U_0$. 
+$W \subseteq U_0$ closed in $U_0$
+$W= U_0 \cap \overline{W}$, $\overline{W}$ closed in $\P^n$
+$\overline{W}= Z(T)$, $T \subseteq S^h$
+$\alpha(T)= \{ \alpha(F) \;|\; F \in T\}$
+$\phi_0^{-1}(W)= Z(\alpha(T))$
+
+
+\begin{cor}
+If $Y$ is a projective (respectively quasi-projective) variety, then $Y$ is covered by the open sets $U_i \cap Y$, $i= 0,\ldots,n$, which are homeomorphic to affine (respectively quasi-affine) varieties with the map $\phi_i$. 
+\end{cor}
+
+
+$\A^n \cong U_i \subseteq \P^n$, $U_i= \P^n \setminus H_i$, $H_i= Z(x_i)= \{ [a_0,\ldots,0,\ldots,a_n \;|\; \text{not all }a_i=0 \} \cong \P^{n-1}$, $\P^n= \A^n \cup \P^{n-1}$. Parallel lines meet at infinity. 
+
+%%% Ex
+
+
+$\A^2$ coordinates $x,y$
+$Ax+By+C=0$ at least one of $A,B \neq 0$.
+$AB+Cy+D=0$, $C \neq D$.
+
+Homogenize 
+$Z(A(X/Z)+B(Y/Z)+C=0)$
+$Ax+By+CZ=0-Ax+BY+DZ=0$ so $(C-D)Z=0$ so $Z=0$. 
+If $Z=0$, still have $Ax+By= 0$. 
+
+$x= \lambda B$, $y= -\lambda A$, $[\lambda B, -\lambda A,0]$ for $\lambda \neq 0$. One point in $\P^2$. $[B,-A,0]$ it is in $H_2$. $x_0 \iff x$, $x_1 \iff y$, $x_2 \iff z$.
+
+Slope of $Ax+By+C=0$ is the ratio $-A/B$. So each slope determines what point at infinity the line goes to. 
+
+
+%%% Ex
+
+Looking at a curve in different patches and seeing how they fit together. 
+Hyperbola: $xy-1=0$
+homogeneize that $xy-z^2=0$
+$z=1$, $xy-1=0$
+$y=1$ $x-z^2=0$
+$x=1$ $y-z^2=0$
+
+% Give plots of hyperbola, plot and darken points (1,1), (-1,-1) and (1/2,2), (-1/2,-2)
+
+$B(1/2,2), [1/2,2,1] $
+$C[-1,-1,1], (-1,-1)$
+$D[-1/2,-2,1], (-1/2,-2)$
+$A[1,1,1],(1,1)$
+
+$y- z^2$ (plot)
+$E[1,0,0] (0,0)$
+$A(1,1)[1,1,1]$
+$B(4,2)[1/2,2,1]=[1,4,2]$
+$C[-1,-1,1]=[1,1,-1]$
+$D[-1/2,-2,1]=[1,4,-2]$
+
+$x-z^2=0$ (plot)
+$F(0,0)$
+$A(1,1)[1,1,1]$
+$B(1/4,1/2), [1/2,2,1]=[1/4,1,1/2]$
+$C(1,-1)[-1,-1,1]= [1,1,-1]$
+$D(1/4,-1/2)[-1/2,-2,1]=[1/4,1,-1/2]$
+
+%%% Ex
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

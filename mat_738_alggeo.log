@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.27)  31 JAN 2019 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.27)  5 FEB 2019 16:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1673,7 +1673,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 630--636
 
  []
 
-[17] [18]) [19]
+[17] [18] [19]
+Overfull \hbox (19.61124pt too wide) in paragraph at lines 735--741
+[]$\OML/zplm/m/it/10.95 f \OMS/zplm/m/n/10.95 2 \OML/zplm/m/it/10.95 k\OT1/zplm
+/m/n/10.95 [\OML/zplm/m/it/10.95 x[]\OT1/ppl/m/n/10.95 (-20) , [] , \OML/zplm/m
+/it/10.95 x[]\OT1/zplm/m/n/10.95 ]$ $\OML/zplm/m/it/10.95 F \OMS/zplm/m/n/10.95
+ 2 \OML/zplm/m/it/10.95 k\OT1/zplm/m/n/10.95 [\OML/zplm/m/it/10.95 x[]\OT1/ppl/
+m/n/10.95 (-20) , [] , \OML/zplm/m/it/10.95 x[]\OT1/zplm/m/n/10.95 ]$ $\OML/zpl
+m/m/it/10.95 F$ \T1/ppl/m/n/10.95 (-20) ho-mo-ge-neous $\OML/zplm/m/it/10.95 f\
+OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 a[]\OT1/ppl/m/n/10.95 (-20) , [] , \OM
+L/zplm/m/it/10.95 a[]\OT1/zplm/m/n/10.95 ) = \OT1/ppl/m/n/10.95 (-20) 1[]\OML/z
+plm/m/it/10.95 f\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 a[]\OT1/zplm/m/n/10.9
+5 /\OT1/ppl/m/n/10.95 (-20) 1, [] , \OML/zplm/m/it/10.95 a[]\OT1/zplm/m/n/10.95
+ /\OT1/ppl/m/n/10.95 (-20) 1\OT1/zplm/m/n/10.95 ) =
+ []
+
+) [20]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
  (./mat_738_alggeo.aux)
@@ -1685,11 +1700,11 @@ Package logreq Info: Writing requests to 'mat_738_alggeo.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
  ) 
 Here is how much of TeX's memory you used:
- 41353 strings out of 492646
- 912758 string characters out of 6129563
+ 41364 strings out of 492646
+ 912878 string characters out of 6129563
  1683106 words of memory out of 5000000
  44071 multiletter control sequences out of 15000+600000
- 64997 words of font info for 303 fonts, out of 8000000 for 9000
+ 65305 words of font info for 307 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  85i,18n,138p,3237b,2506s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1705,10 +1720,10 @@ f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/
 texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2018/texmf-d
 ist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-dist/fon
 ts/type1/urw/palatino/uplri8a.pfb>
-Output written on mat_738_alggeo.pdf (22 pages, 351077 bytes).
+Output written on mat_738_alggeo.pdf (23 pages, 360985 bytes).
 PDF statistics:
- 374 PDF objects out of 1000 (max. 8388607)
- 333 compressed objects within 4 object streams
- 160 named destinations out of 1000 (max. 500000)
+ 383 PDF objects out of 1000 (max. 8388607)
+ 341 compressed objects within 4 object streams
+ 165 named destinations out of 1000 (max. 500000)
  31314 words of extra memory for PDF output out of 35830 (max. 10000000)
 
