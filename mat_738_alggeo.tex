@@ -62,14 +62,13 @@
 %}
 
 
-
-\usepackage[
-	hyperref = true,      	% links to online documents
-  	backend  = bibtex,    % use bibtex instead of biber
-  	sorting  = nyt,       	% sorts by (name, year, title)
-  	style  = alphabetic 	% citations look like [Har77]
-]{biblatex}
-\addbibresource{mat830_bib.bib}
+%\usepackage[
+%	hyperref = true,      	% links to online documents
+%  	backend  = bibtex,    % use bibtex instead of biber
+%  	sorting  = nyt,       	% sorts by (name, year, title)
+%  	style  = alphabetic 	% citations look like [Har77]
+%]{biblatex}
+%\addbibresource{mat738_bib.bib}
 
 \usepackage[all]{xy}
 \hypersetup{
@@ -146,6 +145,7 @@ Last Updated: \today
 
 
 
+ 
 
 
 
@@ -167,9 +167,9 @@ Last Updated: \today
 
 
 
-
-
-
-
+\newpage
+\nocite{*}
+\bibliographystyle{alpha}
+\bibliography{mat738_bib}
 
 \end{document}

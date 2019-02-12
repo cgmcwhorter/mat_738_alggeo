@@ -535,15 +535,41 @@ When you have $Y \subseteq X$ closed, and one knows $\dim X < \infty$, then $\di
 If $Y$ is a quasi-affine variety, then $\dim Y= \dim \overline{Y}$.
 \end{prop}
 
-% \pf Include!
+\pf If $Z_0 \subset \cdots \subset Z_n$ is a sequence of distinct closed irreducible subsets of $Y$, then $\overline{Z}_0 \subset \cdots \subset \overline{Z}_n$ is a sequence of distinct closed irreducible subsets of $\overline{Y}$. Thus, we must have $\dim Y \leq \dim \overline{Y}$. In particular, the dimension of $Y$ must be finite. Therefore, there exists a maximal chain in $Y$, say $Z_0 \subset \cdots \subset Z_n$, where $n= \dim Y$. Since the chain is maximal, $Z_0=\{P\}$, where $P$ is a point, because if $Z_0$ contained at least two points, say $P,Q$ then $\{P\} \subset Z_0$ would contradict the maximality of the chain. The point $P$ corresponds to some maximal ideal $\fm$ of the affine coordinate ring $A(\overline{Y})$. Each $\overline{Z}_i$ corresponds to a prime ideal contained in $\fm$, so that the height $\fm= n$. On the other hand as $P$ is a point in the affine space, $A(\overline{Y})/\fm \cong k$. But then $n= \dim A(\overline{Y})= \dim \overline{Y}$. Therefore, $\dim Y= \dim \overline{Y}$. \qed \\
 
 
-Note this is something special about varieties since, generally, there are topological spaces $X$ and dense open sets $U$ with $\dim U < \dim X$, c.f. Hartshorne Ex.1.10. 
+Note this is something special about varieties because, generally, there are topological spaces $X$ and dense open sets $U$ with $\dim U < \dim X$, c.f. \cite[Exercise 1.10]{hart}.
 
 
-% Example 1.1.3? Any nonempty open subset of an irreducible space is irreducible and dense. 
 
-% Pf: Dense easy. Irreducible: if not, there are subsets $Y_1, Y_2 \subseteq Y$ such that $U= (U \cap Y_1) \cup (U \cap Y_2)$ and each of $U \cap Y_i$ is a proper subset of $U$. Then $Y_i$ is a proper subset of $Y$. $U= (U \cap Y_1) \cup (U \cap Y_2)$ then $U \subseteq Y_1 \cup Y_2$ but $\overline{U}= Y$, $Y \subseteq Y_1 \cup Y_2$ then $Y= Y_1 \cup Y_2$, a contradiction. 
+\begin{ex}
+Any nonempty open subset of an irreducible space is irreducible and dense. Suppose $U \subseteq Y$ were an open set and $Y$ irreducible. To prove density, note that (assuming $U$ was nonempty) if $\overline{U} \neq Y$, then we could write $Y= \overline{U} \cup U^C$, contradicting the irreducibility of $Y$. To see the irreducibility of $U$, suppose that $U= A \cup B$ with $A,B$ closed in $Y$. Because $U$ is dense in $Y$, we know $Y= \overline{U}= \overline{A \cup B}= \overline{A} \cup \overline{B}$. As $Y$ is irreducible, we must have $Y= \overline{A}$ or $Y= \overline{B}$. Without loss of generality, assume that $Y= \overline{A}$. Therefore, $A= \overline{A} \cap U= Y \cap U= U$. But then $U$ is irreducible. \xqed
+\end{ex}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 % Example: If $Y$ is an irreducible subset of $X$, then its closure $\overline{Y}$ in $X$ is irreducible.
@@ -575,7 +601,13 @@ Now suppose $Y$ has dimension $n-1$, and $\sum_{j=}^\infty$. Then $\dim k[x_1,\l
 
 
 
-\section{Projective Varieties}
+
+
+
+
+
+
+\subsection{Projective Varieties}
 
 Graded rings first.
 
@@ -585,7 +617,7 @@ Let $R$ be a ring. A grading of $R$ is an expression of the additive group $(R,+
 
 
 \begin{ex}
-Let $R= k[x_1,\ldots,x_n]$. $R_i= \{ f \in R \colon \text{all monomials of }f\text{ having deg }i\} \cup \{0\}$, is homogenous of every degree. $\C[x,y]$, $x^2+4xy-17y^2$ is homogeneous of degree 2. $x^3-xy$ is not homogeneous. 
+Let $R= k[x_1,\ldots,x_n]$. $R_i= \{ f \in R \colon \text{all monomials of }f\text{ having deg }i\} \cup \{0\}$, is homogenous of every degree. $\C[x,y]$, $x^2+4xy-17y^2$ is homogeneous of degree 2. $x^3-xy$ is not homogeneous. \xqed
 \end{ex}
 
 
@@ -595,6 +627,22 @@ You can replace $\oplus_{i=0}^\infty R_i$ with $\oplus_{i \in M} R_i$, where $M$
 
 
 Let $R$ be a graded ring. Each $f \in R$ has a unique expression $f= f_0 + \cdots + f_d$, where $f_i$ is homogeneous of degree $i$---simply the definition of a direct sum. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Definition and prop (homogeneous graded ideal)
@@ -682,6 +730,31 @@ We now work on showing $\bP^n$ is $\A^{n+1}$ with points added at $\infty$. In $
 	\[
 	(\cup_i^n U_i)^C= \cap_0^n U_i^C= \cap_0^n H_i= \{[a_0,\ldots,a_N] \colon a_i= 0 \text{ all }i\}= \emptyset. 
 	\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -803,7 +876,39 @@ $B(1/4,1/2), [1/2,2,1]=[1/4,1,1/2]$
 $C(1,-1)[-1,-1,1]= [1,1,-1]$
 $D(1/4,-1/2)[-1/2,-2,1]=[1/4,1,-1/2]$
 
-%%% Ex
+
+
+%%% Ex 2.12
+$\rho_d(P)= [M_0(P), M_1(P), \ldots, M_N(P)]$
+First note that the map is well defined.
+$\rho_d([\lambda a_0,\ldots, \lambda a_n])= \lambda^d \rho_d([a_0,\ldots,a_n])$ because all of the $M_i$ are homogeneous of degree $d$. 
+
+$f: \P^2 \to \P^2$
+$f[(x_0,x_1,x_2])= [x_0x_1x_0x_2,x_0^2]$
+$[0,0,1] \to [0,0,0]$, bad 
+
+But not a problem above since one of $a_i$ is nonzero. The exercise asks you to check various things. $\rho_d$ is one-to-one, $\rho_d(\P^n)$ is a closed subset of $\P^N$, if we give $\rho_d(\P^n)$ its induced topology as a subset of $\P^N$ then $\rho_d: \P^n \to \rho_d(\P^n)$ is a homeomorphism. It seems reasonable to call it an embedding.
+
+\begin{ex}
+$n=1$, $d=2$
+$[a_0,a_1] \mapsto [a_0^2,a_0a_1,a_1^2]$, labeled $X,Y,Z$. The image is contained in $Z(XZ-Y^2)$. In fact,.... \xqed
+\end{ex}
+
+\begin{ex}[Segre Embedding]
+Let $\psi: \P^r \times \P^s \to \P^n$ be the map defined by sending the ordered pair $[a_0,\ldots,a_r] \times [b_0,\ldots,b_s] \mapsto [\ldots,a_ib_j,\ldots]$ all $a_ib_j$. $N= rs+r+s= (r+1)(s+1)-1$. This is well defined. $[\lambda a_0,\ldots,\lambda a_r] \times [\mu b_0,\ldots,\mu b_s]= \lambda \mu [\cdots a_ib_j \cdots]$. \xqed
+\end{ex}
+
+
+\begin{ex}
+$\psi: \P^1 \times \P^1 \to \P^3$
+$[a_0,a_1] \times [b_0,b_1] \mapsto [a_0b_0,a_0b_1,a_1b_0,a_1b_1]$ labeled $WXYZ$.
+image lies on $WZ-XY=0$ in fact $=$. Book asks you to show $\psi$ is one-to-one and image is closed.  \xqed
+\end{ex}
+
+
+The book does not ask you to show that $\psi$ is a homeomorphism onto its image when you give the image the induced topology. Why? We have not defined the Zariski topology on $\P^r \times \P^s$. 
+
+It is an exercise to show that if we identify $\A^2$ with $\A^1 \times \A^1$ in the natural way that the Zariski topology on $\A^2$ is not the product topology of the Zariski topologies on the two $\A^1$'s. Hint: In $\A^2$ with coordinates $x,y$, $Z(x-y)$ is closed in $\A^2$ with the Zariski topology, but not the product topology. 
 
 
 
@@ -816,6 +921,154 @@ $D(1/4,-1/2)[-1/2,-2,1]=[1/4,1,-1/2]$
 
 
 
+
+
+
+
+
+
+
+
+
+
+There are three ways to define the Zariski topology on $\P^r \times \P^s$. 
+
+1) $\P^r$ is covered by $U_i$'s with the $U_i$ homeomorphic to $\A^r$. $\P^s$ is covered by $U_j$'s with each $U_j$ homeomorphic to $\A^s$. $\P^r \times \P^s$ will be covered by $U_i \times U_j$'s $\P^s$ is coverd by $U_j$'s with each $U_j$ homeomorphic to $\A^s$. $\P^r \times \P^s$ will be covered by $U_i \times U_j$'s. Give $U_i \times U_j$ the Zariski topology of $\A^{r+s}$, $U_i \times U_k \cap U_k \times U_l$. The topology induced from $U_i \times U_j$ is the same as the topology induced from $U_k \times U_l$. So you can glue to get a topology on $\P^r \times \P^s$. $X \subseteq \P^r \times \P^s$ closed if and only if $X \cap U_i \times U_j$ closed all $i,j$. 
+
+2) on $\P^r$ take homogeneous coordinates $x_0,\ldots,x_r$ and on $\P^s$ take homogeneous coordinates $y_0,\ldots,y_s$. A polynomial $f \in k[x_0,\ldots,x_r,y_0,\ldots,y_s]$ is said to be bihomogeneous of bidegree $d,e$ if and only if every monomial of $f$ has degree $d$ in the $x_i$'s and degree $e$ in the $y_j$'s. In this case, $f(\lambda a_0,\ldots, \lambda a_r,\ldots,\mu b_0,\ldots,\mu b_r)= \lambda^d \mu^e f(a_0,\ldots,a_r,b_0,\ldots,b_r)$ whether $f$ vanishes on $(P,Q) \in \P^r \times \P^s$ is well defined. Define $Y \subseteq \P^r \times \P^s$ is closed if and only if $Y= Z(T)$ for some subset $T \subseteq k[x_0,\ldots,y_s]$ of bihomogeneous polynomials.
+
+
+3) Give $\P^r \times \P^s$ the unique topology it must have for the Segre map $\psi: \P^r \times \P^s \to \psi(\P^r \times \P^s) \subseteq \P^N$ to be a homeomorphism when $\psi(\P^r \times \P^s)$ is given the induced topology as a subset of $\P^N$.
+
+All three give the same topology. 
+
+3 morphisms:
+
+Note: any affine variety is also a quasi-affine variety. Same thing holds for projective and quasi-projective.
+
+def: let $Y$ be a quasi-affine variety in $\A^n$. A function $f: Y \to k$ is regular at a point $P \in Y$ if and only if there is an open neighborhood $U$ with $P \in U \subseteq Y$ and polynomials $g,h \in A= k[x_1,\ldots,x_n]$ such that $h$ is nowhere zero on $U$ and $f= g/h$ on $U$. We say that $f$ is regular on $Y$ if and only if it is regular at every point of $Y$.
+
+``A function is regular if and only if it is locally a rational function.''
+
+Note: It is important to remember this is not iff continuous does not imply regular. $f: \A^1 \to \A^1$ every bijection is continuous. 
+
+Lemma 3.1: A regular function is continuous when $k$ is identified with $\A^1_k$ with its Zariski topology. 
+
+\pf It is enough to show that $f^{-1}$ of closed is closed. $f^{-1}(\emptyset)= \emptyset$. Need $f^{-1}$ of finite sets closed. Since finite unions of closed are closed just need to show $f^{-1}$ of a point is closed. This can be checked locally: a subset $Z$ of a topological space $Y$ is closed if there exists an open cover of $Y$ such that $Z \cap U$ is closed in $U$ for every $U$ in cover. 
+
+Let $U$ be an open set on which $f$ can be represented $f= g/h$, $g,h$ polynomials on $U$, $h \neq 0$. Such $U$ form open cover. $f^{-1}(a) \cap U= \{ P \in U \colon g(P)/h(P)= a \}$
+
+$g(P)/h(P)=a$ if and only if $(g-ah)(p)=0$. that is closed. 
+
+
+Functions on prijective spaces are more tricky. $P \in \P^n$, $f \in k[x_0,\ldots,x_n]$. $f(P)$ is not well defined even if $f$ if homogeneous. $f,g \in k[x_0,\ldots,x_n]$ both continuous functions of the same degree $d$. also assume $g(P) \neq 0$. $P= [a_0,\ldots,a_n]$
+
+	\[
+	\dfrac{f(\lambda a_0,\ldots,\lambda a_n)}{g(\lambda a_0,\ldots,\lambda a_n)}= \dfrac{\lambda^d f(a_0,\ldots,a_n)}{\lambda^d g(a_0,\ldots,a_n)}= \dfrac{f(a_0,\ldots,a_n)}{g(a_0,\ldots,a_n)}.
+	\]
+Therefore, $f/g(P)$ is well defined. 
+
+
+Def: Let $Y$ be a quasi projective variety in $\P^n$. A function $f: Y \to k$ is regular at a point $P \in Y$ iff there is an open neighborhood $Y$ with $P \in U \subseteq Y$ and homogeneous polynomials $g,h \in S= k[x_0,\ldots,x_n[$ of the same degree such that $h$ is nowhere zero on  $Y$ and $f=g/h$ on $Y$. We say $f$ is regular iff it is regular at every point. 
+
+
+\begin{prop}
+Let $Y \subseteq \P^n$ be a quasi-projective variety. $f: Y \to k$ a function. $P \in Y$ and assume $P \in U_i= \P^n \setminus Z(x_i)$. Then when we think of $U_i$ as $\A^n$, $Y \cap U_i$ is a quasi-affine variety and by restriction we get a function $f\big|_{Y \cap U_i}: Y \cap U_i \to k$. Then $f$ is regular at $P$ under the projective definition iff $f\big|_{Y \cap U_i}$ is regular at $P$ under the affine definition. 
+\end{prop}
+
+\pf Assume $f$ is regular at $P$ under the projective definition. Thus, we have an open set $U$ with $P \in U \subseteq Y$ and homogeneous polynomials $g,h \in S= k[x_0,\ldots,x_n]$ of the same degree such that $h$ is nowhere zero on $U$ and $f= g/h$ on $U$. On $U_0 \cap U$, which is open in $U_0 \cap Y$
+	\[
+	\dfrac{g(a_0,\ldots,a_n)}{h(a_0,\ldots,a_n)} = \dfrac{g(1,a_1/a_0,\ldots,a_n/a_0)}{h(1,a_1/a_0,\ldots,a_n/a_0)}.
+	\]
+But $g(1,x_1,\ldots,x_n) h(1,x_1,\ldots,x_n) \in k[x_1,\ldots,x_n]$, $h \neq 0$ on $U_0 \cap Y$ so $f\big|_{U_0 \cap Y}$ is regular at $P$ under the affine defintion. 
+
+Assume $f\big|_{U_0 \cap Y}$ is regular at $P$ under the affine definition. There is an open neighborhood $U$ with $P \in U \subseteq U_0 \cap Y$ and polynomials $g,h \in k[x_1,\ldots,x_n]$ such that $h$ is nowhere zero on $U$ and $f= g/h$ on $U$. Note that $U$ is open in $Y$ not just $U_0 \cap Y$. Let $G$ and $H$ be the homogenizations of $g$ and $h$. If they do not have the same degree multiply the one of lower degree by an appropriate power of $x_0$ to make them both have the same degree. Now call them $\overline{G}, \overline{H}$. For any point $P= [1,a_1,\ldots,a_n] \in U$, 	\[
+	f(P)= \dfrac{g(P)}{h(P)}= \dfrac{\overline{G}(1,a_1,\ldots,a_n)}{\overline{H}(1,a_1,\ldots,a_n)}= \dfrac{\overline{G}(\lambda, \lambda a_1,\ldots, \lambda a_n)}{\overline{H}(\lambda, \lambda a_1,\ldots, \lambda a_n)}
+	\]
+Fact: $X$ a variety $f,g$ regular functions on $X$. Suppose $f=g$ on some nonempty open $U \subseteq X$. Then $f=g$ on all $X$. Proof $Z(f-g)$ is closed in $X$ and since in an irreducible space nonempty opens are dense it is also dense. $Z(f-g)= X$. \qed \\
+
+
+\begin{dfn}
+Let $k$ be a fixed algebraically closed field. A variety over $k$ is an affine, quasi-affine, projective, or quasi-projective variety. If $X$ and $Y$ are two varieties, a morphism $\phi: X \to Y$ is a continuous map such that for every open $V \subseteq Y$ and for every regular function $f: V \to k$, the function $f \circ \varphi: \varphi^{-1}(V) \to k$ is regular. A morphism $\varphi: X  \to Y$ is a isomorphism if and only if there exists a morphism $\psi: Y \to X$ such that $\varphi \circ \psi= 1_Y$ and $\psi \circ \varphi= 1_X$. 
+\end{dfn}
+
+
+Note that an isomorphism is bijective and bicontinuous (hence a homeomorphism). The converse does not hold. There exists bijective bicontinuous function that are morphisms in one direction but not in the other. 
+
+
+\begin{ex}
+$X= \A_t^1$, $Y= Z(Y^2-X^3) \subseteq \A_{X,Y}^2$
+$\varphi: X \to Y$, $\varphi(t)= (t^2,t^3)$
+% Give picture
+One can check that $\varphi$ is a morphism, one-to-one, onto, $\varphi^{-1}$ exists. Check that it is continuous. $\varphi^{-1}$ is not a morphism. There exists a regular function $f: X \to k$ such that $f \circ \varphi^{-1}: ? \to ?$ is not regular. $f$ is locally a rational function but $f \circ \varphi^{-1}$ is not. Problem at the cusp.
+\end{ex}
+
+Alternate definition of a morphism: 
+
+\begin{prop}
+Let $X \subseteq \P^n$ and $Y \subseteq \P^m$ be quasi-projective varieties and $f: X \to Y$ a function. Then $f$ is a morphism if and only if the following condition is satisfied: given any $P \in X$, there exists a neighborhood $U$ of $P$, $P \in U \subseteq X$, such that $f(U)$ is contained in one of the affine opens $U_i \subseteq \P^m$. 
+\end{prop}
+
+Denote this set by $U_0$. Now think of $f: U \to \A^m$. We require further that there exist $m$ regular functions $g_i: U \to k$ such that for all $Q \in U$
+	\[
+	f(Q)= (g_1(Q),\ldots, g_m(Q))
+	\]
+Further since regular functions are locally rational by shrinking $U$, you may assume each $g_i$ is a rational function.
+
+
+A morphism is a function locally given by tuples of rational functions. We have shown polynomials are continuous in the Zariski topology. Easily follows rational function are continuous where defined. A composition of rational functions is rational.
+
+\begin{ex}
+Consider the Veronese $\nu: \P^2 \to \P^2$ given by $\nu([x_0,x_1])= [x_0^2,x_0x_1,x_1^2]$. It is a morphism. $y \mapsto (y,y^2)$. On $U_0 \subseteq \P^1$, $\nu(U_0) \subseteq U_0'$
+	\[
+	U(1,x_1/x_0)= [1,x_1/x_0, (x_1/x_0)^2]
+	\]
+$U_1 \subseteq \P^1$, $\nu(U_1) \subseteq U_2'$
+$\nu(x_0/x_1,1)= [(x_0/x)^2,x_0/x,1]$
+$\nu(y)= [y^2,y]$.
+\end{ex}
+
+
+Let $X \subseteq \P^n$ and $Y \subseteq \P^m$ be quasi-projective varieties and $f: X \to Y$ be a function. Then $f$ is a morphism if and only if the following condition is satisfied: given any $P \in X$, there is an open neighborhood $U$ of $P$. $P \in U \subseteq X$ and $m$ polynomials. $F_0,\ldots,F_m \in k[x_0,\ldots,x_n]$ all homogeneous of the same degree such that for all $Q \in U$, $f(Q)= [F_0(Q), F_1(Q), \ldots, F_m(Q)]$. 
+
+
+\begin{ex}
+We can find the inverse of the Veronese embedding. $\nu: \P^1 \to \P^2$
+$\nu([x_0,x_1])= px_0^2,x_0x_1,x_1^2]$ labeled $(Y_0,Y_1Y_2)$
+On $U_0 \subseteq \P^2$, 
+$\nu^{-1}[Y_0,Y_1,Y_2]= [Y_0,Y_1]$
+On $U_2 \cap \nu(\P^1) \subseteq \P^2$
+$\nu^{-1}[Y_0,Y_1,Y_2]= [Y_1,Y_2]$
+$U_0$ and $U_2$ cover $\nu(\P^1)$
+
+$U_0$: $[x_0,x_1] \mapsto [x_0,x_0x_1,x_1^2] \mapsto [x_0^2,x_0x_1]= [x_0,x_1]$ since $x_0 \neq 0$. 
+
+$U_1$: $[x_0,x_1] \mapsto [x_0,x_0,x_1,x_1^2] \mapsto [x_0x_1,x_1^2]= [x_0,x_1]$ since $x_1 \neq 0$. 
+
+
+No the other way:
+
+$U_0$: $[Y_0,Y_1,Y_2] \mapsto [Y_0,Y_1] \mapsto [Y_0^2,Y_0Y_1,Y_1^2]$ only working on $\nu(\P^1)$, $Y_0Y_2= Y_1^2$
+$[Y_0^2,Y_0Y_1,Y_0Y_2]= [Y_0,Y_1,Y_2]$
+
+$U_1$: $[Y_0,Y_1,Y_2] \to [Y_1,Y_2] \to [Y_1^2,Y_1Y_2,Y_2^2]= [Y_0Y_2,Y_1Y_2,Y_2^2]= [Y_0,Y_1,Y_2]$ since $Y_2 \neq 0$. 
+
+$\nu(\P^1) \cap U_0 \cap U_2$ on $\P^2$
+$[Y_0,Y_1,Y_2] \to [Y_0,Y_1]= [Y_0Y_2,Y_1,Y_2]= [Y_1^2,Y_1Y_2] = [Y_1,Y_2]$ using $Y_0Y_2=Y_1^2$. 
+\end{ex}
+
+
+\begin{dfn}
+Let $Y$ be a variety. We denote by $\cO(Y)$ the ring of all regular functions on $Y$. If $P$ is a point of $Y$, we define the local ring of $P$ on $Y$, $\cO_{P,Y}$ (or simply $\cO_P$) to be the ring of germs of regular functions on $Y$ near $P$: equivalence classes of pairs $\langle U,f \rangle$, where $U$ is an open neighborhood of $P$ in $Y$ and $f$ is a regular function on $U$ with the equivalence relation $\langle U,f \rangle \sim \langle V,g \rangle \Leftrightarrow f=g \text{ on } U \cap V$.
+\end{dfn}
+
+	\[
+	\begin{split}
+	\langle U,f \rangle + \langle V,g \rangle&= \langle U \cap V, f+g \rangle \\
+	\langle U,f \rangle \langle V,g \rangle&= \langle U \cap V, fg \rangle 
+	\end{split}
+	\]
+Of course, there much to check here. Use the fact that $Y$ is a variety (hence irreducible)
 
 
 
