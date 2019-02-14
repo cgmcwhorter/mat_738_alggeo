@@ -466,6 +466,122 @@ Of course, there much to check here. Use the fact that $Y$ is a variety (hence i
 
 
 
+%%%%%%%%
+
+Notice that for $\langle U,f \rangle \in \O_{P,Y}$, $f(P)$ is well defined because $P$ is contained in every $U$. The evaluation map $\ev: \O_{P,Y} \to k$ given by $\langle U,f \rangle \mapsto f(P)$ is easily seen to be a ring homomorphism. For surjectivity, observe that $\langle Y, a \rangle \O_{P,Y}$ is the constant function $a$ for $a \in k$. The kernel is a maximal ideal, $\fm_{P,Y}= \{ \langle U,f \rangle \colon f(P)=0 \}$. Moreover, $\O_{P.Y}/ \fm{P,Y} \cong k$. 
+
+
+\begin{rem}
+For any commutative noetherian ring $R$, we say that $R$ is a local ring if and only if it has a unique maximal ideal, $\fm$. We say that $R/\fm$ is the residue field of $R$. 
+\end{rem}
+
+
+\begin{prop}
+$\O_{P,Y}$ is a local ring, i.e. $\fm_{P,Y}$ the unique maximal idea. 
+\end{prop}
+
+\pf Recall that a ring is local if and only if it has a unique maximal ideal if and only if the only proper maximal ideal consists of all non-units of the ring. Suppose that $\langle U,f \rangle \notin \fm_{P,Y}$. Then $f(P) \neq 0$. By possibly restricting to a smaller open subset, $P \in U_1 \subseteq U$, we may write $f= g/h$, where $g,h \in k[x_1,\ldots,x_n]$, $h \neq 0$ on $U_1$, and $g(P) \neq 0$. Let $U_2= U_1 \setminus Z(g)$. We know that $P \in U_2$ and $h/g$ is regular on $U_2$. But then $\langle U_2, h/g \rangle \in \O_{P,Y}$. But
+	\[
+	\langle U_2, h/g \rangle \cdot \langle U,f \rangle= \langle U_2, h/g \rangle \langle U_2, g/h \rangle= \langle U_2,1 \rangle,
+	\]
+so that $\langle U,f \rangle$ is invertible in $\O_{P,Y}$. Therefore, $\langle U,f \rangle$ is not contained in any proper ideal. This shows that $\fm_{P,Y}$ is the unique maximal ideal. \qed \\
+
+
+Note that the above proof did not show that $\O_{P,Y}$ was indeed noetherian, but we shall see this later. In fact, one does not need commutative or noetherian to define local, merely the unique maximal ideal. However, commutative algebraists typically, when using the term `local ring', intend for this to mean commutative, noetherian, and with unique maximal ideal.
+
+
+\begin{dfn}
+If $Y$ is a variety, we define the function field of $K(Y)$ of $Y$ as follows: an element of $K(Y)$ is an equivalence class of pairs $\langle U,f \rangle$, where $U$ is a nonempty open subset of $Y$, $f$ is a regular function on $U$, and we define $\langle U,f \rangle \sim \langle V,g \rangle$ if and only if $f=g$ on $U \cap V$. We define
+	\[
+	\begin{split}
+	\langle U,f \rangle + \langle V,g \rangle&= \langle U \cap V, f+g \rangle \\
+	\langle U, f \rangle \langle V,g \rangle&= \langle U \cap V, fg \rangle.
+	\end{split}
+	\]
+The elements of $K(Y)$ are called rational functions on $Y$.
+\end{dfn}
+
+
+One should check that $K(Y)$ is indeed a field. Note that one needs $Y$ to be irreducible so that any two open sets intersect. Otherwise, the addition and multiplication described above might not make sense. We have natural ring homomorphisms 
+	\[
+	\begin{tikzcd}
+	k \arrow[hook]{r} & \mathcal{O}(Y) \arrow[hook]{r} & \O_{P,Y} \arrow[hook]{r} & K(Y),
+	\end{tikzcd}
+	\]
+with maps $a \mapsto$ constant function $a$, $f \mapsto \langle U, f \rangle$, and $\langle U,f \rangle \langle U,f \rangle$, respectively. It is routine to verify that these are injective ring homomorphisms. Furthermore, $\O(Y)$, $\O_{P,Y}$, and $K(Y)$ are all $k$-algebras. We often think of them as subrings. 
+
+
+Now let $f: X \to Y$ be a morphism of varieties. Since by definition under a morphism, regular functions pull back to regular functions, it is easy to see we get the following ring homomorphism: $f^*: \O(Y) \to \O(X)$. If $P \in X$, $f(P) \in Y$. Now $f^*: \O_{f(P),Y} \to \O_{P,X}$ is given by $\langle U, g \rangle \mapsto \langle f^{-1}(U), f^*(g) \rangle$ and is a $k$-algebra homomorphism. When $f$ is an isomorphism, these are both isomorphisms. Furthermore, $(f^{-1})^*= (f^*)^{-1}$, and $\O(Y), \O_{P,Y}$ are isomorphic invariants. What about the map $f^*: K(Y) \to K(X)$? This is not always defined: if $f(X)$ is contained in a proper closed subset of $Y$, there will be some open $U \subseteq Y$ such that $f^{-1}(U)= \emptyset$. 
+
+
+
+We now give a brief review of localization in commutative rings.
+
+\begin{dfn}
+Let $R$ be a ring and $S \subseteq R$. We say $S$ is multiplicatively closed if and only if $1 \in S$ and if $a,b \in S$, then $ab \in S$. 
+\end{dfn}
+
+
+Given a ring $R$ and a multiplicatively closed set $S \subseteq R$, we define the localization of $R$ (with respect to $S$), denoted $S^{-1}R$ or $R_S$ as follows: as a set $S^{-1}R$ is the set of equivalence classes of elements $r/s$, where $r \in R, s \in S$, under the equivalence relation
+	\[
+	\dfrac{r}{s} \sim \dfrac{a}{t} \Leftrightarrow= \exists w \in S (SUCH THAT) w(rt-sa)=0.
+	\]
+We make $S^{-1}R$ into a ring by defining
+	\[
+	\begin{split}
+	\dfrac{r}{s} + \dfrac{a}{t}&= \dfrac{rt+as}{st} \\
+	\dfrac{r}{s} \cdot \dfrac{a}{t}&= \dfrac{ra}{st}.
+	\end{split}
+	\]
+One of the most common examples of such an $S$ and a ring is when $R$ is an integral domain and $S$ is the prime ideal $S= R \setminus \{0\}$. In this case $S^{-1}R$ is the fraction field of $R$. More generally for any integral domain $R$, if $\fp$ is a prime ideal, then $S:= R \setminus \fp$ is a multiplicatively closed subset (as one easily verifies). In this special case, $S^{-1}R$ is denoted $R_\fp$ instead of $R_S= R_{R \setminus \fp}$, called the localization of $R$ at $\fp$. As another typical example, if $f \in R$ is not nilpotent, then $S= \{1,f,f^2,\ldots\}$ is a multiplicatively closed subset of $R$. In this case, $S^{-1}R$ is denoted $R_f$, called the localization of $R$ at $f$.
+
+
+\begin{rem}
+If $f$ is prime, then $(f)$ is prime. However, $R_f \neq R_{(f)}$. 
+\end{rem}
+
+
+\begin{thm}
+Let $Y \subseteq \A^n$ be an affine variety with affine coordinate ring $A(Y)$. Then
+\begin{enumerate}
+\item $\O(Y) \cong A(Y)$
+\item for each point $P \in Y$, let $\fm_P \subseteq A(Y)$ be the ideal of functions vanishing at $P$. Then $P \mapsto \fm_P$ gives a one-to-one correspondence between the points of $Y$ and the maximal ideals of $A(Y)$
+\item for each $P$, $\O_{P,Y} \cong A(Y)_{\fm_P}$ and $\dim \O_{P,Y}= \dim Y$
+\item $K(Y)$ is isomorphic to the quotient field of $A(Y)$, and hence $K(Y)$ is a finitely generated field extension of $k$ with transcendence degree $\dim Y$. 
+\end{enumerate}
+\end{thm}
+
+\pf \hfill
+\begin{enumerate}[(a)]
+\item We have an injective homomorphism $\alpha: A(Y) \to \O(Y)$. Start with the homomorphism $f: k[x_1,\ldots,x_n] \to \O(Y)$. A regular function need to be locally rational (but polynomials are globally rational). The kernel of the map is $I(Y)$. Now
+	\[
+	\alpha': A(Y)= k[x_1,\ldots,x_n]/I(Y) \ma{} \O(Y)
+	\]
+is injective. We prove surjectivity later. 
+
+
+\item The points of $\A^n$ are in bijective correspondence with the maximal ideals of $k[x_1,\ldots,x_n]$. [We know that the maximal ideals are points $P=(a_1,\ldots,a_n)$ and $I(P)= (x_1-a_1,\ldots,x_n-a_n)$, the polynomials vanishing at $P$.] Now $P \in Y$ if and only if $I(P) \supseteq I(Y)$. But $I(P)$ is maximal. The points of $Y$ are then in bijective correspondence with the maximal ideals of $k[x_1,\ldots,x_n]$ containing $I(Y)$ which are in correspondence with the maximal ideals of $A(Y)$, which are $k[x_1,\ldots,x_n]/I(Y)$. 
+
+\item For each point $P$, there is a natural map $A(Y)_{\fm_P} \to \O_{P,Y}$
+
+$a/b \in A(Y)_{\fm_P}$, where $a,b \in A(Y)$ and $b(P) \neq 0$. Replace $a,b$ by polynomials that represent them. Now $Y \setminus Z(b)$ is an open neighborhood of $P$ in $Y$.
+
+$a/b \mapsto \langle Y \setminus Z(b), a/b \rangle \in \O_{P,Y}$ is injective as $\alpha$ is injective.
+
+For surjective, $\langle U,f \rangle \in \O_{P,Y}$
+represented by $\langle V, g/h \rangle$, $g,h$ polynomials, $h \neq 0$ on $V$, $g/h \in A(Y)$. 
+
+This gives $\O_{P,Y} \cong A(Y)_{\fm_P}$. 
+\end{enumerate}
+
+
+
+
+
+
+
+
+
 
 
 
