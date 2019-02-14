@@ -1,9 +1,25 @@
-\begin{thebibliography}{Har77}
+\begin{thebibliography}{Mat70}
+
+\bibitem[AM69]{atmac}
+M.~F. Atiyah and I.~G. Macdonald.
+\newblock {\em Introduction to commutative algebra}.
+\newblock Addison-Wesley Publishing Co., Reading, Mass.-London-Don Mills, Ont.,
+  1969.
+
+\bibitem[Bou65]{bour1}
+N.~Bourbaki.
+\newblock {\em Alg\`ebre Commutative}.
+\newblock El\'ements de Math. 27, 28, 30, 31 Hermann, Paris, 1961--1965.
 
 \bibitem[Har77]{hart}
-Robin Hartshorne.
+R.~Hartshorne.
 \newblock {\em Algebraic geometry}.
 \newblock Springer-Verlag, New York-Heidelberg, 1977.
 \newblock Graduate Texts in Mathematics, No. 52.
+
+\bibitem[Mat70]{mat}
+H.~Matsumura.
+\newblock {\em Commutative algebra}.
+\newblock W. A. Benjamin, Inc., New York, 1970.
 
 \end{thebibliography}

@@ -1,0 +1,577 @@
+% !TEX root = ../../mat_738_alggeo.tex
+\newpage
+\section{Affine Varieties}
+\subsection{Introduction}
+
+One could define Algebraic Geometry as the study of solutions to systems of polynomial equations. The early history of Algebraic Geometry was focused on what we will eventually know as affine varieties, especially the simplest cases plane algebraic curves, e.g. lines, circles, parabolas, ellipses, hyperbolas, and cubic curves. The development of Algebraic Geometry was slow, due to cumbersome language, notation, varying approaches, and especially varying or ineffective definitions. However motived by work in various fields including Complex Analysis, (Algebraic) Topology, Number Theory, and especially Commutative Algebra, Algebraic Geometry developed rapidly. Modern Algebraic Geometry is due largely to the development of the theory of sheaves and schemes by Grothendieck and Serre, but is also due to the contribution of many others such as  Zariski, \v{C}ech, Leray, Cartan, et al.. 
+
+
+
+% Affine Varieties
+\subsection{Affine Varieties}
+
+Let $k$ be a fixed algebraically closed field.\footnote{Note that much of elementary Algebraic Geometry, the requirement that $k$ be algebraically closed is unnecessary, and $k$ being an arbitrary field, or even simply an integral domain would suffice.} Often, we will focus on the case where $k= \C$.
+
+
+\begin{dfn}[Affine $n$-space]
+Denote by $k^n$ the set of ordered $n$-tuples of elements of $k$. Then define $\A_k^n:= k^n$, called affine $n$-space over $k$. Note that this is also denoted $\A^n(k)$ or simply $\A^n$ when $k$ is understood. 
+\end{dfn}
+
+
+For ease of notation, we often denote the polynomial ring $k[x_1,\ldots,x_n]$ simply by `$A$'. We can think of elements of $A:= k[x_1,\ldots,x_n]$ as being functions $f: \A^n \to k$ via $(k_1,\ldots,k_n) \mapsto f(k_1,\ldots,k_n)$, i.e. via evaluation; that is, given $f \in A$ and $P=(k_1,\ldots,k_n)$, we have $f(P)= f(k_1,\ldots,f_n) \in k$. This allows us to consider the vanishing set of the polynomial $f$. 
+
+
+\begin{dfn}[Zero Set]
+For $f \in A:= k[x_1,\ldots,x_n]$, define $Z(f):= \{ P \in \A^n \;|\; f(P)=0 \}$, called the zero set of $f$. For $T \subseteq A$, we define the zeros of $T$, denoted $Z(T)$, by 
+	\[
+	Z(T):= \bigcap_{f \in T} Z(f)= \{ P \in \A^n \;|\; f(P)=0 \text{ for all } f \in T \}.
+	\]
+If $T= \{f_1,\ldots,f_r\}$, we will often write $Z(T)= Z(f_1,\ldots,f_r)$. 
+\end{dfn}
+
+
+Note the underlying field $k$ does matter here. For example, $Z(x^2+1)= \emptyset$ if $k= \R$ but if $k= \C$, then $Z(x^2+1)= \{ \pm i \}$. As another example in $\R^2$, $Z(y-x^2, x-y^2)$ consists of two points, namely the points $(0,0), (1,1)$ of intersection, see Figure~\ref{fig:algsetex}. However if $k= \C^2$, then $Z(y-x^2,x-y^2)$ consists of four points: $(0,0), (1,1), (-\zeta_3,\zeta_3^2), (\zeta_3^2,-\zeta_3)$, where $\zeta_3$ is a primitive cube root of unity. 
+
+	\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[scale=1.1]
+	\coordinate (Origin)   at (0,0);
+    	\coordinate (XAxisMin) at (-3,0);
+    	\coordinate (XAxisMax) at (3,0);
+    	\coordinate (YAxisMin) at (0,-3);
+    	\coordinate (YAxisMax) at (0,3);
+    	
+	\draw [thin,-latex] (XAxisMin) -- (XAxisMax) node[right] {\footnotesize$x$};
+    	\draw [thin,-latex] (YAxisMin) -- (YAxisMax) node[above] {\footnotesize$y$};
+	
+	\draw[scale=0.5,domain= -2.5:2.5,smooth,variable=\x,blue,thick] node at (3.5,4.5) {$y^2=x^3$} plot ({\x},{\x*\x});
+	\draw[scale=0.5,domain= -2.5:2.5,smooth,variable=\x,red,thick] node at (2.5,-2.5) {$x=y^2$} plot ({\x*\x},{\x});
+	\end{tikzpicture}
+	\caption{If $k= \R^2$, then the set $Z(y-x^2, x-y^2)$ is the intersection of $y= x^2$ with $x= y^2$. \label{fig:algsetex}}
+	\end{figure}
+
+
+We now have enough to define the basic building block of Algebraic Geometry.
+
+
+\begin{dfn}[Algebraic Set]
+A subset $Y \subseteq \A^n$ is called an algebraic set if and only if there exists a subset $T \subseteq A$ such that $Y= Z(T)$.  
+\end{dfn}
+
+
+That is, a set of points $Y$ is an algebraic set if $Y$ is a set of common zeros for a collection of polynomials $T$. This is the start of the bridge between Algebraic Geometry, describing geometric objects using algebraic terms, as some of the following examples shall being to show (though one will have to wait for coordinate rings and much later material to see the deeper connections). 
+
+
+\begin{ex} \label{ex:emptyandwhole} \hfill
+\begin{enumerate}[(i)]
+\item  The emptyset, $\emptyset$, is algebraic since $\emptyset= Z(1)$, where $f= 1$ is the constant polynomial $f= 1$. Furthermore, $\A^n$ is an algebraic set since $\A^n= Z(0)$, where $f= 0$ is the zero polynomial. 
+
+\item Any single point $P=(k_1,\ldots,k_n) \in \A^n$ is an algebraic set since $\{P\}= Z(x_1-k_1,\ldots,x_n-k_n)$. In fact, any \emph{finite} collection of points is algebraic, c.f. Proposition~\ref{prop:basic_affine}. [One should check that you can write down an explicit polynomial to confirm this.] 
+
+\item The set $\{ (x,y) \colon y-f(x)= 0 \}$, where $f(x)$ is a polynomial, is trivially algebraic. But this is precisely the graph of the function $y= f(x)$. For example, the cubic $y= x^3$ is algebraic (meaning its graph). This easily generalizes to $y= f(x_1,\ldots,x_n)$, where $f(x_1,\ldots,x_n)$ is a polynomial. Furthermore considering the graph of $Ax^2+By^2+Cz^2+Dxy+Exz+Fyz+Gx+Hy+Iz+J=0$, we see that the graph of every quadratic surface an algebraic surface, e.g. the cone, ellipsoid, cylinder, hyperboloid, etc.. 
+	\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[scale=0.9]
+	\coordinate (Origin)   at (0,0);
+    	\coordinate (XAxisMin) at (-3,0);
+    	\coordinate (XAxisMax) at (3,0);
+    	\coordinate (YAxisMin) at (0,-3);
+    	\coordinate (YAxisMax) at (0,3);	
+	
+	\draw [thin,-latex] (XAxisMin) -- (XAxisMax) node[right] {\footnotesize$x$};
+    	\draw [thin,-latex] (YAxisMin) -- (YAxisMax) node[above] {\footnotesize$y$};
+
+	\draw[scale=0.5,domain= -1.8:1.8,smooth,variable=\x,blue,thick] node at (3.3,4.5) {$y=x^3$} plot ({\x},{\x^3});		
+	\end{tikzpicture} \hfill
+	\begin{tikzpicture}[scale=0.9]
+    	\begin{axis}[
+	colormap name={viridis},
+	axis lines= left,
+	xtick={-4,-2,...,4}, % \empty
+	ytick={-4,-2,...,4},
+	ztick={-20,-10,...,20},
+	xlabel=$x$,
+	ylabel=$y$,
+	zlabel=$\mathbin{\rotatebox[origin=c]{90}{$z$}}$,
+   	smooth, % samples = 50,
+  	domain=-4:4,
+	view={-45}{-45}
+  	]
+  	\addplot3[surf] {x^2-y^2+6};
+ 	\end{axis}	
+	\end{tikzpicture}
+	\caption{One the left, the algebraic set given by the curve $y=x^3$ (not including axes). On the right, the algebraic set given by $z=x^2-y^2+6$ (not including axes).}
+	\end{figure}
+
+\item A `line glued to a circle' is an algebraic set, i.e. the image in Figure~\ref{fig:linegluecirc} (excluding the axes) is an algebraic set since it represents the set $Z((x^2+y^2-1)(y-2))=\{ (x,y) \colon (x^2+y^2-1)(y-2) \}$. Why? If $(x^2+y^2-1)(y-2)=0$, then either $x^2+y^2=1$, in which case the point lies on the circle, or $y-2=0$ in which case the point $(x,y)$ lies on the line $y=2$. In fact, even the coordinate axes are algebraic sets because together they are $Z(xy)$, by a similar reasoning. 
+	\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+	\coordinate (Origin)   at (0,0);
+    	\coordinate (XAxisMin) at (-3,0);
+    	\coordinate (XAxisMax) at (3,0);
+    	\coordinate (YAxisMin) at (0,-3);
+    	\coordinate (YAxisMax) at (0,3);	
+	
+	\draw [thin,-latex] (XAxisMin) -- (XAxisMax) node[right] {\footnotesize$x$};
+    	\draw [thin,-latex] (YAxisMin) -- (YAxisMax) node[above] {\footnotesize$y$};
+
+	\draw[domain= -1.5:1.5,samples=50,variable=\x,blue,thick] node at (1.2,1.2) {} plot ({\x},{sqrt((1.5)^2-(\x)^2)});
+	\draw[domain= -1.5:1.5,samples=50,variable=\x,blue,thick] node at (1.2,1.2) {} plot ({\x},{-sqrt((1.5)^2-(\x)^2)});		
+	\draw[domain= -2.5:2.5,smooth,variable=\x,blue,thick] node at (1.2,1.2) {} plot ({\x},{1.5});	
+	\end{tikzpicture}
+	\caption{The algebraic set given by a `line glued to a circle.' [Axes not included.] \label{fig:linegluecirc}}
+	\end{figure}
+
+
+\item The set of all $n \times n$ matrices can be identified with the set $\C^{n^2}$. This space contains many subsets of interest. For example, the matrices of determinant 1, SL$_n(\C)$, forms an affine algebraic variety in $\C^{n^2}$ because it is the vanishing set of the polynomial given by $\Delta - 1$, where
+	\[
+	\Delta(x_{ij})= \det 
+	\begin{pmatrix} 
+	x_{11} &  \cdots & x_{1n} \\ 
+	\vdots & \ddots & \vdots \\
+	x_{n1} & \cdots & x_{nn}
+	\end{pmatrix}
+	\]
+is the determinant. In fact, a determinantal variety is the set of all matrices (considered as a subset of $\C^{n^2}$) of rank at most $k$. For $k \geq n$, the determinantal variety is the whole space $\C^{n^2}$. But for $k<n$, the rank of a matrix $A$ is at most $k$ if and only if all its $(k+1) \times (k+1)$ subdeterminants vanish. But as these subdeterminants are polynomials in the variables $x_{ij}$, the set of matrices of rank at most $k$ is an affine algebraic variety.  \xqed
+\end{enumerate}
+\end{ex}
+
+
+Of course, not all sets are algebraic. Not even all curves in $\R^2$ are algebraic, as the following exercise demonstrates. 
+
+
+\begin{exc} \hfill
+\begin{enumerate}[(a)]
+\item Prove that in $\A^2_\R$, the graph of $y= \sin x$ is not an algebraic set, i.e. prove the set $\{ (x,y) \colon y= \sin x \}$ is not algebraic. [{\em Hint: The graph intersects the $x$-axis at infinitely many points, but single variable polynomials have finitely many roots.}]
+
+\item Prove that in $\A^2_\R$, the graph of $y= e^x$ is not an algebraic set, i.e. prove the set $\{ (x,y) \colon y= e^x \}$ is not an algebraic set. [{\em Hint: $e^x$ grows `faster' than any polynomial, i.e. $\displaystyle \lim_{x \to \infty} \dfrac{e^x}{x}= \infty$.}]
+
+\item Prove that the open ball in the usual Euclidean topology on $\C^n$ is not an algebraic set by showing that every affine algebraic variety in $\C^n$ is closed in the Euclidean topology. [{\em Hint: Polynomials are continuous functions from $\C^n$ to $\C$, so their zero sets are closed.}] Explain then why the set of invertible matrices, GL$_n(\C)$ is not an affine algebraic variety.
+\end{enumerate}
+\end{exc}
+
+
+Note that if $N \subseteq M$, then $Z(M) \subseteq Z(N)$, since any polynomial which  vanishes on all of $M$ certainly vanishes on all of $N$. Combining this with the Hilbert Basis Theorem: if $R$ is noetherian, then $R[x_1,\ldots,x_n]$ is noetherian, we obtain the following result.
+
+
+\begin{prop} \label{prop:basic_affine} \hfill
+\begin{enumerate}[(a)]
+\item Let $T \subseteq A$ and $J$ be the ideal generated by $T$, then $Z(T)= Z(J)$. In particular, every algebraic set in $\A^n$ is of the form $Z(J)$ for some ideal $J$ of $A$. 
+\item Every algebraic set in $\A^n$ is of the form $Z(T)$ for some finite set $T \subseteq A$.
+\end{enumerate}
+\end{prop}
+
+\pf \hfill
+\begin{enumerate}[(a)]
+\item Since $T$ generates $J$, we know that $T \subseteq J$ which immediately implies $Z(J) \subseteq Z(T)$. For the reverse inclusion, let $P \in Z(T)$ so that for all $f \in T$, $f(P)=0$. If $g \in J$, we have $g= \sum_{i=1}^m a_i f_i$, where $a_i \in A$, $f_i \in T$. But then we have
+	\[
+	g(P)= \sum_{i=1}^m a_i(P) f_i(P)= \sum_{i=1}^m a_i(P) \cdot 0= 0.
+	\]
+Therefore, $Z(T)= Z(J)$. By definition, $Y \subseteq \A^n$ is algebraic if and only if there is $T \subseteq A$ with $Y= Z(T)$. Taking $J:= \langle T \rangle$, the second claim follows. 
+
+
+\item Since $k$ is a field, we know that $A= k[x_1,\ldots,x_n]$ is noetherian by the Hilbert Basis Theorem. Recall that every ideal in a noetherian ring is finitely generated (in fact this is equivalent to the definition).  By (a), we know that $Y \subseteq \A^n$ is algebraic if and only if $Y= Z(J)$ for some ideal $J$ of $A$. But as $A$ is noetherian, we can find a finite number of generators, say $T:=\{f_1,\ldots, f_r\}$, for $J$. Therefore, $Y= Z(J)=Z(\langle T \rangle)=Z(T)= Z(f_1,\ldots,f_r)$, as desired. \qed \\
+\end{enumerate}
+
+
+Our goal is to build an underlying topological structure with which to work. This will form the basis for much of what is to come later. But first, we will need a proposition. 
+
+
+\begin{prop} \label{prop:closedset} \hfill
+\begin{enumerate}[(a)]
+\item The empty set and whole space are algebraic sets. 
+\item The finite union of algebraic sets is algebraic.
+\item The intersection of any algebraic sets is algebraic. 
+\end{enumerate}
+\end{prop}
+
+\pf \hfill
+\begin{enumerate}[(a)]
+\item Recall from Example~\ref{ex:emptyandwhole} that $\emptyset= Z(1)$ and $\A^n= Z(0)$ are algebraic sets. 
+
+\item By induction, it suffices to prove that the union of two algebraic sets is algebraic. Suppose that $S_1,S_2$ are algebraic sets. Then by Proposition~\ref{prop:basic_affine}, we know that $S_1= Z(T_1)$ and $S_2= Z(T_2)$ for some $T_1,T_2 \subseteq A$. We need show that $S_1 \cup S_2= Z(T_1) \cup Z(T_2)= Z(T)$ for some set $T$. We shall show that $Z(T_1) \cup Z(T_2)= Z(T_1T_2)$, i.e. $T= T_1T_2= \{ t_1t_2 \colon t_1 \in T_1, t_2 \in T_2 \}$ works, so that again by Proposition~\ref{prop:basic_affine}, $S_1 \cup S_2$ is algebraic. 
+
+To see that $Z(T_1) \cup Z(T_2) \subseteq Z(T_1T_2)$, let $P \in Z(T_1) \cup  Z(T_2)$. But then $P \in Z(T_1)$ or $Z(T_2)$. Without loss of generality, suppose $P \in Z(T_1)$. Any element of $T_1T_2$ is of form $fg$, where $f \in T_1, g \in T_2$. But then $P \in Z(T_1T_2)$. 
+
+To see that $Z(T_1T_2) \subseteq Z(T_1) \cup Z(T_2)$, choose $P \in Z(T_1T_2)$. We will show that if $P \notin Z(T_1)$ then $P \in Z(T_2)$. So suppose $P \notin Z(T_1)$. Then there is $f \in T_1$ with $f(P) \neq 0$. Choose any $g \in T_2$. Now $fg \in T_1T_2$ so $(fg)(P)= 0$. But $0= (fg)(P)= f(P)g(P)$. We know $f(P) \neq 0$ whenever$k$ is an integral domain, so that we must have $g(P)= 0$. As $g \in T_2$ was arbitrary, then $P \in Z(T_2)$.
+ 
+\item Suppose $\{S_i\}_{i \in \mathcal{I}}$ is a collection of algebraic sets. Then for each $i \in \mathcal{I}$, we know that $S_i= Z(T_i)$ for some $T_i \subseteq A$. But then we have
+	\[
+	\bigcap_{i \in \mathcal{I}} S_i= \bigcap_{i \in \mathcal{I}} Z(T_i) = Z \left( \bigcup_{i \in \mathcal{I}} T_i \right),
+	\]
+where the last equality follows since $P \in Z(\bigcup_{i \in \mathcal{I}} T_i)$ if and only if every polynomial in every $T_i$ vanishes at $P$, i.e. $P \in \bigcap_{i \in \mathcal{I}} Z(T_i)$. \qed \\
+\end{enumerate}
+
+
+Notice that Proposition~\ref{prop:closedset} shows that the algebraic sets are precisely the closed sets in some topology, called the Zariski topology on $\A^n$.
+
+
+\begin{dfn}[Zariski Topology]
+The Zariski topology on $\A^n$ is defined by taking the open sets to be the complements of algebraic sets. 
+\end{dfn}
+
+
+\begin{ex}
+What is the Zariski topology on $\A^1$? Since $k$ is a field, $A= k[x]$ is a PID, so every ideal in $A$ is principal. But by Propositon~\ref{prop:basic_affine}, every algebraic set $Y$ is of the form $Y= Z(J)$ for some ideal $J$. But then $Y=Z(f)$ for some polynomial. Since $k$ is algebraically closed, we can factor $f(x)$ as $f(x)= c(x-a_1)\cdots(x-a_n)$, where $c, a_1,\ldots,a_n \in k$. Therefore, $Z(f)= \{a_1,\ldots,a_n\}$. We know also from Example~\ref{ex:emptyandwhole} that any finite set in $\A^n$ is algebraic. The closed sets in the Zariski topology are then $\emptyset$, $\A^1$, and all finite subsets. Therefore, the Zariski topology on $\A^1$ consists of $\emptyset$, $\A^1$, and the complements of finite subsets. But then every set which is not the whole set or $\emptyset$ contain all but finitely many elements of $k$. In particular, every two open sets intersect so that the Zarisiki topology on $\A^1$ is (extremely) not Hausdorff. Note that one did not need the fact that $k[x]$ a PID. Any algebraic set is if the form $\bigcap_{i \in \mathcal{I}} Z(f_i)$, where $f_i \in k[x]$. However, $f_i$ can only be 0, in which case $Z(f_i)= \A^1$, a nonzero constant, in which case $Z(f_i)= \emptyset$, or a nonconstant polynomial in which case $Z(f_i)$ consists on finitely many points. In particular, the intersection consists of finitely many points. \xqed
+\end{ex}
+
+
+When studying objects geometrically, one breaks them into their constituent pieces and studies them individually, as well as how they fit together. So when studying geometric objects from an algebraic or topological structure, we will also want to break pieces into smaller structures.
+
+
+\begin{dfn}[Irreducible]
+A nonempty subset $Y$ of a topological space $X$ is irreducible if and only if it cannot be expressed as the union $Y= Y_1 \cup Y_2$ of two proper subsets each of which is closed in $Y$ (in the induced topology). The empty set is not considered to be irreducible. A set which is not irreducible is reducible. 
+\end{dfn}
+
+
+\begin{ex}
+Whenever $k$ is infinite, e.g. when $k$ is algebraically closed, $\A^1$ is irreducible as the only proper closed subsets are finite, so $\A^1$ could not be written as a finite union of closed sets. \xqed
+\end{ex}
+
+
+\begin{ex}
+In  $\A^2$, the set $Z(xy)$ is reducible as we can write $Z(xy)= Z(x) \cup Z(y)$, i.e. for $xy$ to vanish either $x$ must vanish or $y$ must vanish. This should be expected since the coordinate axes can be broken up into the $x$-axis and $y$-axis individually, c.f. Example~\ref{ex:emptyandwhole}(iv). 
+	\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[scale=0.9]
+	\coordinate (Origin)   at (0,0);
+    	\coordinate (XAxisMin) at (-3,0);
+    	\coordinate (XAxisMax) at (3,0);
+    	\coordinate (YAxisMin) at (0,-3);
+    	\coordinate (YAxisMax) at (0,3);	
+	
+	\draw [thin,-latex] (XAxisMin) -- (XAxisMax) node[right] {\footnotesize$x$};
+    	\draw [thin,-latex] (YAxisMin) -- (YAxisMax) node[above] {\footnotesize$y$};
+	
+	\node at (4,0) {`$=$'};
+	\node at (6,0) {$+$};
+	\draw[thin,-latex] (5,-3) -- (5,3) node at (5,3.2) {\footnotesize$y$};
+	\draw[thin,-latex] (7,0) -- (13,0) node at (13.2,0) {\footnotesize$x$};
+	\end{tikzpicture}
+	\caption{The decomposition $Z(xy)= Z(x) \cup Z(y)$.}
+	\end{figure} \xqed
+\end{ex}
+
+
+\begin{ex} \hfill
+\begin{enumerate}[(i)]
+\item Any nonempty open subset of an irreducible space is irreducible and dense. This confirms our intuition that Zariski open sets are very `big'. 
+\item If $Y$ is an irreducible subset of $X$, then its closure $\overline{Y}$ in $X$ is also irreducible. 
+\item If $Y$ is irreducible and $U_1,U_2$ are nonempty open subsets of $Y$, then $U_1 \cap U_2\neq \emptyset$. Why? If the intersection were not empty, then $Y \setminus U$ would be a closed proper subset of $Y$ containing $U_2$, which contradicts the fact that $Y_2$ is dense. 
+\item If $Y$ is irreducible and $U$ is nonempty and open in $Y$, then $U$ is both dense and irreducible. Why? If $\overline{U} \subsetneq Y$, then $Y \setminus U \subsetneq Y$ so that $Y= \overline{U} \cup (Y \setminus U)$, contradicting the irreducibility of $Y$. Now if $U$ were reducible, then there would be closed subsets $Y_1,Y_2$ of $Y$ with $U= (U \cap Y_1) \cup (U \cap Y_2)$. Each $U \cap Y_i$ is a proper subset of $U$ and $U \subsetneq Y_i$. % LEFT OFF HERE!
+\end{enumerate}
+\end{ex}
+
+
+\begin{dfn}[Affine Algebraic Variety]
+An affine algebraic variety is an irreducible closed subset of $\A^n$ (with the induced topology). This is also sometimes referred to as simply an affine variety. An open subset of an affine variety is a quasi-affine variety. 
+\end{dfn}
+
+
+Notice all the proceeding definitions and examples connected subsets of $\A^n$ and ideals in $A$. Before moving forward, we first need to examine this correspondence more closely. Notice before one began with a collection of polynomials and then obtained a collection of points. One can go in the other direction as well, which gives the following definition. 
+
+
+\begin{dfn}[$I(Y)$]
+Let $Y \subseteq \A^n$ be a subset. Define the ideal of $Y$, denoted $I(Y)$, by $I(Y):= \{ f\in A \colon f(P)= 0 \text{ for all } P \in Y \}$. 
+\end{dfn}
+
+
+Of course, one should actually check that this is an ideal.
+
+
+\begin{prop}
+Let $Y \subseteq \A^n$ be any subset. Then $I(Y)$ is an ideal. 
+\end{prop}
+
+\pf We know that $0 \in I(Y)$ since 0 vanishes everywhere. Now suppose that $f,g \in I(Y)$ and $h \in A$.  For any $P \in Y$, 
+	\[
+	\begin{split}
+	(f+g)(P)&= f(P) + g(P)= 0 + 0= 0 \\
+	(hf)(P)&= h(P)f(P)= h(P)(0)= 0
+	\end{split}
+	\]
+so that $f+g, hf \in I(Y)$. \qed \\
+
+
+We then have two functions between two different important sets, namely
+	\[
+	\begin{tikzcd}
+	\left\{\parbox[c]{1.1in}{\centering Subsets of $\A^n$} \right\} \arrow[yshift=1ex]{r}{I(-)} & 
+        \left\{ \parbox[c]{1.1in}{\centering subsets of \\ $k[x_1,\ldots,x_n]$} \right\} \arrow[yshift=-1ex]{l}{Z(-)}
+	\end{tikzcd}
+	\]
+To find the relationship between this connection, we will need the following result.
+
+
+\begin{prop} \label{prop:ziproperties} \hfill
+\begin{enumerate}[(i)]
+\item If $T_1 \subseteq T_2$ are subsets of $A$, then $Z(T_1) \supseteq Z(T_2)$.
+\item If $Y_1 \subseteq Y_2$ are subsets of $\A^n$, then $I(Y_1) \supseteq I(Y_2)$.
+\item For any two subsets $Y_1,Y_2$ of $\A_1^2$, we have $I(Y_1 \cup Y_2)= I(Y_1) \cap I(Y_2)$. 
+\item For any ideal $J \subseteq A$, $I(Z(J))= \sqrt{J}$, where $\sqrt{J}:= \{ f \in A \colon f^r \in J \text{ for some } r>0 \}$ is the radical of $J$. 
+\item For any subset $Y \subseteq \A^n$, $Z(I(Y))= \overline{Y}$, the closure of $Y$ in the Zariski topology. 
+\end{enumerate}
+\end{prop}
+
+\pf \hfill
+\begin{enumerate}[(i)]
+\item If $P \in Z(T_2)$, then $f(P)= 0$ for all $f \in T_2$. But then $f(P)= 0$ for all $f \in T_1$, showing that $P \in Z(T_1)$.
+
+\item If $f \in I(Y_2)$, then $f(P)= 0$ for all $P \in Y_2$. But then $f(P)= 0$ for all $P \in Y_1$, showing that $f \in I(Y_1)$. 
+
+\item We know that $f \in I(Y_1 \cup Y_2)$ if and only if $f(P)= 0$ for all $P \in Y_1 \cup Y_2$ if and only if $f(P)= 0$ for all $P \i nY_1$ and $f(P)= 0$ for all $P \in Y_2$ if and only if $f \in I(Y_1)$ and $f \in I(Y_2)$ if and only if $f \in I(Y_1) \cap I(Y_2)$. 
+
+\item This follows immediately from Hilbert's Nullstellensatz, c.f. Theorem~\ref{thm:hilberN}:  $f \in \sqrt{J}$ if and only if $f^r \in J$ for some $r>0$ if and only if $f^r(P)=0$ for all $P \in Z(J)$, where the last ``if and only if'' follows from the definition of $Z(-)$ and the Nullstellensatz. 
+
+\item We know that $Z(I(Y))$ is closed because it is algebraic. We know also that $Z(I(Y)) \supseteq Y$ because if $P \in Y$, then $f(P)= 0$ for all $f \in I(Y)$, showing $P \in Z(I(Y))$. Now if $W$ is any closed set, say $W= Z(J)$, then $I(W) \supseteq J$ because if $f \in J$, then $f(P)= 0$ for all $P \in Z(J)= W$, showing $f \in I(W)$. Thus, $Z(I(W)) \subseteq Z(J)= W$. We know that $Y=W$ and $Z(I(W)) \supseteq W$. But then $W= Z(I(W))$. 
+
+Now suppose $W$ is any closed subset containing $Y$. From (ii), we have $I(W) \subseteq I(Y)$. But then from (i), we know that $Z(I(W)) \supseteq Z(I(Y))$. Then from (iii), we know $W= Z(I(W))$ so that $W \supseteq Z(I(Y))$. Therefore, $Z(I(Y))$ is a closed set containing $Y$ and contained in any closed set containing $Y$. Therefore, $Z(I(Y))= \overline{Y}$. \qed \\
+\end{enumerate}
+
+
+As a reminder for the reader,
+
+
+\begin{thm}[Hilbert's Nullstellensatz] \label{thm:hilberN}
+Let $k$ be an algebraically closed field, $J$ be an ideal in $A= k[x_1,\ldots,x_n]$, and $f \in A$ be a polynomial vanishing at all points of $Z(J)$. Then $f^r \in J$ for some $r>0$. 
+\end{thm}
+
+\pf See any `standard' introductory text on Commutative Algebra. \qed \\
+
+
+Note for Hilbert's Nullstellensatz, one does need $k$ to be algebraically closed, as the following examples show:
+
+
+\begin{ex} \hfill
+\begin{enumerate}[(i)]
+\item If $k= \R$ and $J= (x^2+x+1) \subseteq \R[x]$, then $Z(J)= \emptyset$. Now $1$ vanishes at all points of $\emptyset= Z(J)$, but no power of 1 is in $(x^2+x+1)$. 
+
+\item If $k= \R$ and $J= (x^2+y^2) \subseteq \R[x,y]$, then $Z(J)= \{(0,0)\}$. Now $x$ vanishes at $(0,0)$ but no power of $x$ is in $(x^2+y^2)$. \xqed
+\end{enumerate}
+\end{ex}
+
+
+As a result, we can now see the connection between the the subsets of $\A^n$ and the subsets of $k[x_1,\ldots,x_n]$  that we had discussed earlier. 
+	\[
+	\begin{tikzcd}
+	\left\{\parbox[c]{1.1in}{\centering Subsets of $\A^n$} \right\} \arrow[yshift=1ex]{r}{I(-)} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\supseteq$}}  & 
+        \left\{ \parbox[c]{1.1in}{\centering subsets of \\ $k[x_1,\ldots,x_n]$} \right\} \arrow[yshift=-1ex]{l}{Z(-)} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\supseteq$}}  \\
+	\left\{\parbox[c]{1.1in}{\centering Closed subsets \\ of $\A^n$} \right\} \arrow[yshift=1ex]{r}{I(-)}[swap]{\sim} & 
+        \left\{ \parbox[c]{1.1in}{\centering Radical ideals \\ of $k[x_1,\ldots,x_n]$} \right\} \arrow[yshift=-1ex]{l}{Z(-)} \\        
+	\end{tikzcd}
+	\]
+
+
+\begin{cor}
+There is a one-to-one (inclusion-reversing) correspondence between algebraic sets in $\A^n$ and radical ideals in $A$ given by $Y \mapsto I(Y)$ and $\fa \mapsto Z(\fa)$. Furthermore, an algebraic set is irreducible if and only if its ideal is a prime ideal. 
+\end{cor}
+
+\pf All of this was shown in Proposition~\ref{prop:ziproperties} with the exception of the final statement. Now suppose that $Y$ is irreducible. We need show $I(Y)$ is prime. Suppose that $fg \in I(Y)$. Then $Y \subseteq Z(fg)= Z(f) \cup Z(g)$. But then $Y= Y \cap Z(fg)= (Y \cap Z(f)) \cup (Y \cap Z(g))$, both of which are closed subsets of $Y$ (in the subspace topology). Since $Y$ is irreducible, $Y$ must be one of the sets in this union. Without loss of generality, assume $Y= Y \cap Z(f)$. But then $f \in I(Y)$, as desired. Now suppose that $\fp$ is a prime ideal, and $Z(\fp)= Y_1 \cup Y_2$. Then we must have $\fp= I(Y_1) \cap I(Y_2)$. But then $\fp= I(Y_1)$ or $\fp= I(Y_2)$. Without loss of generality, assume $\fp= I(Y_1)$. Then we have $Z(\fp)= Z(I(Y_1))= Y_1$. Therefore, $Z(\fp)$ is irreducible. \qed \\
+
+
+This gives the most complete diagram as
+	\[
+	\begin{tikzcd}
+	\left\{\parbox[c]{1.1in}{\centering Subsets of $\A^n$} \right\} \arrow[yshift=1ex]{r}{I(-)} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\supseteq$}}  & 
+        \left\{ \parbox[c]{1.1in}{\centering subsets of \\ $k[x_1,\ldots,x_n]$} \right\} \arrow[yshift=-1ex]{l}{Z(-)} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\supseteq$}}  \\
+	\left\{\parbox[c]{1.1in}{\centering Closed subsets \\ of $\A^n$} \right\} \arrow[yshift=1ex]{r}{I(-)}[swap]{\sim} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\supseteq$}} & 
+        \left\{ \parbox[c]{1.1in}{\centering Radical ideals \\ of $k[x_1,\ldots,x_n]$} \right\} \arrow[yshift=-1ex]{l}{Z(-)} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\supseteq$}} \\        
+\left\{\parbox[c]{1.1in}{\centering Subvarieties \\ of $\A^n$} \right\} \arrow[yshift=1ex]{r}{I(-)}[swap]{\sim} & 
+        \left\{ \parbox[c]{1.1in}{\centering Prime ideals \\ of $k[x_1,\ldots,x_n]$} \right\} \arrow[yshift=-1ex]{l}{Z(-)}
+	\end{tikzcd}
+	\]
+
+
+\begin{ex} \hfill
+\begin{enumerate}[(i)]
+\item $\A^n$ is irreducible because it corresponds to the zero ideal in $A$, which is prime.
+\item If $f$ is an irreducible polynomial in $A= k[x,y]$ (a UFD), then $f$ generates a prime ideal (irreducibles are primes in a UFD). Then it must be that $Y= Z(f)$ is irreducible. This is called the affine curve defined by the equation $f(x,y)=0$. If the degree of $f$ is $d$, we say that $Y$ is a curve of degree $d$. Generally, if $f$ is an irreducible polynomial in $A= k[x_1,\ldots,x_n]$, the affine variety $Y= Z(f)$ is called a hypersurface for $n>3$ (or simply a surface if $n=3$). 
+\item A maximal ideal $\fm$ of $A= k[x_1,\ldots,x_n]$ corresponds to a minimal irreducible set (by `inclusion-reversingness') of $\A^n$, which must be a point, say $P= (a_1,\ldots,a_n)$. Then every maximal ideal of $A$ is of the form $\fm= (x_1-a_1,\ldots,x_n-a_n)$ for some $a_1,\ldots,a_n \in k$. Note that we can express $\{P\}= Z(\langle x_1-a_1,\ldots,x_n-a_n \rangle )$, $\langle x_1-a_1,\ldots,x_n-a_n \rangle$ is maximal as $k[x_1,\ldots,x_n]/\langle x_1-a_1,\ldots,x_n-a_n \rangle \cong k$ is a field, and that this result requires that $k$ be algebraically closed. \xqed
+\end{enumerate} 
+\end{ex}
+
+
+Note that polynomials in more than one variable can have infinitely many roots. For example, $f(x,y)= xy$ has zeros whenever $x=0$ or $y=0$. Clearly, $Z(xy)= \{ (x,0) \; x \in \R \} \cup \{ (0,y) \;|\; y \in \R \}$, the coordinate axes. In fact in the finite field case, there are nonzero polynomials which are everywhere zero, the trivial example being $f(x)= \prod_{i=1}^{p^n} (x-k_i)$, where $k= \{ k_1,\ldots,k_{p^n} \}$. But in the case where $k$ is infinite, there will always exist a point where the polynomial does not have a root. 
+
+
+\begin{prop}
+Let $k$ be an infinite field and $0 \neq f \in k[x_1, \ldots, x_n]$. Then there exists a point $P \in \A^n$ such that $f(P) \neq 0$. 
+\end{prop}
+
+\pf We proceed by induction on $n$. The case where $n=1$ is routine since any polynomial in a single variable has finitely many roots by degree considerations. Assume then that the result is true for $n$, and let $f \in k[x_1, \ldots, x_{n+1}]$. Write $f$ as $a_m x_{n+1}^m + a_{m-1} x_{n+1}^{n-1} + \cdots + a_1 x_{n+1} + a_0$, where $a_i \in k[x_1, \ldots, x_n]$. Since $f$ is nonzero, some $a_i \neq 0$. Recalling $k[x_1,\ldots,x_{n+1}]= k[x_1,  \ldots, x_n][x_{n+1}]$ and using the induction hypothesis, there exists $Q=(b_1,\ldots,b_n)$, where $b_i \in k$, such that $a_i(Q) \neq 0$. Now $f(b_1, \ldots, b_n, x_{n+1})$ is a nonzero polynomial in a single variable, which can have only finitely many roots. Because $k$ is infinite, there must then be $b_{n+1} \in k$ so that $f(b_1, \ldots, b_n, b_{n+1}) \neq 0$, as desired. \qed \\
+
+
+\begin{dfn}[(Affine) Coordinate Ring]
+If $Y \subseteq \A^n$ is an algebraic set, we define the affine coordinate ring, denoted $A(Y)$, to be $A/I(Y)$. 
+\end{dfn}
+
+
+One can think of elements of $A(Y)$ to be functions from $Y \to k$: if $Y \subseteq \A^n, f \in A= k[x_1,\ldots,x_n[$, then $f$ certainly gives a function $f: \A^n \to k$ via restriction. Note that $f,g \in k[x_1,\ldots,x_n]$ induce the same function from $Y \to k$ if and only if $f - g \in I(Y)$. Hence, $A(Y)$ is the ring of all functions $f: Y \to k$ that are restrictions of polynomials. 
+
+
+\begin{ex}
+Let $Y \subseteq \A^2$ be the set given by $xy=1$, i.e. $Z(xy - 1)$. It is routine to verify that $\sqrt{\langle xy - 1 \rangle}= \langle xy - 1 \rangle$. But then we have
+	\[
+	k[x,y]/(xy - 1) \cong k[x,x^{-1}],
+	\]
+the ring of Laurent polynomials. The isomorphism is easy to prove when one realizes the relation $xy - 1=0$ implies that $xy=1$ so that we can take $y= x^{-1}$. \xqed
+\end{ex}
+
+
+\begin{rem}
+We know that $A(Y)$ is an integral domain if and only if $I(Y)$ is prime if and only if $Y$ is irreducible. Now $A(Y)$ is finitely generated as a $k$-algebra because it is a quotient of $k[x_1,\ldots,x_n]$, which is finitely generated as a $k$-algebra (one can take the image of the generators to be a generating set). On the other hand, any finitely generated $k$-algebra, say $B$, which is a domain is the affine coordinate ring of some variety. Why? Consider a map $\psi: k[x_1,\ldots,x_n] \to B$ is a surjection with kernel $I$. Then taking $Y= Z(I)$, we have $A(Y) = B$. 
+\end{rem}
+
+
+To study the topology of the affine varieties we have defined, we will need to introduce an important class of topological spaces, which is just the topological variant of its algebraic cousin.
+
+
+\begin{dfn}[Noetherian]
+A topological space $X$ is called noetherian if it satisfies the ascending chain condition on open subsets (every chain of open subsets stabilizes), i.e. for any chain of open subsets $U_1 \subseteq U_2 \subseteq \cdots \subseteq U_r \subseteq \cdots$, there exists an $n$ such that $U_n=U_{n+1}=\cdots$. Equivalently, a topological space $X$ is noetherian if it satisfies the descending chain condition on closed subsets. 
+\end{dfn}
+
+
+\begin{ex}
+The topological space $\A^n$, with the Zariski topology, is noetherian as given a set of closed subsets $Y_1 \supseteq Y_2 \supseteq \cdots$, applying $Y(-)$ (noting it is inclusion-reversing), we have $I(Y_1) \subseteq I(Y_2) \subseteq \cdots$. But this is an ascending chain of ideals in $A= k[x_1,\ldots,x_n]$. As $A$ is noetherian (by the Hilbert Basis Theorem), the chain of ideals must stabilize, say at $n$. Finally as $Y_i= Z(I(Y_i))$, so too must the chain $Y_1 \supseteq Y_2 \supseteq \cdots$ stabilize at $n$. \xqed
+\end{ex}
+
+
+\begin{ex}
+The topological space $\R^n$, with the usual Euclidean topology, is not noetherian. Let $\{a_n\}$ be a strictly monotone decreasing set with $a_n \to 0$. Letting $Y_i$ be the closed sphere centered at the origin with radius $a_i$, we see that $\{Y_i\}$ is a chain of closed subsets that does not stabilize. \xqed
+\end{ex}
+
+
+\begin{prop}
+In a noetherian topological space, every nonempty set of closed subsets has a minimal element.
+\end{prop}
+
+\pf Let $S$ be a nonempty collection of closed subsets. Choose $Y_1 \in S_1$. If $Y_1$ is minimal, we are done. If not, choose $Y_2 \subseteq Y_1$. If $Y_2$ is minimal, we are done. If not, choose $Y_3$ such that $Y_3 \subseteq Y_2$. Continuing in this process, we construct a chain $Y_1 \supseteq Y_2 \supseteq Y_3 \supseteq \cdots$. Since the space is noetherian, this chain must stabilize, say at $n$. But then $Y_n$ must be a minimal element of $S$. \qed \\
+
+
+This is equivalent to the algebraic property that every collection of submodules (or ideals) must contain a maximal element. 
+
+
+\begin{prop}
+In a noetherian topological space $X$, every nonempty closed subset $Y$ can be expressed a finite union $Y= Y_1 \cup \cdots \cup Y_r$ of irreducible closed subsets of $Y$. If requires $Y_i \supsetneq Y_j$ for $i \neq j$ (which is possible), the $Y_i$ are uniquely determined up to reordering. In this case, the $Y_i$ are called the irreducible components of $Y$. 
+\end{prop}
+
+\pf Let $S$ be the set of all nonempty closed subsets of $X$ that cannot be expressed as a finite union of irreducible closed sets. We wish to show that $S= \emptyset$. Suppose that $S \neq \emptyset$. Because $X$ is noetherian, $S$ must have a minimal element, say $Y$. Because $Y \in S$, $Y$ cannot be irreducible. Thus, we can write $Y= A \cup B$, where $A, B \subsetneq Y$ are nonempty and closed in $Y$. But by the minimality of $Y$, $A,B$ must be the finite union of irreducibles. Suppose $A= A_1 \cup \cdots \cup A_s$ and $B= B_1 \cup \cdots \cup B_t$ irreducible, where the $A_i$ and $B_j$ are irreducible closed subsets of $A,B$, respectively. But then the $A_i, B_j$ are closed in $Y$, and we have $Y= A_1 \cup \cdots \cup A_s \cup B_1 \cup \cdots \cup B_t$, which contradicts the fact that $Y \in S$. Therefore, every nonempty closed subset $Y$ of $X$ has such a decomposition. Suppose $Y= Y_1 \cup \cdots \cup Y_s$, where the $Y_i$ are irreducible. If $Y_i \supseteq Y_j$ for $i \neq j$, you could drop $Y_j$ from the expression. If so, then do just that. We can then assume that $Y_i \not\supseteq Y_j$ for $i \neq j$. 
+
+It remains to show that this expression is unique. Assume $Y= Y_1 \cup \cdots \cup Y_s= Y_1' \cup \cdots \cup Y_t'$ as expressions as in the theorem. If $i=j$, $Y_i \not\supseteq Y_j$ and $Y_i' \not\supseteq Y_j'$. Then $Y_1= Y_1 \cap Y= Y_1 \cap (Y_1' \cup \cdots \cup Y_t')= (Y_1 \cap Y_1') \cup \cdots \cup (Y_1 \cap Y_t')$. But $Y_1$ is irreducible, so these cannot all be closed proper subsets of $Y_1$. Therefore, $Y_1= Y_1 \cap Y_i'$ for some $i$, i.e. $Y_1 \subseteq Y_i'$. Mutatis mutandis, $Y_i' \subseteq Y_j$ for some $j$. Then $Y_1 \subseteq Y_i' \subseteq Y_j$. Then $j=1$ and $Y_1= Y_i'$. One then reindexes so that $Y_1= Y_1'$. 
+
+We claim that $\overline{Y \setminus Y_1}= Y_2 \cup \cdots \cup Y_s$ and $\overline{Y \setminus Y_1}= Y_2' \cup \cdots \cup Y_t'$. Now $Y_2 \cup \cdots \cup Y_s$ is a closed set containing $Y \setminus Y_1$. Let $W$ be any closed set containing $Y \setminus Y_1$. Fix any $i \geq 2$, then $W \supseteq Y_i \setminus Y_1$. Then $Y_i= (Y_i \cap W) \cup (Y_i \cap Y_1)$. But as $Y_i$ is irreducible, either $Y_i= Y_i \cap W$ or $Y_i= Y_i \cap Y_1$. If $Y_i= Y_i \cap Y_1$ then $Y_i \subseteq Y_1$, a contradiction. It must then be that $Y_i= Y_i \cap W$ so that $Y_i \subseteq W$. But then $Y_2 \cup \cdots \cup Y_s \subseteq W$.
+
+Therefore, we have shown $Y_2 \cup \cdots \cup Y_s= Y_2' \cup \cdots \cup Y_t'$. Clearly, this process must terminate: without loss of generality assume $s \leq t$. We then have $Y_{s+1}' \cup \cdots \cup Y_t'= \emptyset$ and $Y_i= Y_i'$ for all $i$, as desired. \qed \\
+
+
+\begin{cor}
+Every algebraic set in $\A^n$ can be uniquely expressed as a union of varieties, no one containing another. 
+\end{cor}
+
+
+\begin{dfn}[Dimension]
+If $X$ is a topological space, we say that the dimension of $X$, denoted $\dim X$, is the supremum of all integers $n$ such that there exists a chain $Z_0 \subset Z_1 \subset \cdots \subset Z_n$ of distinct irreducible closed subsets of $X$. We define the dimension of an affine or quasi-affine variety to be the its dimension as a topological space.  
+\end{dfn}
+
+
+\begin{ex}
+The dimension of $\A^1$ is 1 because the only irreducible closed subsets of $\A^1$ are single points or the whole space. \xqed
+\end{ex}
+
+
+\begin{rem}
+In general, it is not a simple feat to compute the dimension of a space directly from its definition. One can find lower bounds by finding an example of a chain of length $n$. However, it is difficult to prove that there is no longest chain or that even a given chain is \emph{the} longest. This approach generally only works if one has a strong description of what the irreducible closed sets in the space are. Note that a maximal chain does not have to be a maximum chain. Meaning that just because a chain cannot be refined to a longer chain does not mean there does not exist some other longer chain of sets. 
+\end{rem}
+
+
+There is also the notion of dimension for rings. 
+
+\begin{dfn}[(Krull) Dimension]
+If $A$ is a ring, the height of a prime ideal $\fp$ is the supremum of all $n$ such that there exists a chain $\fp_0 \subset \fp_1 \subset \cdots \subset \fp_n= \fp$ of distinct prime ideals. We define the (Krull) dimension of $A$ to be the supremum of all the heights of all prime ideals.
+\end{dfn}
+
+
+In special cases, the relationship between this ring theoretic definition of dimension and the topological definition gives us a much more practical method of computing the dimension of a space.
+
+
+\begin{prop} \label{prop:coord_rng}
+If $Y$ is an affine algebraic set, then the dimension of $Y$ is the dimension of its affine coordinate ring $A(Y)$.
+\end{prop}
+
+\pf If $Y \subseteq \A^n$ is an affine algebraic set, then the irreducible closed subsets of $Y$ correspond to prime ideals of $A= k[x_1,\ldots,x_n]$ containing $I(Y)$. But these correspond to prime ideals in $A(Y)$. Therefore, $\dim Y$ is the length of the longest chain of prime ideals in $A(Y)$, which is precisely its dimension as a ring. \qed \\
+
+
+Generally, tools from Commutative Algebra are the typical approach to computing the dimension of a space. 
+
+
+\begin{thm} \label{thm:dimcomalg}
+Let $k$ be a field, and let $B$ be an integral domain which is a finitely generated $k$-algebra. Then
+	\begin{enumerate}[(i)]
+	\item the dimension of $B$ is equal to the  transcendence degree of the quotient field $K(B)$ of $B$ over $k$
+	\item for any prime ideal $\fp$ in $B$, we have
+		\[
+		\dim B= \height \fp + \dim B/\fp
+		\]
+	\end{enumerate}
+\end{thm}
+
+\pf See Matsumura~\cite[Chapter 5 \S14]{mat}, or in the case where $k$ is algebraically closed, Atiyah-Macdonald~\cite[Chapter 11]{atmac}. \qed \\
+
+
+\begin{prop}
+The dimension of $\A^n$ is $n$.
+\end{prop}
+
+\pf By Proposition~\ref{prop:coord_rng}, the dimension of the polynomial ring $k[x_1,\ldots,x_n]$ is $n$. But then the result follows from (i) in Theorem~\ref{thm:dimcomalg} because $k(x_1,\ldots,x_n)$ has transcendence degree $n$. \qed \\
+
+
+\begin{rem}
+If $Y \subseteq X$ is a closed subset, we know that $\dim Y \leq \dim X$. But in the cases where $\dim X < \infty$, this gives another approach to computing $\dim Y$ by trying the following: find lower bounds on the $\dim Y$ by finding chains in $Y$. Find upper bounds on the $\dim Y$ by using the fact that you know $\dim X$ and can find chains in $X$ starting at $Y$. Then one tries to `squeeze' these chains together.
+\end{rem}
+
+
+\begin{prop}
+If $Y$ is a quasi-affine variety, then $\dim Y= \dim \overline{Y}$.
+\end{prop}
+
+\pf If $Z_0 \subset \cdots \subset Z_n$ is a sequence of distinct closed irreducible subsets of $Y$, then $\overline{Z}_0 \subset \cdots \subset \overline{Z}_n$ is a sequence of distinct closed irreducible subsets of $\overline{Y}$. Thus, we must have $\dim Y \leq \dim \overline{Y}$. In particular, the dimension of $Y$ must be finite. Therefore, there exists a maximal chain in $Y$, say $Z_0 \subset \cdots \subset Z_n$, where $n= \dim Y$. Since the chain is maximal, $Z_0=\{P\}$, where $P$ is a point, because if $Z_0$ contained at least two points, say $P,Q$ then $\{P\} \subset Z_0$ would contradict the maximality of the chain. The point $P$ corresponds to some maximal ideal $\fm$ of the affine coordinate ring $A(\overline{Y})$. Each $\overline{Z}_i$ corresponds to a prime ideal contained in $\fm$, so that the height $\fm= n$. On the other hand as $P$ is a point in affine space, $A(\overline{Y})/\fm \cong k$. But then $n= \dim A(\overline{Y})= \dim \overline{Y}$. Therefore, $\dim Y= \dim \overline{Y}$. \qed \\
+
+
+Note this is something special about varieties because, generally, there are topological spaces $X$ and dense open sets $U$ with $\dim U < \dim X$, c.f. \cite[Exercise 1.10]{hart}.
+
+
+\begin{ex}
+Any nonempty open subset of an irreducible space is irreducible and dense. Suppose $U \subseteq Y$ is an open set, where $Y$ is irreducible. To prove density, note that (assuming $U$ was nonempty) if $\overline{U} \neq Y$, then we could write $Y= \overline{U} \cup U^C$, contradicting the irreducibility of $Y$. To see the irreducibility of $U$, suppose that $U= A \cup B$ with $A,B$ closed in $Y$. Because $U$ is dense in $Y$, we know $Y= \overline{U}= \overline{A \cup B}= \overline{A} \cup \overline{B}$. As $Y$ is irreducible, we must have $Y= \overline{A}$ or $Y= \overline{B}$. Without loss of generality, assume that $Y= \overline{A}$. Therefore, $A= \overline{A} \cap U= Y \cap U= U$. But then $U$ is irreducible. \xqed
+\end{ex}
+
+
+\begin{prop}
+If $Y$ is an irreducible subsets of $X$, then its closure in $X$, $\overline{Y}$, is irreducible.
+\end{prop}
+
+\pf Assume $\overline{Y}$ is not irreducible. There exist closed subsets $Y_1, Y_2$ of $X$ with $\overline{Y} \not\subseteq Y_1$, $\overline{Y} \not\subseteq Y_2$, and $\overline{Y}= (\overline{Y} \cap Y_1) \cup (\overline{Y} \cap Y_2)$. As $Y \subseteq \overline{Y}$, we have $Y= (Y \cap Y_1) \cup (Y \cap Y_2)$. But $Y$ irreducible, so $Y= Y \cap Y_1$ or $Y= Y \cap Y_2$. Without loss of generality, suppose $Y= Y \cap Y_1$. But then $Y \subseteq Y_1$, which as $Y_1$ closed, $\overline{Y} \subseteq Y_1$, a contradiction. \qed \\
+
+
+\begin{thm}[Krull Hauptidealsatz]
+Let $A$ be a noetherian ring, and let $f \in A$ be an element which is neither a zero divisor nor a unit. Then every minimal prime ideal $\fp$ containing $f$ has height 1.
+\end{thm}
+
+\pf See Atiyah-Macdonald~\cite[p.122]{atmac}. \qed \\
+
+
+\begin{prop} \label{prop:height1prin}
+A noetherian integral domain $A$ is a UFD if and only if every ideal of height one is principal.
+\end{prop}
+
+\pf See Matsumura~\cite[p.141]{mat} or Bourbaki~\cite[Chapter 7 \S3]{bour1}. \qed \\
+
+
+\begin{prop}
+A variety $Y \subseteq \A^n$ has dimension $n - 1$ if and only if it is the zero set, $Z(f)$, for some irreducible polynomial $f \in k[x_1, \ldots, x_n]$. 
+\end{prop}
+
+\pf Suppose that $Y= Z(f)$. If $f$ is irreducible, we know that $Z(f)$ is a variety. Now $\fp= (f)$ is certainly the minimal prime of $f$. Then by Theorem~\ref{thm:dimcomalg}, $Z(f)$ has dimension 1. But again by Theorem~\ref{thm:dimcomalg}, $\height \fp + \dim k[x_1,\ldots,x_n]= \dim k[x_1,\ldots,n]$. Then by Proposition~\ref{prop:coord_rng}, $\dim Y= \dim A(Y)= n-1$.
+
+Now suppose $Y$ has dimension $n-1$. Observe $\dim k[x_1,\ldots,x_n]= n-1$, and $\dim A= n$. Then $Y$ corresponds to a prime ideal of height 1, say $\fp$. Now the polynomial ring $A$ is a UFD, so by Proposition~\ref{prop:height1prin}, $\fp$ is necessarily generated by an irreducible polynomial, say $f$. But then we have shown $Y= Z(f)$, as desired. \qed \\
+
