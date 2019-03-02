@@ -5,7 +5,6 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\C}{\mathbb{C}}
-
 \newcommand{\A}{\mathbb{A}}
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\bP}{\mathbb{P}}
@@ -17,7 +16,6 @@
 \newcommand{\fp}{\mathfrak{p}}
 
 
-
 % Math Operators
 \DeclareMathOperator{\spec}{Spec}
 \DeclareMathOperator{\Hom}{Hom}
@@ -25,15 +23,12 @@
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\height}{height}
 \DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Aut}{Aut}
 
 
 % Commands
 \newcommand{\xqed}{\hfill \lower-0.3ex\hbox{$\triangleleft$}}
-\newcounter{problem}
-\newcommand{\prob}{
-	\stepcounter{problem}%
-	\noindent\textbf{Problem \theproblem: }
-}
 \newcommand{\ov}[1]{\overline{#1}}
 \newcommand*{\defeq}{\stackrel{\text{def}}{=}}
 \newcommand{\pf}{\noindent\emph{Proof. }}
@@ -43,8 +38,11 @@
 \newcommand{\tss}[1]{\textsuperscript{#1}}
 \newcommand{\ma}[1]{\stackrel{#1}{\longrightarrow}}
 \renewcommand{\char}{\text{char }}
-
-
+\newcounter{problem}
+\newcommand{\prob}{
+	\stepcounter{problem}%
+	\noindent\textbf{Problem \theproblem: }
+}
 
 \makeatletter
 \newcommand{\extp}{\@ifnextchar^\@extp{\@extp^{\,}}}

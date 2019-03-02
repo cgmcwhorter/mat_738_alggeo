@@ -5,13 +5,13 @@
 
 Graded rings first.
 
-\begin{dfn}[Grading]
-Let $R$ be a ring. A grading of $R$ is an expression of the additive group $(R,+)$ as an interal direct sum $R= \oplus_{i=1}^\infty R_i$ with the property that if $a \in R_d, b \in R_e$, then $ab \in R_{e+d}$, written $R_e \cdot R_d \subseteq R_{de}$. A graded ring is a ring together with a given grading. An element of $R_d$ is said to be homogeneous of degree $d$. 
+\begin{dfn}[Graded Ring]
+Let $R$ be a ring. A grading of $R$ is an expression of the additive group $(R,+)$ as an internal direct sum $R= \oplus_{i=1}^\infty R_i$ with the property that if $a \in R_d, b \in R_e$, then $ab \in R_{e+d}$, written $R_e \cdot R_d \subseteq R_{de}$. A graded ring is a ring together with a given grading. An element of $R_d$ is said to be homogeneous of degree $d$. 
 \end{dfn}
 
 
 \begin{ex}
-Let $R= k[x_1,\ldots,x_n]$. $R_i= \{ f \in R \colon \text{all monomials of }f\text{ having deg }i\} \cup \{0\}$, is homogenous of every degree. $\C[x,y]$, $x^2+4xy-17y^2$ is homogeneous of degree 2. $x^3-xy$ is not homogeneous. \xqed
+Let $R= k[x_1,\ldots,x_n]$. $R_i= \{ f \in R \colon \text{all monomials of } f  \text{ having deg }i\} \cup \{0\}$, is homogenous of every degree. $\C[x,y]$, $x^2+4xy-17y^2$ is homogeneous of degree 2. $x^3-xy$ is not homogeneous. \xqed
 \end{ex}
 
 
@@ -124,6 +124,20 @@ We now work on showing $\bP^n$ is $\A^{n+1}$ with points added at $\infty$. In $
 	\[
 	(\cup_i^n U_i)^C= \cap_0^n U_i^C= \cap_0^n H_i= \{[a_0,\ldots,a_N] \colon a_i= 0 \text{ all }i\}= \emptyset. 
 	\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -325,37 +339,82 @@ It is an exercise to show that if we identify $\A^2$ with $\A^1 \times \A^1$ in 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 There are three ways to define the Zariski topology on $\P^r \times \P^s$. 
 
-1) $\P^r$ is covered by $U_i$'s with the $U_i$ homeomorphic to $\A^r$. $\P^s$ is covered by $U_j$'s with each $U_j$ homeomorphic to $\A^s$. $\P^r \times \P^s$ will be covered by $U_i \times U_j$'s $\P^s$ is coverd by $U_j$'s with each $U_j$ homeomorphic to $\A^s$. $\P^r \times \P^s$ will be covered by $U_i \times U_j$'s. Give $U_i \times U_j$ the Zariski topology of $\A^{r+s}$, $U_i \times U_k \cap U_k \times U_l$. The topology induced from $U_i \times U_j$ is the same as the topology induced from $U_k \times U_l$. So you can glue to get a topology on $\P^r \times \P^s$. $X \subseteq \P^r \times \P^s$ closed if and only if $X \cap U_i \times U_j$ closed all $i,j$. 
+\begin{enumerate}[1.]
 
-2) on $\P^r$ take homogeneous coordinates $x_0,\ldots,x_r$ and on $\P^s$ take homogeneous coordinates $y_0,\ldots,y_s$. A polynomial $f \in k[x_0,\ldots,x_r,y_0,\ldots,y_s]$ is said to be bihomogeneous of bidegree $d,e$ if and only if every monomial of $f$ has degree $d$ in the $x_i$'s and degree $e$ in the $y_j$'s. In this case, $f(\lambda a_0,\ldots, \lambda a_r,\ldots,\mu b_0,\ldots,\mu b_r)= \lambda^d \mu^e f(a_0,\ldots,a_r,b_0,\ldots,b_r)$ whether $f$ vanishes on $(P,Q) \in \P^r \times \P^s$ is well defined. Define $Y \subseteq \P^r \times \P^s$ is closed if and only if $Y= Z(T)$ for some subset $T \subseteq k[x_0,\ldots,y_s]$ of bihomogeneous polynomials.
+\item 
+
+$\P^r$ is covered by $U_i$'s with the $U_i$ homeomorphic to $\A^r$. $\P^s$ is covered by $U_j$'s with each $U_j$ homeomorphic to $\A^s$. $\P^r \times \P^s$ will be covered by $U_i \times U_j$'s $\P^s$ is covered by $U_j$'s with each $U_j$ homeomorphic to $\A^s$. $\P^r \times \P^s$ will be covered by $U_i \times U_j$'s. Give $U_i \times U_j$ the Zariski topology of $\A^{r+s}$, $U_i \times U_k \cap U_k \times U_l$. The topology induced from $U_i \times U_j$ is the same as the topology induced from $U_k \times U_l$. So you can glue to get a topology on $\P^r \times \P^s$. $X \subseteq \P^r \times \P^s$ closed if and only if $X \cap U_i \times U_j$ closed all $i,j$. 
+
+\item on $\P^r$ take homogeneous coordinates $x_0,\ldots,x_r$ and on $\P^s$ take homogeneous coordinates $y_0,\ldots,y_s$. A polynomial $f \in k[x_0,\ldots,x_r,y_0,\ldots,y_s]$ is said to be bihomogeneous of bidegree $d,e$ if and only if every monomial of $f$ has degree $d$ in the $x_i$'s and degree $e$ in the $y_j$'s. In this case, $f(\lambda a_0,\ldots, \lambda a_r,\ldots,\mu b_0,\ldots,\mu b_r)= \lambda^d \mu^e f(a_0,\ldots,a_r,b_0,\ldots,b_r)$ whether $f$ vanishes on $(P,Q) \in \P^r \times \P^s$ is well defined. Define $Y \subseteq \P^r \times \P^s$ is closed if and only if $Y= Z(T)$ for some subset $T \subseteq k[x_0,\ldots,y_s]$ of bihomogeneous polynomials.
 
 
-3) Give $\P^r \times \P^s$ the unique topology it must have for the Segre map $\psi: \P^r \times \P^s \to \psi(\P^r \times \P^s) \subseteq \P^N$ to be a homeomorphism when $\psi(\P^r \times \P^s)$ is given the induced topology as a subset of $\P^N$.
+\item Give $\P^r \times \P^s$ the unique topology it must have for the Segre map $\psi: \P^r \times \P^s \to \psi(\P^r \times \P^s) \subseteq \P^N$ to be a homeomorphism when $\psi(\P^r \times \P^s)$ is given the induced topology as a subset of $\P^N$.
+\end{enumerate}
+
 
 All three give the same topology. 
 
-3 morphisms:
+
+
+
+
+% Section 3: morphisms
+
 
 Note: any affine variety is also a quasi-affine variety. Same thing holds for projective and quasi-projective.
 
-def: let $Y$ be a quasi-affine variety in $\A^n$. A function $f: Y \to k$ is regular at a point $P \in Y$ if and only if there is an open neighborhood $U$ with $P \in U \subseteq Y$ and polynomials $g,h \in A= k[x_1,\ldots,x_n]$ such that $h$ is nowhere zero on $U$ and $f= g/h$ on $U$. We say that $f$ is regular on $Y$ if and only if it is regular at every point of $Y$.
+
+\begin{dfn}[Regular]
+Let $Y$ be a quasi-affine variety in $\A^n$. A function $f: Y \to k$ is regular at a point $P \in Y$ if and only if there is an open neighborhood $U$ with $P \in U \subseteq Y$ and polynomials $g, h \in A= k[x_1,\ldots,x_n]$ such that $h$ is nowhere zero on $U$ and $f= g/h$ on $U$. We say that $f$ is regular on $Y$ if and only if it is regular at every point of $Y$.
+\end{dfn}
 
 ``A function is regular if and only if it is locally a rational function.''
 
 Note: It is important to remember this is not iff continuous does not imply regular. $f: \A^1 \to \A^1$ every bijection is continuous. 
 
-Lemma 3.1: A regular function is continuous when $k$ is identified with $\A^1_k$ with its Zariski topology. 
-
-\pf It is enough to show that $f^{-1}$ of closed is closed. $f^{-1}(\emptyset)= \emptyset$. Need $f^{-1}$ of finite sets closed. Since finite unions of closed are closed just need to show $f^{-1}$ of a point is closed. This can be checked locally: a subset $Z$ of a topological space $Y$ is closed if there exists an open cover of $Y$ such that $Z \cap U$ is closed in $U$ for every $U$ in cover. 
-
-Let $U$ be an open set on which $f$ can be represented $f= g/h$, $g,h$ polynomials on $U$, $h \neq 0$. Such $U$ form open cover. $f^{-1}(a) \cap U= \{ P \in U \colon g(P)/h(P)= a \}$
-
-$g(P)/h(P)=a$ if and only if $(g-ah)(p)=0$. that is closed. 
 
 
-Functions on prijective spaces are more tricky. $P \in \P^n$, $f \in k[x_0,\ldots,x_n]$. $f(P)$ is not well defined even if $f$ if homogeneous. $f,g \in k[x_0,\ldots,x_n]$ both continuous functions of the same degree $d$. also assume $g(P) \neq 0$. $P= [a_0,\ldots,a_n]$
+
+
+
+
+
+\begin{lem}
+A regular function is continuous when $k$ is identified with $\A^1_k$ with its Zariski topology. 
+\end{lem}
+
+\pf It is enough to show that $f^{-1}(C)$ is closed for any closed set $C$. First, note that $f^{-1}(\emptyset)= \emptyset$. Now the (nonempty) closed sets of $\A_k^1$ are a finite collection of points. Because of this and the fact that a finite union of closed sets is closed, it suffices to show that $f^{-1}(a)$ is a closed set, i.e. a finite collection of points, where $a \in \A_k^1$. 
+
+This can be checked locally: a subset $Z$ of a topological space $Y$ is closed if there exists an open cover of $Y$ such that $Z \cap U$ is closed in $U$ for every $U$ in cover. Let $U$ be an open set on which $f$ can be represented $f= g/h$, where $g, h$ polynomials on $U$ and $h \neq 0$. The collection of all such $U$'s form an open cover of $\A_k^1$. Observe $f^{-1}(a) \cap U= \{ P \in U \colon g(P)/h(P)= a\}$. But $g(P) / h(P)= a$ if and only if $(g - ah)(p)= 0$. This means $f^{-1}(a) \cap U= Z(g - ah) \cap U$, which is a closed set. Therefore, $f^{-1}(a)$ is closed in $Y$, as desired. \qed \\
+
+
+
+
+
+
+
+
+Functions on projective spaces are more tricky. $P \in \P^n$, $f \in k[x_0,\ldots,x_n]$. $f(P)$ is not well defined even if $f$ if homogeneous. $f,g \in k[x_0,\ldots,x_n]$ both continuous functions of the same degree $d$. also assume $g(P) \neq 0$. $P= [a_0,\ldots,a_n]$
 
 	\[
 	\dfrac{f(\lambda a_0,\ldots,\lambda a_n)}{g(\lambda a_0,\ldots,\lambda a_n)}= \dfrac{\lambda^d f(a_0,\ldots,a_n)}{\lambda^d g(a_0,\ldots,a_n)}= \dfrac{f(a_0,\ldots,a_n)}{g(a_0,\ldots,a_n)}.
@@ -452,17 +511,70 @@ $[Y_0,Y_1,Y_2] \to [Y_0,Y_1]= [Y_0Y_2,Y_1,Y_2]= [Y_1^2,Y_1Y_2] = [Y_1,Y_2]$ usin
 \end{ex}
 
 
-\begin{dfn}
-Let $Y$ be a variety. We denote by $\cO(Y)$ the ring of all regular functions on $Y$. If $P$ is a point of $Y$, we define the local ring of $P$ on $Y$, $\cO_{P,Y}$ (or simply $\cO_P$) to be the ring of germs of regular functions on $Y$ near $P$: equivalence classes of pairs $\langle U,f \rangle$, where $U$ is an open neighborhood of $P$ in $Y$ and $f$ is a regular function on $U$ with the equivalence relation $\langle U,f \rangle \sim \langle V,g \rangle \Leftrightarrow f=g \text{ on } U \cap V$.
+
+
+
+
+
+
+\begin{dfn}[Local Ring of $P$ on $Y$]
+Let $Y$ be a variety. We denote by $\O(Y)$ the ring of all regular functions on $Y$. If $P$ is a point of $Y$, we define the local ring of $P$ on $Y$, denoted $\O_{P,Y}$ or simply $\O_P$, to be the ring of germs of regular functions on $Y$ near $P$, i.e. equivalence classes of pairs $\langle U,f \rangle$, where $U$ is an open neighborhood of $P$ in $Y$ and $f$ is a regular function on $U$ with the equivalence relation $\langle U,f \rangle \sim \langle V,g \rangle$ if and only if $f=g$ on $U \cap V$.
 \end{dfn}
 
+
+The ring operations on $\O_{P,Y}$ are given below, though we leave it to the reader that these operations are well defined (make use of the fact that $Y$ is a variety, and hence $Y$ is irreducible). 
 	\[
 	\begin{split}
 	\langle U,f \rangle + \langle V,g \rangle&= \langle U \cap V, f+g \rangle \\
 	\langle U,f \rangle \langle V,g \rangle&= \langle U \cap V, fg \rangle 
 	\end{split}
 	\]
-Of course, there much to check here. Use the fact that $Y$ is a variety (hence irreducible)
+There is more to check. For instance, we have not shown that $\O_{P,Y}$ is a local ring in the `regular' sense of the word, i.e. a ring possessing a unique maximal ideal, or that the relation is indeed an equivalence relation. Again, we leave it to the reader to verify these facts as they are routinely checked. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% Missing two lectures here?
+
+
+
 
 
 
@@ -573,6 +685,311 @@ represented by $\langle V, g/h \rangle$, $g,h$ polynomials, $h \neq 0$ on $V$, $
 
 This gives $\O_{P,Y} \cong A(Y)_{\fm_P}$. 
 \end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+$S: A \to C$
+Dense: For any $c \in C$, there is an $a \in A$ such that $Sa$ is isomorphic to $c$.
+On objects, surjective up to isomorphism. 
+
+
+$X \to A(X)$
+
+On objects, surjective up to isomorphism.
+
+$X \to A(X)$, $X$ affine variety. 
+
+affine varieties $\mapsto$ finitely generated integral domains over $k$.
+
+Bijection: $\alpha: \Hom(X,Y) \stackrel{\sim} \Hom(A(Y),\O(X) \cong A(X))$, where used $\O(X) \cong A(X)$ is $X$ is affine. 
+
+full and faithful come from being a bijection.
+
+dense: Remark 1.4.6. Showed that any f.g. integral domain over $k$ was isomorphic to $A(X)$ for some $X$.
+
+
+
+
+
+Automorphisms of $\P^n$.
+
+Let $M$ be an invertible $(n+1) \times (n+1)$ matrix with entries in $k$. $M$ induces a map $m: \P^n \to \P^n$ via 
+
+$[a_0,\ldots,a_n] \to M \begin{bmatrix} a_0 \\ \vdots \\ a_n \end{bmatrix}$
+$[\lambda a_0, \ldots, \lambda a_n] \mapsto \lambda M \begin{bmatrix} a_0 \\ \vdots \\ a_n \end{bmatrix}$
+
+Since $M$ is invertible, the only $[a_0,\ldots,a_n]$ mapping to $[0,\ldots,0]$ is $[0,\ldots,0]$. It's a morphism because if you multiply out $M \begin{bmatrix} a_0 \\ \vdots \\ a_n \end{bmatrix}$, you can see each entry is a homogeneous linear polynomial in the $a_i$.
+
+The inverse morphism is multiplication by $M^{-1}$.
+
+That is an automorphism.
+
+If $D= \begin{bmatrix} d & & & \\ & d & & \\ & & \ddots & \\ \end{bmatrix}$, then $d \neq 0$. $M$ and $DM$ induce the same map: 
+
+$DM \begin{bmatrix} a_0 \\ \vdots \\ a_n \end{bmatrix}= dM \begin{bmatrix} a_0 \\ \vdots \\ a_n \end{bmatrix}$.
+
+$\GL_k(n+1)$ group of all $(n+1) \times (n+1)$ invertible matrices operation matrix multiplication general linear group. 
+
+The set of scalar matrices is a normal subgroup. 
+
+Define $PGL_k(n+1)= \GL_k(n+1)/scalar matrices$. Projective general linear group. 
+
+It can be shown that $\Aut(\P^n_k) \cong PGL_k(n+1)$.
+
+Linear Varieties (Subspaces) in $\P^n$
+
+$\P^n= \A^{n+1} \setminus \{0\} /\sim$, where $\sim$ $(a_0,\ldots,a_n) \sim \lambda (a_0,\ldots,a_n)$, where $\lambda \in k^\times$ which is lines through origin. 
+
+Go back to thinking of $\A^{n+1}$ as $k^{n+1}$ a vector space. 
+
+
+If $V \subseteq k^{n+1}$ is any subspace of dimension $m+1$. Let $X= \{ P \in \P^n \colon the line to which P corresponds lies in V\}$
+
+$X \cong \P^m$, $V \cong k^{m+1}$
+
+$X$ is called a linear subvariety of $\P^n$, sometimes it is called a linear subspace. This is confusing because $\P^n$ is not a vector space. 
+
+$V \subseteq k^{n+1}$ is the zero locus of $n+1-(m+1)$ homogeneous linear equations.
+
+$X$ will also be the zero set of these equations. 
+
+In fact, they generate its ideal. By change of variables, you assume those equations $x_0= \cdots= x_{(n+1)-(m+1)-1}=0$. Then not hard to see $X$ is called an $m$-plane.
+
+$X \cap U_i \subseteq \A^n$. 
+
+It really is a plane.
+
+Some important exercises in Hartshorne 3.1e., 3.14, 3.15, 21
+
+
+% Group varieties examples, with topological
+% counterexample from screenshot (in alg geo folder)
+
+
+
+4. Rational Maps
+
+% Include Lemma 4.1 
+
+% Similar to..... Add remark 3.1.1
+
+
+
+
+\begin{dfn}
+Let $X$ and $Y$ be varieties. A rational map 
+\end{dfn}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Let's convince ourselves that the statement is true.
+
+We have $\langle U, \varphi_U \rangle$ such that $\varphi_U(U)$ is dense in $Y$. This means that for any nonempty open $V \subset U$, $\varphi_U(U) \cap V \neq \emptyset$. Now suppose we have another pair $\langle W, \varphi_W \rangle$. We need to show that for any open $V \subseteq Y$, $\varphi_U(U) \cap V \neq \emptyset$ and since morphisms are continuous, $\varphi_U^{-1}$ is nonempty open in $U$  and hence open in $X$. This means $\varphi_U^{-1}(V) \cap W \neq \emptyset$ because $X$ is irreducible. [Recall all nonempty open subsets meet.] Choose $P \in \varphi_U^{-1}(V) \cap W$, note $P \in U \cap W$. By definition, $\varphi_U$ and $\varphi_W$ agree on $U \cap W$. 
+	\[
+	\varphi_W(P)= \varphi_U(P) \in V.
+	\]
+Show $\varphi_W(W) \cap V \neq \emptyset$.
+
+
+A rational map might not be defined at some points of $X$. There may be some points of $X$ not in any $U$ such that $\langle U, \varphi_U \rangle$ is in the rational map. 
+
+
+Example: Projection from a point: $\varphi: \P^n \setminus \{P\} \to \P^{n-1}$. $\langle \P^n \setminus \{P\}, \varphi \rangle$. Sometimes rational maps are denoted by dotted arrows. In a talk, Fulton once said thats because some points (parts of the arrow) do not make it and fall out. This means we cannot always compose rational maps:
+	\[
+	X \ma{\varphi} Y \ma{\psi} Z
+	\]
+where $\varphi, \psi$ are rational maps. It could be that $\varphi(X)= U \langle U, \varphi \rangle \varphi_U(U)$ is contained in the set of points where $\psi$ is not defined. This will not happen if $\varphi$ is dominant. 
+
+
+
+In fact, you can check that if $\varphi$ and $\psi$ are dominant then so is $\psi \circ \varphi$. So you can make a category the objects are varieties and the morphisms are dominant rational maps. 
+
+
+\begin{dfn}
+A birational map $\varphi: X \to Y$ is a rational map that admits an inverse, namely a rational map $\psi: Y \to X$ such that $\psi \circ \varphi= 1_X$ and $\varphi \circ \psi= 1_X$ as rational maps. (Equal to identity where they are defined). If there is a birational map from $X$ to $Y$, we say that there are birationally equivalent or birational or birationally isomorphic.
+\end{dfn}
+
+
+What is a birational morphism? That is a morphism that has a rational inverse. It is a birational isomorphism. 
+
+
+Examples: $\A^n$ and $\P^n$ are birationally isomorphic. (They are not isomorphic.) $\varphi: \A^n \to \P^n$ given by $(a_1,\ldots,a_n) \mapsto (1,a_1,\ldots,a_n)$ and $\psi: \P^n \to \A^n$ defined on $U_0$ given by $(1,a_1,\ldots,a_n) \mapsto (a_1,\ldots,a_n)$. 
+
+2) $X= Z(y^2-x^2(x+1)) \subseteq \A^2$ % Give plot, nodal cubic
+$X$ is birationally isomorphic to $\A^1$.
+$\varphi: \A^1 \to X$
+$\varphi(t)= (t^2-1,t(t^2-1))$
+$(t(t^2-1))^2 - (t^2-1)^2(t^2-1+1)$
+$t^2(t^2-1)^2 -(t^2-1)^2t^2=0$
+$\varphi(\A^1) \subseteq X$
+$\psi: X \to \A^1$
+$\psi(x,y)= y/x$, defined where $x \neq 0$
+$\psi \circ \varphi(t)= \psi(t^2-1,t(t^2-1))= \frac{t(t^2-1)}{t^2-1}=1$
+away from $t= \pm 1$
+$\varphi \circ \psi= \varphi(y/x)= (y^2/x^2-1,y/x(y^2/x^2-1))$ but on $X$ $y^2/x^2= x+1$ as long as $x \neq 0= (x+1-1,y/x(x+1-1))= (x,y)$ away from $x=0$.
+
+Geometric interpretation of the map
+
+Projecting from the origin to the line $x=1$.
+
+% Give picture of nodal cubic, line x=1, then line y= tx t
+
+line $y=tx$ through the origin. It meets $x=1$ at point $(1,t)$. It meets $y^2-x^2(x+1)$ at $t^2x^2-x^2(x+1)=0$
+	\[
+	x^2(t^2-(x+1))=0
+	\]
+so $x=0$ twice.
+
+$x= t^2-1$
+$y=t(t^2-1)$
+
+Remark: Clearly a morphism is a rational map. Thus, $X$ is isomorphic to $Y$ implies $X$ is birationally isomorphic to $Y$. Those examples show reverse does not hold.
+
+$\O(\A^n)= k[x_1,\ldots,x_n]$
+$\O(\P^n)= k$
+
+$\A^n$ not isomorphic to $\P^n$
+$A(\A^1)= k[x]$
+$A(X)= k[x,y]/(y^2-x^2(x+1))$
+
+$k[x]$ is a PID
+
+In $A(X)$, look at ideal generated by $\overline{x}, \overline{y}$. Anything in $(y^2 - x^2(x+1))$ has all its monomials of degree at least $(\overline{x},\overline{y})= (h(\overline{x},\overline{y}))$ 
+$h$would have to have no constant term because $h \in (\overline{x},\overline{y})$. 
+
+$\overline{x}$ and $\overline{y}$ would have to be constant multiples of degree 1 term. Birational is a weaker equivalence relation than isomorphic. Ideally, you would like to classify varieties up to isomorphism. This is \textbf{extremely} difficult. You break it into steps. First, classify up to birational isomorphism, then for each birational equivalence class, try to classify up to isomorphism. 
+
+Confusing terminology.
+
+When we say $X$ is an affine variety, we mean $X$ is a closed irreducible set of some affine space, say $\A^n$. 
+
+When we say a variety $X$ is affine, we mean that $X$ is isomorphic to an affine variety 
+
+
+Example: $\A^1 \setminus \{0\}$ not an affine variety but it is affine.
+
+$\A_t^1 \setminus \{0\} \cong X= Z(xy-1) \subseteq \A_{x,y}^2$
+
+$\varphi: \A_t^1 \setminus \{0\} \to X$ given by $t \mapsto (t,1/t)$
+$\psi: X \to \A^1 \setminus \{0\}$ given by $(x,y) \mapsto x$
+$\psi(\varphi(t))= \psi(t,1/t)= t$
+$\varphi(\psi(x,y))= \varphi(x)= (x,1/x)$
+But on $xy-1=0$, $y=1/x$ so $(x,1/x)=(x,y)$. 
+
+
+Lemma 4.2: Let $Y$ be a hypersurface in $\A^n$ given by the equation $f(x_1,\ldots,x_n)= 0$. Then $\A^n \setminus Y$ is isomorphic to the hypersurface $H$ in $\A^{n+1}$ given by $x_{n+1}f - 1= 0$. In particular, $\A^n \setminus Y$ is affine and its coordinate ring is $k[x_1,\ldots,x_n]_f$. In previous example, $f=x$ so $x_{n+1}f$ becomes $xy=1$. 
+
+Pf: $\varphi: \A^n \setminus Y \to H$ given by $(x_1,\ldots,x_n)= (x_1,\ldots,x_n,1/f)$
+
+$1/f \cdot f-1=0$
+$\psi: H \to \A^n \setminus Y$
+$\psi(x_1,\ldots,x_{n+1})= (x_1,\ldots,x_n)$
+Check $\varphi \circ \psi= 1$, $\psi \circ \varphi= 1$
+
+$k[x_1,\ldots,x_{n+1}]/(x_{n+1}f-1) = A(H) \cong k[x_1,\ldots,x_n]_f$
+
+as 
+$x_{n+1}f-1=0$
+$x_{n+1}f=1$
+$f= 1/x_{n+1}$. 
+
+
+$k[x_1,\ldots,x_{n+1}] \to k[x_1,\ldots,x_n]_f$
+given by $x_i \mapsto x_i$, $1 \leq i \leq n$
+$x_{n+1} \mapsto 1/f$.
+
+Obviously, a surjective ring homomorphism. Show kernel is $(x_{n+1}f-1)$. Kernel contains the ideal is easy. 
 
 
 
