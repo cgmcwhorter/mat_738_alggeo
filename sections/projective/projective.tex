@@ -997,6 +997,161 @@ Obviously, a surjective ring homomorphism. Show kernel is $(x_{n+1}f-1)$. Kernel
 
 
 
+%%%%%%%%
+% Two classes conference missing
+%%%%%%%%
+
+
+
+% Missing diagram
+
+$X= Z(\{x_iy_i= x_jy_i \;|\; i,j= 1,\ldots,n\})$
+
+5) $X$ is covered by open sets each isomorphic to $\A^n$, $\A^n \times \P^{n-1}$ is covered by $\A^n \times y_i \cong \A^n \times \A^{n-1} \cong \A^{2n-1}$. Set $V_i = X \cap \A^n \times U_i$. On $V_i$, $y_i= 1$, $x_iy_j= x_jy_i$ becomes $x_iy_j= x_j$, $j=1,\ldots,n$. The points of $X$ are of the form
+$(x_iy_1,x_iy_2,\ldots,x_i,\ldots,x_i,y_n) \times (y_1,y_2,\ldots,1,\ldots,y_n)$. Notice that this satisfies all the other equations $x_sy_t= x_ty_s$, $x_s= x_iy_s$, $x_t= x_iy_t$, $x_iy_sy_2=x_iy_ty_s$
+
+$\A^n \to V_i$ given by $(y_1,\ldots,x_i,\ldots,y_n) \mapsto (x_iy_1,x_iy_2,\ldots,x_i,\ldots,x_i,y_n) \times (y_1,y_2,\ldots,1,\ldots,y_n)$
+
+Note that on $V_i$, $\varphi^{-1}(0)$ is given by $x_i= 0$
+
+
+This again shows that $\varphi^{-1}(0)$ fits nicely into $X$. 
+
+
+
+
+Def: If is a closed subvariety of $\A^n$ passing through 0, we define the blowing-up of $Y$ at the point 0 to by $\tilde{Y} = \overline{\varphi^{-1}(Y \setminus \{0\})}$, where $\varphi: X \to \A^n$ is the blowing up of $\A^n$ at 0.
+
+
+We denote by $\varphi: \tilde{y} \to Y$, the restrictionof $\varphi$ to $\tilde{Y}$. To blow-up any other point $P$ on $\A^n$, make a change of variables sending $P$ to 0. Blow-up points of $\P^n$ by going to an affine patch. $\tilde{Y}$ is also sometimes called the proper transform of $Y$. 
+
+
+Ex (4.9.1): 
+
+Let $Y$ be the plane cubic curve given by the equation $y^2= x^2(x+1)$
+% Give picture of nodal cubic y^2= x^2(x+1)$ with points P(1,sqrt(2)), Q(1,-sqrt(2)), R(-1,0)
+Blow-up of $\A^2$ at (0,0) is covered by two $\A^2$'s.
+
+One one 1 $x=x$, $y=xy$, $\varphi^{-1}(0)$, $x=0$
+other 2 $x=xy$, $y=y$, $\varphi^{-1}(0)$, $y=0$
+
+$x^2y^2=x^2(x+1)$ divide out $x^2$, $y^2=x+1$
+
+% Give  $y^2=x+1 with points p(1,sqrt(2)), q(1,-sqrt(2)), (-10), and arrow in bowl of parabola point to left labeled varphi^(-1)(0). Give points where hits y=axis
+
+2 $y^2= x^2y^2(xy+1)$
+$1=x^2(xy+1)$
+$1/x^2=xy+1$
+$1/x^2-1)=xy$
+$y= (1/x^2-1)/x= (1-x^2)/x^3$
+
+% Give plot with hits x-axis points and points P (Q1) and q (Q3) arrow pointing to x-axis in Q1 labeled \varphi^{-1}(0)
+
+
+A Theorem prove by the classical Italian algebraic geometers late 1800s early 1900s. Assume $k= \C$ and let $X,Y$ be nonsingular projective surfaces (surfaces means dimension 2, nonsingular means that they are complex manifolds). Let $\varphi: X \to Y$ be a birational isomorphism. Then there exists a commutative diagram
+	\[
+	\begin{tikzcd}
+	\tilde{X} \arrow[leftrightarrow]{r}{\Psi}[swap]{\Psi^{-1}} \arrow{d}{f} & \tilde{Y} \arrow{d}{g} \\
+	X \arrow[leftrightarrow]{r}{\varphi}[swap]{\varphi^{-1}} & Y
+	\end{tikzcd}
+	\]
+where $\psi$ is an isomorphism of nonsingular complex projective surfaces and $f,g$ are both finite sequences of blow-ups. Every birational isomorphism of nonsingular projective surfaces can be factored into a finite sequence of blow-ups followed by a finite sequence of blow-downs. 
+
+
+1990, Mori got a Fields medal for sort of generalizing this to three-folds. 
+
+
+Example: Consider $Q= Z(xy-zw) \subseteq \P^3$. $Q$ is the image of the Segre embedding of $\P^1 \times \P^1$ in $\P^3$. $(s,t) \times (u,v) \mapsto (su,sv,tu,tv)$, which we label $(w,x,y,z)$. How do we know that $Q$ is birationally isomorphic to $\P^2$. 
+
+Why? Know $U_i \subseteq \P^2$ and $U_i \not\cong \A^2$. But know $\P^1 \times \P^1 \supseteq U_i \times U_j$ and $U_i \times U_j \cong \A^1 \times \A^1 \cong \A^2$. Isomorphic open sets so birationally iso.
+
+Two families of lines on $Q$
+$P \times \P^1$, vary $P$
+$\P^1 \times R$, vary $R$
+
+
+Fix $s,t$ vary $u,v$
+$tw-sy=0$
+$tx-sz=0$
+last two interesction of two planes $=$ line
+
+$tw-sy=0$
+$tsu-stu=0$
+
+$tx-sz=0$
+$tsv-stv=0$
+
+
+fix $u,v$, vary $s,t$
+
+$vw-ux=0$
+$vy-uz=0$
+
+Consider $P= [1,0,0,0] \in Q$
+Project from $P$ onto $w=0$
+$\varphi([w,x,y,z])= [x,y,z]$
+
+Projecting we get a morphism $\varphi: Q \setminus P \to \P^2 = \{w=0\}$. 
+
+That is a birational isomorphism. 
+$\varphi^{-1}[x,y,z]= [xy,xz,yz,z^2]$
+
+$\varphi$ is defined except when $x=y=z=0$. 
+$\varphi^{-1}$ is defined except when 
+
+$z=0$ and eitehr $x=0$ or $y=0$
+
+$[0,*,0]$, $[*,0,0]$
+two points, $[0,1,0], [1,0,0]$
+
+$[x,y,z] \to [xy,xz,yz,z^2] \to [xz,yz,z^2]= [x,y,z]$ if $z \neq 0$
+
+$[w,x,y,z] \to [x,y,z] \to [xy,xz,yz,z^2]$ but on $Q$, $xy=wz$, $=[wz.xz.yz.z^2]=[w,x,y,z]$ if $z \neq 0$
+
+Since $\varphi$ is projection, the two lines on $Q$ through $P$
+
+These two lines are $[1,0] \times [u,v] \to [u,v,0,0]$, $[s,t] \times [1,0] \to [s,0,t,0]$.
+
+Where do they map to in $\P^2$?
+$[v,0,0] \to [1,0,0]$
+$[0,t,0]= [0,1,0]$
+Those are the two points at which $\varphi^{-1}$ is undefined. 
+
+Look at where the two familes of lines on $Q$ land in $\P^2$
+
+
+	\[
+	\begin{tikzcd}
+	(s,t) \times (u,v) \arrow{r} \arrow{rd} & (su,sv,tu,tv) \arrow{d}{\varphi} \\ 
+	& (\underbrace{sv}_{x},\underbrace{tu}_{y},\underbrace{tv}_{z})
+	\end{tikzcd}
+	\]
+Fix $s,t$ and let $u,v$ vary. $tx-sz=0$ all these lines go through $[0,1,0]$
+Fix $u,v$, $[1,0,0]$
+
+ % Picutre iphone 03/19
+ 
+ Need to blow-up
+ $[1,0,0]$ and $[0,1,0]$
+ so the lines separate out.
+ 
+ The line through $[1,0,0]$ and $[0,1,0]$ is in both families but the families on $Q$ are disjoint.
+ 
+ % Give two vertical lines in 3 spaces with lots of lines crossing them and one THICK solid line going through both
+ 
+ Blow down that line. Each family of lines is now missing a line. It gets replaced by the other $\varphi^{-1}(0)$. 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
