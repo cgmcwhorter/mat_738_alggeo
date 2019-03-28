@@ -1143,6 +1143,112 @@ Fix $u,v$, $[1,0,0]$
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Lecture Photos
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Normalization of Varieties
+
+Let $X$ be an affine variety with affine coordinate ring $A(X)= k[x_1,\ldots,x_n]/ I(X)$. Let $B$ be the integral closure of $A(X)$ in its fraction field $\Frac A(X)$. It can be proven that $B$ is still a finitely generated $k$-algebra. So it must correspond to some affine $\tilde{X}$. The containment $A(X) \subseteq B$ must correspond to a morphism $\tilde{X} \to X$. $\tilde{X}$ is called the normalization of $X$. For general $X$, cover $X$ with affine sets, doing normalization to each of them. Then glue them back together to get $\tilde{X}$. 
+
+Properties of $f: \tilde{X} \to X$
+
+1. $f$ is projective (proper)
+2. $f$ induces an isomorphism between $X \sm \sing X$ and $f^{-1}(X \sm \sing X)$
+3. The singularities of $\tilde{X}$ have codimension at least 2. Thus for curves, you have a desingularization. For higher dimensions, often, $\tilde{X}$ is still singular.
+
+
+
+Intersections in Projective Space
+
+Recall the following result from linear algebra. Let $V$ be a vector space of dimension $n$ and let $U,W$ be subspaces of dimensions $r,s$. Then $\dim (U \cap W) \geq r + s - n$. There are similar results for intersections of varieties in affine and projective space. 
+
+
+\begin{prop}[Affine Dimension Theorem]
+Let $X,Y,Z$ be varieties of dimensions $r,s$ that are closed subsets in $\A^n$. Then every irreducible component $W$ of $Y \cap Z$ has dimension at least $r+s-n$. This includes the possibility that $Y \cap Z$ is empty. 
+\end{prop}
+
+\pf We proceed in several steps. First, suppose that $Z$ is a hypersurface defined by an equation $f=0$. This is Exercise I.18, $r= n - 1$, $n - 1 + s - n= s - 1$
+
+Now for the general case. We consider the product $Y \times Z \subseteq \A^n \times \A^n = \A^{2n}$, which is a variety of dimension $r+s$. Exercise I.3.15. Let $\Delta$ be the diagonal $\{ P \times P \colon P \in \A^n \} \subseteq \A^{2n}$. Then $\A^n$ is isomorphic to $\Delta$ be the map $P \to P \times P$.
+
+$\Delta$ is closed in $\A^{2n}$. Take coordinates $(x_1,\ldots,x_n,y_1,\ldots,y_n)$. $x_i$ coordinate on first $\A^n$ and $y_i$ coordinate on second $\A^n$.
+$\Delta= Z(x_1 - y_1, x_2 - y_2, \ldots, x_n - y_n)$
+$\varphi: \A^n \to \A^{2n}$
+$\varphi(x_1,\ldots,x_n)= (x_1,\ldots,x_n,x_1,\ldots,x_n)$
+morphism because it is given by polynomials. 
+$\varphi^{-1}(x_1,\ldots,x_n,x_1,\ldots,x_n):= (x_1,\ldots,x_n)$ also clearly a morphism. 
+
+Under this isomorphism, $Y \cap Z$ corresponds to $(Y \times Z) \cap \Delta$
+
+$(a_1,\ldots,a_n) \in Y \cap Z$ if and only if $(a_1,\ldots,a_n,a_1,\ldots,a_n) \in (Y \times Z) \cap \Delta$
+
+Since $\Delta$ has dimension $n$ $\cong \A^n$.
+
+And since $\underbrace{r+s-n}_{\A^n}= \underbrace{(r+s)}_{Y \times Z} + \underbrace{n}_{\Delta} - 2n$
+
+We reduce to proving the result for the two varieties $Y \times Z$ and $\Delta$ in $\A^{2n}$
+
+Recall $\Delta= Z(x_1-y_1,\ldots,x_n-y_n)$. Apply the first case $n$ times. Dimension goes down by at most 1 for each. \qed \\
+
+
+\begin{thm}[Projective Dimension Theorem]
+Let $Y,Z$ be varieties of dimensions $r,s$ that are closed subsets in $\P^n$. Then every irreducible component of $Y \cap Z$ has dimension at least $r + s - n$. Furthermore, if $r + s - n \geq 0$, then $Y \cap Z$ is nonempty.
+\end{thm}
+
+\pf The first statement follows from the previous result since $\P^n$ is covered by affine $n$-spaces. For the second result, let $C(Y)$ and $C(Z)$ be the cones over $Y, Z$ in $\A^{n+1}$, Exercise I.2.10. (The cone over a projective variety. Let $Y \subseteq \P^n$ be a nonempty algebraic set. and let $\theta: \A^{n+1} \sm \{(0,\ldots,0)\} \to \P^n$ be the map which sends the point with affine coordinates $(a_0,\ldots,a_n)$ to the point with homogeneous coordinates $[a_0,\ldots,a_n]$. We define the cone over $Y$ to be \dots (copy rest of exercise)). 
+
+Then $C(Y), C(Z)$ have dimensions $r+1, s+1$, respectively. Furthermore, $C(Y) \cap C(Z)$ is nonempty because it contains the origin $P= (0,\ldots,0)$. By the Affine Dimension Theorem $C(Y) \cap C(Z)$ has dimension at least $(r+1)+(s+1)-(n+1)= r+s-n+1 > 0$. $C(Y) \cap C(Z)$ must have points other than $(0,\ldots,0)$. These correspond to points of $Y \cap Z$. \qed
+
+
+But we want to do better than just understanding how the dimensions work.
+
+
+Recall the following: Let $f \in k[x]$ be a nonconstant polynomial of degree $d$. Then $f$ has $d$ roots (because $k$ is assumed alg. closed) and the roots counted with multiplicity. 
+
+Suppose you want a similar statement about polynomials in two variables. To get a finite number of points, you want to intersect two polynomial curves. 
+
+X two lines meet at one point
+line conic (give ellipise and line crossing) meet at two points.
+
+Two conics (2 ellipses) 4 points
+Line \& cubic 3 points.
+
+f,g \# points of intersection $= \deg f \deg g$ Need assumptions.
+
+$f,g$ no common factors
+$k$ algebraically closed
+$y= x^2+1$ and $y=0$, parabola and line do not meet but algebraic closure do meet.
+
+Multiplicity of course in the counting. 
+$xy=1$ asymptote
+$y=x^2, x=0$ than (0,0,..,0)
+
+These coorespond to points of $Y \cap Z$.
+
+
+\begin{dfn}
+A numerical polynomial is a polynomial $P(z) \in \Q[z]$ such that $P(n) \in \Z$ for all $n \gg 0$, $n \in \Z$.
+\end{dfn}
+
+
+\begin{prop}
+(a) If $P \in \Q[z]$ is a numerical polynomial, then there are integers $c_0,\ldots,c_r$ such that 
+	\[
+	P(z)= c_0 \binom{z}{r} + c_1 \binom{z}{r-1} + \cdots + c_r,
+	\]
+where
+	\[
+	\binom{z}{r}= \dfrac{1}{r!} z(z-1)\cdots(z-r+1)
+	\]
+is the binomial coefficient function. In particular, $P(n) \in \Z$ for all $n \in \Z$.
+
+(b) If $f: \Z \to \Z$ is any function and if there exists a numerical polynomial $Q(z)$ such that the difference function $\Delta f= f(n+1) - f(n)$ (like the derivative) is equal to $Q(n)$ for all $n \gg 0$, then there exists a $P(z)$ such that $f(n)= P(n)$ for all $n \gg 0$. 
+\end{prop}
+
 
 
 
