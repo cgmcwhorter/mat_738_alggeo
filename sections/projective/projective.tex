@@ -1249,6 +1249,117 @@ is the binomial coefficient function. In particular, $P(n) \in \Z$ for all $n \i
 (b) If $f: \Z \to \Z$ is any function and if there exists a numerical polynomial $Q(z)$ such that the difference function $\Delta f= f(n+1) - f(n)$ (like the derivative) is equal to $Q(n)$ for all $n \gg 0$, then there exists a $P(z)$ such that $f(n)= P(n)$ for all $n \gg 0$. 
 \end{prop}
 
+\pf \hfill
+
+\begin{enumerate}[(a)]
+\item By induction on the degree of $P$, the case of degree 0 being obvious (degree $0$ means that $P(z)= c_r$, $c_r \in \Q$. But $P(n) \in \Z$ for $n \gg 0$, $P(n)= c_r$ for all $n$ so that $c_r \in \Z$. 
+
+Since $\binom{z}{r}= \dfrac{z^r}{r!} + \text{l.ot.}$, we can express any polynomial $P \in \Q[z]$ of degree $r$ in the above form with unique $c_0,\ldots,c_r \in \Q$. (Start from $z^r$m work down.) For any polynomial $P$, we define the difference function by
+	\[
+	\Delta \binom{z}{r}= \binom{z}{r-1}.
+	\]
+This is Pascal's triangle identity $\binom{n}{r} + \binom{n}{r-1}= \binom{n+1}{r}$. Now $\Delta P(z)= c_0 \binom{z}{r-1} + c_1 \binom{z}{r-2} + \cdots + c_{r-1}$. $\Delta P(n) \in \Z$ for all $n \gg 0$ since $P(n) \in \Z$ for all $n \gg 0$. 
+
+$\Delta P(z)$ is a numerical polynomial. By induction, $c_0, \ldots, c_{r-1} \in \Z$. Claim $\binom{z}{r} \in \Z$ for all $z \in \Z$. Now $z \geq r$ because it is a binomial coefficient. For $0 \leq z < r$, it is 0. For $z<0$, $-z+r-1 \geq r$ so that $\binom{-z+r-1}{r} \in \Z$ by the previous case. 
+	\[
+	\binom{-z+r-1}{r}= \dfrac{1}{r!} (-z+r-1)(-z+r-2) \cdots = \dfrac{1}{r!} (-z+r-1-r)(-z+r -1 -(r+1))= (-1)^r \binom{z}{r} \in \Z
+	\]
+Then $P(z)= c_0 \binom{z}{r} + c_1 \binom{z}{r-1} + \cdots + c_{r-1} \binom{z}{1} + c_r$. For $z \in \Z$, we know every term up to $c_r$ is in $\Z$. By assumption, $P(n) \in \Z$ for $n \gg 0$. This gives $c_r \in \Z$. The $P(n)$ is always in $\Z$ for $n \in \Z$.
+
+\item Using (a), write $Q= c_0 \binom{z}{r} + \cdots+ c_r$, where $c_0, \ldots, c_r \in \Z$. Let $P(z) = c_0 \binom{z}{r+1} + \cdots + c_r \binom{z}{1}$, $\Delta P= Q$, $\Delta(f-P)=0$ for all $n \gg 0$. But $\Delta(f-P)= \Delta(f) - \Delta(P)= Q$. $(f-P)(n)= c_{r+1}$ for all $n \gg 0$. $f= P+ c_{r+1}$ for all $n \gg 0$. \qed 
+\end{enumerate}
+
+
+\begin{dfn}
+Let $S$ be a ring. A grading of $S$ is an expression of the additive group $(S,+)$ as an internal direct sum $S= \bigoplus_{i=0}^\infty$ with the property that if $a \in S_e$ and $b \in S_d$, then $ab \in S_{e+d}$, written $S_e \cdot S_d \subseteq S_{e+d}$. A graded ring is a ring together with a given grading on it. An ideal $I \subseteq S$ is called graded or homogeneous if $I= \bigoplus_{i=0}^\infty (I \cap S_i)$ as a group. 
+\end{dfn}
+
+
+Now let $S$ be a graded ring and $M$ an $S$-module. We say that $M$ is a graded $S$-module if and only if $M$ as a group can be expressed as an internal direct sum $M= \bigoplus_{i= -\infty}^\infty M_i$ such that if $f \in S_e$ and $M \in M_d$, then $f_m \in M_{e+d}$, written $S_e \cdot M_d \subseteq M_{e+d}$.
+
+
+\begin{ex}
+If $S$ is a graded ring, it is a graded module over itself. Any homogeneous ideal of $S$ is a graded module over $S$. Any quotient of $S$ by a homogeneous ideal is a graded module over $S$.
+
+Let $S$ be a graded ring and $M$ a graded $S$-module. We define the twisted module $M(l)$ by setting $M(l)_i := M_{l+i}$. Say $a \in S_e$, $b \in M(l)_d$, then $b \in M_{l+d}$ so $ab \in M_{l+l+d}= M(l)_{l+d}$ so this is still a grading. 
+\end{ex}
+
+
+\begin{dfn}
+Let $S$ be a graded ring and $M,N$ graded modules over $S$. An $s$-module homomorphism $\varphi: M \to N$ is said to be graded or homogeneous of degree $d$ if and only if for all $e$, $\varphi(M_e) \subseteq N_{d+e}$. Two graded modules are considered isomorphic if and only if they are isomorphic via an isomorphism that is graded of degree 0.
+\end{dfn}
+
+
+The most interesting graded homomorphisms are those graded of degree 0. In fact, usually when one says the homomorphism is graded without saying of degree $d$, it is implied that the degree is 0. This is where twisting comes in. Any homomorphism that is graded of degree $d$ can be made into one graded of degree 0. $\varphi: M \to N$ graded of degree $d$, $\varphi: M(-d) \to N$ or $\varphi: M \to N(d)$ are graded of degree 0.
+
+$\varphi(M(-d)_e)= \varphi(M_{-d+e}) \subseteq N_{d-d+e}= N_e$
+$\varphi(M_e) \subseteq N_{d+e}= N(d)_e$
+
+\begin{dfn}
+Let $A$ be a ring and $M$ an $A$-module. The length of $M$ over $A$, denoted $\ell_A(M)$, is equal to the length of the longest strictly increasing sequence of submodules of $M$.
+	\[
+	0 = M_0 \subsetneq M_1 \subsetneq \cdots \subsetneq M_d= M.
+	\]
+The length is the number of steps.
+\end{dfn}
+
+
+\begin{ex}
+If $A$ is a field, this is just a vector space dimension. 
+\end{ex}
+
+
+\begin{prop}
+If $M$ is a graded $S$-module, we define the annihilator of $M$, $\ann(M)= \{ s \in S \colon sM=0 \}$. This is a homogeneous ideal in $S$.
+\end{prop}
+
+\pf ideal: $(s+t)m= sm+tm$, $sm=0, tm=0$ then $(s+t)m=0$ and $(as)m= a(sm)=0$.
+Homogeneous: $s= s_0+\cdots+s_d \in \ann M$, need to show $s_i \in M$. 
+
+
+$s \in \ann M \iff sm=0$ for all $m \in M \iff$ $sm_i=0$ for all $m_i \in M$ such that $m_i$ homogeneous . The forward direction obvious, reverse any $m \in M$ is sum of $\sum m_i$. 
+
+So we want to show $s_j m_i=0$ for $0 \leq j \leq d$. and $m_i$ homogeneous of degree $i$.
+
+$sm_i=0$ then $s_0m_i+s_1m_i+\cdots+s_dm_i=0$ but each term in sum is homogeneous of different degree then $s_j m_i=0$ for all $j$. \qed 
+
+
+\begin{prop} %7.4
+Let $M$ be a finitely generated graded module over a noetherian graded ring $S$. Then there exists a filtration 
+	\[
+	0 = M^0 \subsetneq M^1 \subsetneq \cdots \subsetneq M^r= M
+	\]
+by graded submodules, such that for each $i$,
+	\[
+	M^i/M^{i-1} \cong (S/\mathfrak{p}_i)(l_i),
+	\]
+where $\mathfrak{p}_i$ is a homogeneous prime ideal and $l_i \in \Z$. The filtration is not unique but for any such filtration, we have
+
+\begin{enumerate}[(a)]
+\item if $\mathfrak{p}$ is a homogeneous ideal of $S$, then $\mathfrak{p} \supseteq \ann(M)$ if and only if $\mathfrak{p} \supseteq \mathfrak{p}_i$ for some $i$. In particular, the minimal elements of the set $\{\mathfrak{p}_1,\ldots,\mathfrak{p}_r\}$ are the minimal primes of $M$, i.e. the primes which are minimal containing $\ann M$.
+\item for each minimal prime of $M$, the number of times which $\mathfrak{p}$ occurs in the set $\{\mathfrak{p}_1,\ldots,\mathfrak{p}_r\}$ is equal to the length of $M_\mathfrak{p}$ over the local ring $S_\mathfrak{p}$ (and hence is independent of the filtration). 
+\end{enumerate}
+\end{prop}
+
+\pf See Hartshorne
+
+
+
+\begin{dfn}
+If $\mathfrak{p}$ is a minimal prime of a graded $S$-module $M$, then the multiplicity of $M$ at $\mathfrak{p}$, denoted $\mu_\mathfrak{p}(M)$, to be the length of $M_\mathfrak{p}$ over $S_\mathfrak{p}$. 
+\end{dfn}
+
+
+Now say $S= k[x_1,\ldots,x_n[$ and $M$ a graded $S$-module. Notice this makes each $M_i$ a vector space over $k$. Define the Hilbert function of $M$, denoted $\varphi_M$, as 
+	\[
+	\varphi_M(l):= \dim_k M_l.
+	\]
+$\varphi_M: \Z \to \Z_{\geq 0}$. 
+
+
+
+
+
 
 
 
