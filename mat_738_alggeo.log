@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.27)  2 APR 2019 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.27)  16 APR 2019 16:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -924,23 +924,23 @@ ks.code.tex
 File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
 )))
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 103.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 106.
 
 \c@thm=\count159
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 104.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 107.
 
 \c@prop=\count160
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 105.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 108.
 
 \c@lem=\count161
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 106.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 109.
 
 \c@cor=\count162
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 107.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 110.
 
 \c@ex=\count163
 \c@nex=\count164
@@ -1578,7 +1578,61 @@ m/it/10.95 r \OMS/zplm/m/n/10.95 ^^@ \OT1/ppl/m/n/10.95 1 \OMS/zplm/m/n/10.95 ^
 \OT1/zplm/m/n/10.95 )[][] \OMS/zplm/m/n/10.95 2 \U/fplmbb/m/n/10.95 Z
  []
 
-[36] [37]) [38] (./mat_738_alggeo.bbl) [39]
+[36] [37] [38] [39]
+Overfull \hbox (139.82858pt too wide) detected at line 1408
+[]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 z \OT1/zplm/m/n/10.95 + \OML/zplm/m
+/it/10.95 n\OT1/zplm/m/n/10.95 )(\OML/zplm/m/it/10.95 z \OT1/zplm/m/n/10.95 + \
+OML/zplm/m/it/10.95 n \OMS/zplm/m/n/10.95 ^^@ \OT1/ppl/m/n/10.95 1\OT1/zplm/m/n
+/10.95 )(\OML/zplm/m/it/10.95 z \OT1/zplm/m/n/10.95 + \OML/zplm/m/it/10.95 n \O
+MS/zplm/m/n/10.95 ^^@ \OT1/ppl/m/n/10.95 2\OT1/zplm/m/n/10.95 ) [] (\OML/zplm/m
+/it/10.95 z \OT1/zplm/m/n/10.95 + \OML/zplm/m/it/10.95 n \OMS/zplm/m/n/10.95 ^^
+@ \OML/zplm/m/it/10.95 n \OT1/zplm/m/n/10.95 + \OT1/ppl/m/n/10.95 1\OT1/zplm/m/
+n/10.95 ) \OMS/zplm/m/n/10.95 ^^@ []\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 z
+ \OMS/zplm/m/n/10.95 ^^@ \OML/zplm/m/it/10.95 d \OT1/zplm/m/n/10.95 + \OML/zplm
+/m/it/10.95 n\OT1/zplm/m/n/10.95 )(\OML/zplm/m/it/10.95 z \OMS/zplm/m/n/10.95 ^
+^@ \OML/zplm/m/it/10.95 d \OT1/zplm/m/n/10.95 + \OML/zplm/m/it/10.95 n \OMS/zpl
+m/m/n/10.95 ^^@ \OT1/ppl/m/n/10.95 1\OT1/zplm/m/n/10.95 )(\OML/zplm/m/it/10.95 
+z \OMS/zplm/m/n/10.95 ^^@ \OML/zplm/m/it/10.95 d \OT1/zplm/m/n/10.95 + \OML/zpl
+m/m/it/10.95 n \OMS/zplm/m/n/10.95 ^^@ \OT1/ppl/m/n/10.95 2\OT1/zplm/m/n/10.95 
+) [] (\OML/zplm/m/it/10.95 z \OMS/zplm/m/n/10.95 ^^@ \OML/zplm/m/it/10.95 d \OT
+1/zplm/m/n/10.95 + \OML/zplm/m/it/10.95 n \OMS/zplm/m/n/10.95 ^^@ \OML/zplm/m/i
+t/10.95 n \OMS/zplm/m/n/10.95 ^^@ \OT1/ppl/m/n/10.95 1\OT1/zplm/m/n/10.95 )
+ []
+
+
+Overfull \hbox (272.1686pt too wide) detected at line 1412
+[]\OML/zplm/m/it/10.95 z[]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 n \OT1/zplm
+/m/n/10.95 + (\OML/zplm/m/it/10.95 n \OMS/zplm/m/n/10.95 ^^@ \OT1/ppl/m/n/10.95
+ 1\OT1/zplm/m/n/10.95 ) + (\OML/zplm/m/it/10.95 n \OMS/zplm/m/n/10.95 ^^@ \OT1/
+ppl/m/n/10.95 2\OT1/zplm/m/n/10.95 ) + \OT1/ppl/m/n/10.95 2 \OT1/zplm/m/n/10.95
+ + \OT1/ppl/m/n/10.95 1\OT1/zplm/m/n/10.95 ) \OMS/zplm/m/n/10.95 ^^@ []\OML/zpl
+m/m/it/10.95 z[]\OT1/zplm/m/n/10.95 ((\OMS/zplm/m/n/10.95 ^^@\OML/zplm/m/it/10.
+95 d \OT1/zplm/m/n/10.95 + \OML/zplm/m/it/10.95 n\OT1/zplm/m/n/10.95 ) + (\OMS/
+zplm/m/n/10.95 ^^@\OML/zplm/m/it/10.95 d \OT1/zplm/m/n/10.95 + \OML/zplm/m/it/1
+0.95 n \OMS/zplm/m/n/10.95 ^^@ \OT1/ppl/m/n/10.95 1\OT1/zplm/m/n/10.95 ) + (\OM
+S/zplm/m/n/10.95 ^^@\OML/zplm/m/it/10.95 d \OT1/zplm/m/n/10.95 + \OML/zplm/m/it
+/10.95 n \OMS/zplm/m/n/10.95 ^^@ \OT1/ppl/m/n/10.95 2\OT1/zplm/m/n/10.95 ) [] (
+\OMS/zplm/m/n/10.95 ^^@\OML/zplm/m/it/10.95 d \OT1/zplm/m/n/10.95 + \OT1/ppl/m/
+n/10.95 1\OT1/zplm/m/n/10.95 )) = []\OML/zplm/m/it/10.95 z[]\OT1/zplm/m/n/10.95
+ ([]) = []\OML/zplm/m/it/10.95 z[]
+ []
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 1484--1486
+
+ []
+
+[41]
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 1525
+.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsppl.fd
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1525.
+
+ [42])
+[43] [44] (./mat_738_alggeo.bbl) [45]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
  (./mat_738_alggeo.aux)
@@ -1587,11 +1641,11 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 175.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
  ) 
 Here is how much of TeX's memory you used:
- 35200 strings out of 492646
- 798236 string characters out of 6129563
- 1404823 words of memory out of 5000000
- 37814 multiletter control sequences out of 15000+600000
- 68068 words of font info for 339 fonts, out of 8000000 for 9000
+ 35263 strings out of 492646
+ 799023 string characters out of 6129563
+ 1404841 words of memory out of 5000000
+ 37833 multiletter control sequences out of 15000+600000
+ 68784 words of font info for 346 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  85i,21n,138p,3237b,2506s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1600,17 +1654,18 @@ xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
 live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
 e/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texl
-ive/2018/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/
-2018/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2018/
-texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2018/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/
-texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2018/texmf-d
-ist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-dist/fon
-ts/type1/urw/palatino/uplri8a.pfb>
-Output written on mat_738_alggeo.pdf (42 pages, 459204 bytes).
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive
+/2018/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2018
+/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018
+/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2018/texmf-
+dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-dist/fo
+nts/type1/urw/palatino/uplri8a.pfb>
+Output written on mat_738_alggeo.pdf (48 pages, 486618 bytes).
 PDF statistics:
- 577 PDF objects out of 1000 (max. 8388607)
- 514 compressed objects within 6 object streams
- 260 named destinations out of 1000 (max. 500000)
+ 637 PDF objects out of 1000 (max. 8388607)
+ 567 compressed objects within 6 object streams
+ 291 named destinations out of 1000 (max. 500000)
  31322 words of extra memory for PDF output out of 35830 (max. 10000000)
 
