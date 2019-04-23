@@ -1573,48 +1573,248 @@ $\cF_P$ germs of sections at $P$, $X$ a variety, $P \in X$, $(\O_X)_\P= \O_{X,P}
 
 
 
+%%%%%%
+
+\begin{dfn}
+If $\cF$ and $\cG$ are presheaves on $X$, a morphism $\varphi: \cF \to \cG$ consists of a morphism of abelian groups $\varphi(U): \cF(U) \to \cG(U)$ for each open set $U$ such that whenever $V \subseteq U$ is an inclusion, the following diagram commutes:
+	\[
+	\begin{tikzcd}
+	\cF(U) \arrow{d}{\rho_{UV}^\cF} \arrow{r}{\varphi(U)} & \cG(U) \arrow{d}{\rho_{UV}^\cG} \\
+	\cF(V) \arrow{r}{\varphi(V)} & \cG(U)
+	\end{tikzcd}
+	\]
+If $\cF$ and $\cG$ are sheaves on $X$, we use the same definition for a morphism of sheaves. An isomorphism is a morphism with a with a two sided inverse. 
+\end{dfn}
+
+
+This last statement amounts to saying that all the $\varphi(U)$'s are just isomorphisms. Well suppose the diagram above commutes and $\varphi(U)$ and $\varphi(V)$ are isomorphisms. Does the following diagram commute:
+
+	\[
+	\begin{tikzcd}
+	\cF(U) \arrow{d}{\rho_{UV}^\cF}  & \cG(U) \arrow{d}{\rho_{UV}^\cG} \arrow{l}{\varphi^{-1}(U)} \\
+	\cF(V) & \cG(U) \arrow{l}{\varphi^{-1}(V)}
+	\end{tikzcd}
+	\]
+
+
+Take $g \in \cG(U)$, $\rho_{UV}^\cF \varphi^{-1}(U)(g) =? \varphi^{-1}(V) \rho_{UV}^\cG(g)$. Taking $\phi(V)$ of both sides (note this is an isomorphism), we obtain $\rho_{UV}^\cG \varphi(U) \varphi^{-1}(g)=  \rho_{UV}^\cG(g)$ and this works. 
+
+
+Note that a morphism $\varphi: \cF \to \cG$ of presheaves induces a morphism $\varphi_P: \cF_P \to \cG_P$ on the stalks, for any $P \in X$. $\varphi_P(U,s)= (U, \varphi_U(s))$, $s \in \cF(U)$. The following proposition would be false for presheaves illustrates the local nature of sheaves.
+
+\begin{prop}
+Let $\varphi: \cF \to \cG$ be a morphism of sheaves on a topological space $X$. Then $\varphi$ is an isomorphism if and only if the induced map on the stalk $\varphi_P: \cF_P \to \cG_P$ is an isomorphism for every $P \in X$.
+\end{prop}
+
+
+Two examples:
+
+\begin{enumerate}[(i)]
+\item Show Hartshorne's statement that this proposition is false for presheaves is true.
+\item The following similar sounding proposition is false for sheaves. FALSE PROPOSITION. Let $\cF, \cG$ be sheaves on $X$. Then $\cF \cong \cG$ if and only if $\cF_P \cong \cG_P$ for all $P \in X$.
+\end{enumerate}
+
+
+\begin{enumerate}[(i)]
+\item $X= \P^1$. Let $\cF$ be the constant presheaf associated to a group $G$ with at least two elements. Clearly, $\cF_P \cong G$ for all $P \in X$. Now let $\cG$ be the same as $\cF$ except take $\cG(\P^1)=0$ for all other $\cG(U)= \cF(U)$. $\rho_{\P^1,U}= 0$ all other $\rho$'s the same. Stalks are still $G$. $\varphi: \cG \to \cF$, $\varphi(U)= \text{id}$ except when $U= \P^1$, $\varphi_{\P^1}(0) \to G$  induces isomorphism on stalks, $\cF \cong \cG$, $\cF(\P^1)= G$, $\cG(\P^1)= 0$.
+
+\item $X= \P^1$, $\O$ structure sheaf, fix one point, say $P= [0,1] \in X$. Define the sheaf $\mathcal{I}(P)$, $\mathcal{I}(P)(U)= \{ f \in \O(U) \colon f(P)=0 \}$, use restriction maps from $\O$, $O_P= \O_{P,X}$ local rings, $\mathcal{I}(P)_Q$, $P \neq Q$ $=\O_{Q,X}$,
+
+$\mathcal{I}(P)_P= \fm_{P,X} \subseteq \O_{P,X}$
+
+$\O_{P,\P^1} \cong k[x]_{(x)} \supset \fm_{P,X}(x)_{(x)}$
+
+$t$ coordinate: $k[x]_{(x)}= k[t]_{(t)}$
+$\fm_{P,X}(x)_{(x)}= (t)$ 
+
+as a module (group)
+
+$(t) \subset k[t]_{(t)} \cong k[t]_{(t)}$
+
+$\O(\P^1)= k$
+$\mathcal{I}(P)(\P^1)= 0$
+\end{enumerate}
+
+
+
+\begin{dfn}
+Let $\varphi: \cF \to \cG$ be a morphism of presheaves. We define the presheaf kernel of $\varphi$,  presheaf cokernel of $\varphi$, and presheaf image of $\varphi$ to be the presheaves given by $U \mapsto \ker \varphi(U)$, use $\cF$ restriction maps. Need to show $V \subseteq U$, $\rho_{UV} \ker \varphi(U) \subseteq \ker \varphi(V)$.
+
+$U \mapsto \coker \varphi(U)$, use $\cG$ restriction maps
+$U \mapsto \im \varphi(U)$, use $\cG$ restriction maps
+\end{dfn}
+
+
+If $\varphi: \cF \to \cG$ is a morphism of sheaves, then the presheaf kernel of $\varphi$ is a sheaf. But presheaf cokernel and presheaf image might not be sheaves. This leads to the sheaf associated to a presheaf. 
+
+
+
+
+Example where presheaf image is not a sheaf
+
+$X= \P^1$
+$Y \subseteq \P^1$, $Y= \{ [0,1], [1,0] \}$
+(actually any two points will do).
+
+Define the sheaf $\cF$ by 
+$\cF(U)$ regular functions on $U \cap Y$.
+$\cF$ sheaf on $\P^1$
+
+restriction maps are just restriction of functions. 
+
+$\cF(U)= 0$ if $U \cap Y= \emptyset$
+$\cF(U)= k$ if $U \cap Y$ is one point
+$\cF(U)= k \oplus k$ if $U \cap Y$ is two points.
+$\varphi: \O_{\P^1} \to \cF$ by restriction
+of functions
+
+$\O_{\P}(U) \to \cF(U)$
+
+Call $\cG$ the presheaf image of $\varphi$
+$\cG(\P^1)= k$
+
+$\O_{\P^1}(\P^1) \to \cF(\P^1)$ regular function on $Y$, $k \oplus k$
+$\O_{\P^1}(\P^1) = k$,
+$a \mapsto (a,a)$
+
+Consider the following open cover of $\P^1$
+$\P^1 \setminus [0,1]$
+$\P^1 \setminus [1,0]$
+
+$\cG(\P^1 \setminus [0,1])=k$, $\cG(\P^1 \setminus [1,0])= k$
+$\cG( (\P^1 \setminus [0,1]) \cap (\P^1 \setminus [1,0]))= 0$
+
+Pick two unequal elements of $k$, say $s,t$. 
+
+$t \in \cG(\P^1 \setminus [0,1])$, $s \in \P^1 \setminus [1,0]$
+
+Both restrict to $0$ on the intersection. If $\cG$ were a sheaf, we could fine $y \in \cG(\P^1)$ that restricts to $t$ on $\P^1 \setminus [0,1]$ and $s$ on $\P^1 \setminus [1,0]$, $\cG(\P^1)= k$. Anything in $\cG(\P^1)$ must restrict to the same element of $k$ in $\cG(\P^1 \setminus [1,0])$ and $\cG(\P^1 \setminus [0,1])$, violates the 4th property of a sheaf. 
 
 
 
 
 
 
+Proposition-Definition 1.2. 
+Given any presheaf $\cF$, there is a sheaf $\cF^+$ and a morphism $\theta: \cF \to \cF^+$ with the property that for any sheaf $\cG$ and any morphism $\varphi: \cF \to \cG$, there is a unique morphism $\psi: \cF^+ \to \cG$ such that $\varphi= \psi \circ \theta$. Furthermore, the pair $(\cF^+, \theta)$ us unique up to isomorphism. $\cF^+$ is called the sheaf associated to the presheaf $\cF$. This is also called the sheafification of $\cF$. 
+
+
+Propery 3 of sheaf wants to reduce the number of sections whereas property 4 wants to increase the number of sections. 
+
+
+\pf We construct the sheaf $\cF^+$ as follows. For any open $U$, let $\cF^+(U)$ be the set f functions $s$ from $U$ to the union $\cup_{P \in U} \cF_P$ of the stalks of $\cF$ over points of $U$ such that 
+
+(i) for each $P \in U$, $s(P) \in \cF_P$ and
+(ii) for each $P \in U$, there is a neighborhood $V$ of $P$ contained in $U$ and an element $t \in \cF(V)$ such that for all $Q \in V$, the germ $t_Q$ of $t$ at $Q$ is equal to $s(Q)$.
+
+$\{ \text{ for any } Q \in V, \langle V,t \rangle \in \cF_Q \}$
+
+Given $s \in \cF(U), \langle U,s \rangle \in \cF_P$ for all $P \in U\}$. Now one can verify immediately that $\cF^+$ with the natural restriction maps is a sheaf. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{dfn}
+A subsheaf of a sheaf $\cF$ is a sheaf $\cF'$ such that for every open set $U \subseteq X$, $\cF'(U)$ is a subgroup of $\cF(U)$, and the restriction maps of the sheaf $\cF'$ are induced by those from $\cF$
+	\[
+	\begin{tikzcd}
+	\cF(U) \arrow{r}{\rho_{UV}} & \cF(V) \\
+	\cF'(U) \arrow[hook]{u} \arrow{r}{\rho'_{UV}} & \cF'(V) \arrow[hook]{u}
+	\end{tikzcd}
+	\]
+where $V \subseteq U$.  It follows that for any point $P$, the stalk $\cF'_p$ is a subgroup of $\cF'_P$.
+
+If $\varphi: \cF \to \cG$ is a morphism of sheaves, we define the kernel of  $\varphi$, denoted $\ker \varphi$, to be the presheaf kernel of $\varphi$ (which is a sheaf). Thus, $\ker \varphi$ is a subsheaf of $\cF$. 
+
+We say that a morphism of sheaves $\varphi: \cF \to \cG$ is injective if and only if $\ker \varphi= 0$. Thus, $\varphi$ is injective if and only if the induced map $\varphi(U): \cF(U) \to \cG(U)$ is injective for every open set of $X$.
+
+If $\varphi: \cF \to \cG$ is a morphism of sheaves, we define the image of $\varphi$, denoted $\im \varphi$, to be sheaf associated to the presheaf image of $\varphi$, there is a natural map $\im \varphi \to \cG$. In fact, this map is injective (see Ex. 1.4) and thus $\im \varphi$ can be identified with a subsheaf of $\cG$. We say that a morphism of sheaves $\varphi: \cF \to \cG$ is surjective if and only if $\im \varphi= \cG$. We say that a sequence
+	\[
+	\cdots \ma{} \cF^{i-1} \ma{\varphi^{i-1}} \cF^i \ma{\varphi^i} \cF^{i+1} \ma{} \cdots
+	\]
+of sheaves and morphisms is exact if and only if at each stage $\ker \varphi^i= \im \varphi^{i-1}$. Thus, $0 \ma{} \cF \ma{} \cG$ is exact if and only if $\varphi$ is injective, $\cF \to \cG \to 0$ is exact if and only if $\varphi$ is surjective. Now let $\cF'$ be a subsheaf of $\cF$. We define the quotient sheaf $\cF/\cF'$ to be the sheaf associated to the presheaf $U \to \cF(I)/\cF'(U)$. The restriction maps come from $\cF$. It follows that for any point $P$, the stalk $(\cF/\cF')_P$ is the quotient $\cF_P/\cF_P'$. If $\varphi: \cF \to \cG$ is a morphism of sheaves. We define the cokernel of $\varphi$, denoted $\coker \varphi$, to be the sheaf associated to the presheaf cokernel of $\varphi$. 
+\end{dfn}
+
+
+
+
+Caution: We saw that a morphism $\varphi: \cF \to \cG$ of sheaves is injective if and only if the map of sections $\varphi(U): \cF(U) \to \cG(U)$ is injective for each $U$. The corresponding statement for surjective morphisms is not true: if $\varphi: \cF \to \cG$ is surjective the maps $\varphi(U): \cF(U) \to \cG(U)$ need not be surjective.
+
+Example: $X= \P^1$, $Y \subseteq X$, $Y= \{ [0,1], [1,]0 \}$, $\O_{\P^1}$ sheaf of regular functions on $\P^1$. $\cF$ on $\P^1$, $\cF(U)=$ regular functions on $U \cap Y$. 
+
+$\cF(U)= 0$ if $U \cap Y= \emptyset$
+$\cF(U)= k$ if $U \cap Y$ is one-pont 
+$\cF(U)= k \oplus k$ if $U \cap Y$ is two points
+restriction maps are just restriction of functions
+$\varphi: \O_{\P^1} \to \cF$ by restriction of functions 
+Call $\cG$ the presheaf image of $\varphi$
+$\cG(\P^1)= k$ because $\O_\P(\P^1)= k$
+$\varphi(\P^1): \O_{\P^1}(\P^1) \to \cG(\P^1)$ not surjective (this is $k \mapsto k$ in $k \oplus k$). For any other $U$, $\varphi(U)$ will be surjective. As soon as you delete one point from $\P^1$, you get an $\A^1$. $\O_{\P^1}(U)$ is at least all polynomials, $U \neq \P^1$. 
+Can always find a polynomial taking prescribed values at any finite set of points. 
+
+The stalks of $\cG$ at either $[0,1]$ or $[1,0]$ are $k$. Because for small enough open sets containing only one of the points $\O_{\P^1}(U)= k$. Sections of $\cG^+(\P^1)$ only need to locaclly come from $\cG$. By taking the two open sets $\P^1 \setminus [0,1]$, $\P^1 \setminus [0,1]$ you get that $\cG^+(\P^1)= k \oplus k$. Thus, $\cG^+= \cF$. $\varphi$ surjective even though $\varphi(\P^1)$ not.
+
+
+back to caution 1.2.1. However, we can say that $\varphi$ is surjective iff the maps $\varphi_P: \cF_P \to \cG_P$ are surjective for each $P$. More generally, a sequence of sheaves is exact iff it is exact on stalks. (Ex.1.2)
+
+
+\begin{dfn}
+Let $f: X \to Y$ be a continuous map of topological spaces. For any sheaf $\cF$ on $X$, we define the direct image sheaf $f_* \cF$ on $Y$ by $(f_*\cF)(V)= \cF(f^{-1}(V))$ for any open set $V \subseteq Y$. 
+\end{dfn}
+
+For any $V \subseteq U$ open in $Y$, then $f^{-1}(V) \subseteq f^{-1}(U)$ so you can use the restriction maps from $\cF$. Not too  hard to check that this gives a sheaf on $Y$> 
+
+
+For any sheaf $\cG$ on $Y$, we define the inverse image sheaf $f^{-1} \cG$ on $X$ to be the sheaf associated to the presheaf $U \mapsto \lim_{V \supseteq f(U)} \cG(U)$.
+
+$U' \subseteq U$ any $V \supseteq f(U)$ contains $f(U')$
+
+$f^{-1} \cG$ is different than $f^*\cG$, $f^*$ will be defined later for certain sheaves on certain spaces. 
 
 
 
 
 
 
+$f_*$ functor from sheaves on $X$ to sheaves on $Y$
+$f^{-1}$ functor from sheaves on $Y$ to sheaves on $X$
+
+
+\begin{dfn}
+If $Z$ is a subset of $X$ regarded as a topological space with the induced topology. Let $i: Z \to X$ be the inclusion map. For a sheaf $\cF$ on $X$, $i^{-1}\cF$ is called the restriction of $\cF$ to $Z$.
+$\cF\big|_Z, P \in Z, (\cF\big|_Z)_P= \cF_p$.
+\end{dfn}
+
+
+
+Exercise 1.8 very important. 
 
 
 
 
+Schemes
+
+\begin{dfn}
+Let $A$ be any commutative ring with identity. We define $\spec A$ to be the set of prime ideals of $A$. For any ideal $I$ of $A$, we define $V(I)$ to be the set of all prime ideals that contain $I$.
+\end{dfn}
+
+Remember: $A$ is not a prime ideal but it is an ideal.
 
 
+Rem: We could have defined for any subset $S \subseteq A$, $V(S)$ to be the set of all prime ideals containing $S$. it is clear that if $\langle S \rangle$ is the ideal generated by $S$, then $V(S)= V(\langle S \rangle)$. That is why they only define $V$ for ideals.
 
 
+\begin{lem}
+If $I, J$ are two ideals of $A$, then $V(IJ)= V(I)  \cup V(J)$
+If $\{I_i\}$ is any set of ideals of $A$, then $V(\sum I_i)= \cap V(I_i)$
+If $I,J$ are two ideals of $A$, $V(I) \subseteq V(J)$ if and only if $\sqrt{I} \supseteq \sqrt{J}$
+$V(A)= \emptyset$
+$V((0))= \spec A$
+\end{lem}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Then these can be taken as the closed sets of a topology on $\spec A$ called the Zariski topology. 
 
 
 

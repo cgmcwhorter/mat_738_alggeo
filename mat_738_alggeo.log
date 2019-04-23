@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.27)  16 APR 2019 16:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.27)  23 APR 2019 16:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -924,23 +924,23 @@ ks.code.tex
 File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
 )))
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 106.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 107.
 
 \c@thm=\count159
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 107.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 108.
 
 \c@prop=\count160
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 108.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 109.
 
 \c@lem=\count161
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 109.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 110.
 
 \c@cor=\count162
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 110.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 111.
 
 \c@ex=\count163
 \c@nex=\count164
@@ -1631,21 +1631,22 @@ File: omsppl.fd
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1525.
 
- [42])
-[43] [44] (./mat_738_alggeo.bbl) [45]
+ [42]
+[43] [44] [45] [46] [47]) [48] (./mat_738_alggeo.bbl) [49]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
- (./mat_738_alggeo.aux)
+
+(./mat_738_alggeo.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 175.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 175.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
  ) 
 Here is how much of TeX's memory you used:
- 35263 strings out of 492646
- 799023 string characters out of 6129563
- 1404841 words of memory out of 5000000
- 37833 multiletter control sequences out of 15000+600000
- 68784 words of font info for 346 fonts, out of 8000000 for 9000
+ 35409 strings out of 492646
+ 802287 string characters out of 6129563
+ 1404857 words of memory out of 5000000
+ 37955 multiletter control sequences out of 15000+600000
+ 69088 words of font info for 350 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  85i,21n,138p,3237b,2506s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1662,10 +1663,10 @@ mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018
 /texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2018/texmf-
 dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-dist/fo
 nts/type1/urw/palatino/uplri8a.pfb>
-Output written on mat_738_alggeo.pdf (48 pages, 486618 bytes).
+Output written on mat_738_alggeo.pdf (52 pages, 507423 bytes).
 PDF statistics:
- 637 PDF objects out of 1000 (max. 8388607)
- 567 compressed objects within 6 object streams
- 291 named destinations out of 1000 (max. 500000)
+ 671 PDF objects out of 1000 (max. 8388607)
+ 597 compressed objects within 6 object streams
+ 309 named destinations out of 1000 (max. 500000)
  31322 words of extra memory for PDF output out of 35830 (max. 10000000)
 
