@@ -1813,8 +1813,180 @@ $V(A)= \emptyset$
 $V((0))= \spec A$
 \end{lem}
 
+\pf 
+
+(a) $\fp \supset I$ or $\fp \supseteq J$ then $\fp \supseteq IJ$. $\fp \supseteq IJ$ but $\fp \not\subseteq J$. Pick $a \in J$, $a \notin \fp$ for any $b \in I$, $ab \in IJ$, $ab \in \fp$ then $b \in \fp$, $\fp \supseteq I$.
+
+(b) $\fp$ contains $\sum I_i$ if and only if $\fp \supseteq$ each $I_i$ because $\sum I_i$ is the smallest ideal containing all the $I_i$.
+
+(c) $\sqrt{I}= \cap$ all primes containing $I$.
+
 
 Then these can be taken as the closed sets of a topology on $\spec A$ called the Zariski topology. 
+
+
+\begin{ex}
+1. $k$ a field, $\spec k$ is one point
+
+2. $k$ algebraically closed. $k[t]$ primes $0$, $(t-a)$ where $a \in k$. Looks like
+	\[
+	\begin{tikzpicture}
+	\draw[thick] (0,0) -- (1,0);
+	\node at (1.2,0) {$\A^1$};
+	\draw[fill] (1.5,0) circle (0.1cm);
+	\node at (1.5,0.3) {$*$};
+	\end{tikzpicture}
+	\]
+$V(I)$, $k[t]$ is a PID.
+$I= (f)= ((t-a_1)^{m_1} \cdots (t-a_n)^{m_n})$
+$V(f)= \cup (t-a_i)$ finite set of $(t-a_i)$ points
+$V((0))= \spec k[t]$
+$*= (0)$, its closure is all of $\spec k[t]$
+$(0)$ is called the generic point
+
+(3) $\spec \Z$. $\Z$ is a PID so works the same way, so discrete version of the above
+	\[
+	\begin{tikzpicture}
+	\foreach \i in {2,3,5,7}
+	{
+		\draw[fill] (\i,0) circle (0.1cm);
+		\node at (\i,-0.3) {\i};
+	}
+	\node at (8,0) {$*$};
+	\node at (8,-0.3) {$0$};
+	\end{tikzpicture}
+	\]
+primes $(p)$ where $p$ prime and $(0)$.
+
+(4) $\spec k[x,y]$ $k$ algebraically closed.
+maximal ideals $(x-a,y-b)$, which is $\A^2$
+nonmaximal primes $\leftrightarrow$ curves
+
+for each irreducible curve you have an extra point whose closure is that curve.
+closure of $(0)$ is whole thing.
+\end{ex}
+
+
+
+\begin{prop}
+Let $k$ be an algebraically closed field and $I,J$ ideals in $k[x_1,\ldots,x_n]$. Suppose $\sqrt{I}= \sqrt{J}$, then $\spec k[x_1,\ldots,x_n]/I$, $\spec k[x_1,\ldots,x_n]/J$ and $\spec k[x_1,\ldots,x_n]/\sqrt{J}$ are all homeomorphic. 
+\end{prop}
+
+\pf Primes in $k[x_1,\ldots,x_n]/I$ coorespond to primes in $k[x_1,\ldots,x_n]$ correspond to primes in $k[x_1,\ldots,x_n]$ containing $\sqrt{I}$ correspond to primes in $k[x_1,\ldots,x_n]/ \sqrt{I}$. Obvious bijection between $\spec k[x_1,\ldots,x_n]/I$ and $\spec k[x_1,\ldots,x_n]/\sqrt{I}$.
+
+Let $K$ be an ideal of $k[x_1,\ldots,x_n]/I$ corresponding to an ideal $K' \supseteq I$ of $k[x_1,\ldots,x_n]$. $V(K)$ is primes containing $K$ these correspond to primes containing $K'$ which are the same as primes containing $\sqrt{K}$. $K' \supseteq I$ then $\sqrt{K'} \supseteq \sqrt{I}$, so $\sqrt{K'}$ corresponds to an ideal $L$ in $k[x_1,\ldots,x_n]/ \sqrt{I}$. Thus in the bijection between $\spec k[x_1,\ldots,x_n]/I$ and $\spec k[x_1,\ldots,x_n]/\sqrt{I}$, $V(K)$ goes to $V(L)$. Closed in $\spec k[x_1,\ldots,x_n]/I$ goes closed in $\spec k[x_1,\ldots,x_n]/ \sqrt{I}$. Reverse is similar and easier. \qed \\
+
+
+$\spec$ does not distinguish between ideals with the same radical. You need to put a sheaf on it. 
+
+
+\begin{dfn}
+Sheaf of rings $\O$ on $\spec A$. For each prime ideal $\fp \subseteq A$, let $A_\fp$ be the localization of $A$ at $\fp$. For an open set $U \subseteq \spec A$, we define $\O(U)$ to be the set of functions $s: U  \to \sqcup_{\fp \in U} A_\fp$ (disjoint union) such that $s(\fp) \in A_\fp$ for each $\fp$ and such that $s$ is locally a quotient of elements of $A$. To be precise, we require that for each $\fp \in U$, there is a neighborhood $V$ of $\fp$ contained in $U$, and elements $a,f \in A$ such that for each  $q \in V$, $f \notin Q$ and $s(q)= a/f$ in $A_q$.  
+\end{dfn}
+
+
+Easy to see its a ring, restriction maps are just restriction of functions. 
+
+Presheaf obvious
+extra conditions for sheaf. 
+(3) Easy to see restriction of functions 
+(4) because of local definition
+
+
+Let $A= A(X)$ the coordinate ring of an affine variety. $\spec A \supseteq \text{max }\spec A$, where you only look at maximal ideals. $\text{max }\spec A$ with induced topology is homeomorphic to $X$. If $\fm$ is maximal, $(A_\fm)_\fm= k$. 
+
+section $s: U \to \sqcup_{\fm \in U} A_\fm \to k$, composition old fashioned regular function. 
+
+
+\begin{dfn}
+Let $A$ be a ring. The spectrum of $A$ is the pair consisting of the topological space $\spec A$ together with the sheaf of rings $\O$ defined above. For $f \in A$, denote by $D(f)= \spec A \setminus V((f))$ be the primes that do not contain $f$. Open. These $D(f)$ are the basis for a topology on $\spec A$.
+\end{dfn}
+
+
+$V(I)$ closed $\fp \notin V(I)$. 
+$\fp \not\supseteq I$ so there is $f \in I$
+$f \notin \fp$, $\fp \in D(f)$
+$D(f) \cap V(I)= \emptyset$.
+
+
+\begin{prop}
+Let $A$ be a ring and $(\spec A, \O)$ its spectrum. 
+
+\begin{enumerate}[(a)]
+\item For any $\fp \in \spec A$, the stalk $\O_\fp$ of the sheaf $\O$ is isomorphic to the local ring $A_\fp$.
+\item For any element $f \in A$, the ring $\O(D(f))$ is isomorphic to the localized ring $A_f$
+\item In particular, $\Gamma(\spec A, \O) \cong A$. 
+\end{enumerate}
+\end{prop}
+
+
+\begin{rem}
+(a) Should remind you of the fact that in the old fashioned variety world, you could compute local rings by localization. 
+
+(b) another way to picture $\O(U)$ at least for the D(f)'s
+
+(c) This shows that the pair $(\spec A, \O)$ can now distinguish between $k[x_1,\ldots,x_n]/I$ and $k[x_1,\ldots,x_n]/\sqrt{I}$ when $I \neq \sqrt{I}$. 
+\end{rem}
+
+
+\pf
+(a) define a homomorphism $\O_\fp \to A_\fp$. 
+$\langle U,s \rangle$, $s \in \O(U)$, $U$ neighborhood of $\fp$. 
+$s(\fp) \in A_\fp$. 
+
+$\varphi$ is surjective:
+any element of $A_\fp$ has the form $a/f$, $a,f \in A$, $f \notin \fp$.
+$D(f)$ will be an open neighborhood of $\fp$.
+$\langle D(f), a/f \rangle$. 
+
+injective: 
+$U$ neighborhood of $\fp$
+$s,t \in \O(U)$ with 
+$s(\fp)= t(\fp) \in A_\fp$
+shrinking $U$ if necessary, we may assume
+$s= a/f, t= b/g$ on $U$
+where $a,b,f,g \in A$, $f,g \notin \fp$
+
+$a/f= b/g$ in $A_\fp$
+there exists $h \notin \fp$
+$h(ga-fb)=0$ in $A$
+
+Therefore, $a/f= b/g$ in every local ring $A_q$
+such that $f,g,h \notin q$.
+The set of such $q$ is 
+$D(f) \cap D(g) \cap D(h)$, which contains $\fp$
+
+This is a smaller open set on which $s=t$
+so they are equal in $\O_\fp$.
+
+(b)(c)
+(c) is (b) with $f=1$ as $D(1)= \spec A$. 
+So suffices to prove (b).
+
+$\psi: A_f \to \O(D(f))$
+$a/f^n \to s$ which assigns $s(\fp)= a/f^n \in A_\fp$. 
+check that it is a homomorphism
+
+injective: $\psi(a/f^n)= \psi(b/f^M)$ then
+for every $\fp \in D(f)$, $a/f^n$ and $b/f^m$
+have same image in $A_\fp$
+$h \notin \fp$, $h(f^ma - f^nb)= 0$ in $A$.
+
+Let $I$ be the annihilator of $f^ma - f^nb$. Then $h \in I$ and $h \notin \fp$ so $I \not\subseteq \fp$. This holds for every $\fp \in D(f)$. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

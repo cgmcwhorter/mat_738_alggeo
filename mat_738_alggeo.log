@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.27)  23 APR 2019 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.27)  25 APR 2019 16:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1632,21 +1632,37 @@ LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1525.
 
  [42]
-[43] [44] [45] [46] [47]) [48] (./mat_738_alggeo.bbl) [49]
+[43] [44] [45] [46] [47] [48]
+Overfull \hbox (13.12129pt too wide) in paragraph at lines 1877--1878
+\OML/zplm/m/it/10.95 k\OT1/zplm/m/n/10.95 [\OML/zplm/m/it/10.95 x[]\OT1/ppl/m/n
+/10.95 (-20) , [] , \OML/zplm/m/it/10.95 x[]\OT1/zplm/m/n/10.95 ]/[]$\T1/ppl/m/
+n/10.95 (-20) . Thus in the bi-jec-tion be-tween $[] \OML/zplm/m/it/10.95 k\OT1
+/zplm/m/n/10.95 [\OML/zplm/m/it/10.95 x[]\OT1/ppl/m/n/10.95 (-20) , [] , \OML/z
+plm/m/it/10.95 x[]\OT1/zplm/m/n/10.95 ]/\OML/zplm/m/it/10.95 I$ \T1/ppl/m/n/10.
+95 (-20) and $[] \OML/zplm/m/it/10.95 k\OT1/zplm/m/n/10.95 [\OML/zplm/m/it/10.9
+5 x[]\OT1/ppl/m/n/10.95 (-20) , [] , \OML/zplm/m/it/10.95 x[]\OT1/zplm/m/n/10.9
+5 ]/[]$\T1/ppl/m/n/10.95 (-20) ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1877--1878
+
+ []
+
+[49]) [50] (./mat_738_alggeo.bbl) [51]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
-
-(./mat_738_alggeo.aux)
+ (./mat_738_alggeo.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 175.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 175.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
  ) 
 Here is how much of TeX's memory you used:
- 35409 strings out of 492646
- 802287 string characters out of 6129563
+ 35430 strings out of 492646
+ 802559 string characters out of 6129563
  1404857 words of memory out of 5000000
- 37955 multiletter control sequences out of 15000+600000
- 69088 words of font info for 350 fonts, out of 8000000 for 9000
+ 37956 multiletter control sequences out of 15000+600000
+ 69392 words of font info for 354 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  85i,21n,138p,3237b,2506s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1663,10 +1679,10 @@ mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018
 /texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2018/texmf-
 dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-dist/fo
 nts/type1/urw/palatino/uplri8a.pfb>
-Output written on mat_738_alggeo.pdf (52 pages, 507423 bytes).
+Output written on mat_738_alggeo.pdf (54 pages, 519619 bytes).
 PDF statistics:
- 671 PDF objects out of 1000 (max. 8388607)
- 597 compressed objects within 6 object streams
- 309 named destinations out of 1000 (max. 500000)
+ 694 PDF objects out of 1000 (max. 8388607)
+ 617 compressed objects within 7 object streams
+ 323 named destinations out of 1000 (max. 500000)
  31322 words of extra memory for PDF output out of 35830 (max. 10000000)
 
