@@ -1974,6 +1974,168 @@ $h \notin \fp$, $h(f^ma - f^nb)= 0$ in $A$.
 
 Let $I$ be the annihilator of $f^ma - f^nb$. Then $h \in I$ and $h \notin \fp$ so $I \not\subseteq \fp$. This holds for every $\fp \in D(f)$. 
 
+%%%%%%%%%%%%%%
+
+
+\begin{dfn}
+A ringed space is a pair $(X,\O_X)$ consisting of a topological space $X$ and a sheaf of rings $\O_X$ on $X$. A morphism of ringed spaces from $(X,\O_X)$ to $(Y,\O_Y)$ is a pair $(f,f^\#)$ of continuous maps $f: X \to Y$ and a map $f\#: \O_Y \to f_* \O_X$ of sheaves of rings on $Y$. The ringed space $(X,\O_X)$ is a locally ringed space if for each point $P \in X$, the stalk $\O_{X,P}$ is a local ring. A morphism of locally ringed spaces is a morphism of ringed spaces such that for each point $P \in X$, the induced map of local rings $f_P^\#: \O_{Y,f(P)} \to \O_{X,P}$ is a local homomorphism of local rings. An element of $\O_{Y,f(P)}$ is an equivalence class of pairs $\langle U, s \rangle$, where $U$ is an open neighborhood of $P$ in $Y$ and $s \in \O_Y(U)$.  We have $f^\#(U): \O_Y(U) \to (f_*\O_X)(U)= \O_X(f^{-1}(U))$. Define $f^\#_P( \langle U,s \rangle)= \langle f^{-1}(U), f^\#(U)(s) \rangle \in \O_{X,P}$. 
+\end{dfn}
+
+
+If $A$ and $B$ are local rings with maximal ideals $m_A$ and $m_B$, respectively, a homomorphism $\varphi: A \to B$ is called a local homomorphism if and only if $\varphi^{-1}(m_B)= m_A$. An isomorphism of locally ringed spaces is a morphism with a two sided inverse. Thus, a morphism $(f,f^\#)$ is an isomorphism if and only if $f$ is a homeomorphism of the underlying topological spaces and $f^\#$ is an isomorphism of sheaves.
+
+
+\begin{prop}
+\begin{enumerate}[(a)]
+\item If $A$ is a ring, then $(\spec A, \O)$ is a locally ringed space.
+\item If $\varphi: A \to B$ is a homomorphism of rings, then $\varphi$ induces a natural morphism of locally ringed spaces
+	\[
+	(f,f^{\#}): (\spec B, \O_{\spec B}) \to (\spec A, \O_{\spec A})
+	\]
+\item If $A$ and $B$ are rings, then any morphism of locally ringed spaces from $\spec B$ to $\spec A$ is induced by a homomorphism of rings $\varphi: A \to B$ as in (b).
+\end{enumerate}
+\end{prop}
+
+\pf \hfill
+\begin{enumerate}[(a)]
+\item Clear
+
+\item Given a homomorphism $\varphi: A \to B$, we define a map $f: \spec B \to \spec A$ by $f(\fp)= \varphi^{-1}(\fp)$ for any $\fp \in \spec B$. If $I$ is an ideal of $A$, then it is immediate that $f^{-1}(V(I))= V(\varphi(I))$, so that $f$ is continuous. 
+
+$q \in f^{-1}(V(I))$ then $f(q) \in V(I)$ then $\varphi^{-1}(q) \in V(I)$ then $\varphi^{-1}(q) \supset I$ then $\varphi(\varphi^{-1}(q)) \supset \varphi(I)$. But $\varphi(\varphi^{-1}(q))= q$ then $q \supset \varphi(I)$ then $q \in V(\phi(I))$ and $q \in V(\varphi(I))$ then $q \supset \varphi(I)$ then $\varphi^{-1}(q) \supset \varphi(\varphi(I))$. But $\varphi^{-1}(\varphi(I)) \supset I$ then $\varphi^{-1}(q) \supset I$ then $f(q) \in V(I)$ then $q \in f^{-1}(V(I))$.
+
+For each $\fp \in \spec B$, we can localize $\varphi$ to obtain a local homomorphism of local rings, $\varphi_\fp: A_{\varphi^{-1}(\fp)} \to B_{\fp}$. Something in $A_{\varphi^{-1}(\fp)}$ is of the form $a/b$, $b \notin \varphi^{-1}(\fp)$, $a \in A$. Map this to $\varphi(a)/\varphi(b)$, because $b \notin \varphi^{-1}(\fp)$, $\varphi(b) \notin \fp$. Now for any open set $V \subseteq \spec A$, we obtain a homomorphism of rings $f^\#: \O_{\spec A}(V) \to \O_{\spec B}(f^{-1}(V))$ by the definition of $\O$, composing with the maps $f$ and $\varphi_\fp$. $f^\#: \O_{\spec A} \to f_* \O_{\spec B}$; $f^*(V): \O_{\spec A}(V) \to f_* \O_{\spec B}(V)= \O_{\spec B}(f^{-1}(V))$. 
+
+$s \in \O_{\spec A}(V)$
+$s: V \to \coprod_{\fp \in V} A_\fp$
+$t \in \O_{\spec B}(f^{-1}(V))$
+$t: f^{-1}(V) \to \coprod_{q \in f^{-1}(V)} B_q$
+
+Say $t= f^\#(s)$. What would $t$ be
+$f^{-1}(V)= \{ q \colon f(q) \in V \} = \{ q \colon \varphi^{-1}(q) \in V \}$
+Set $t(q)= \varphi_q(s(\varphi^{-1}(q))$
+$q \in f^{-1}(V)$ then $\varphi^{-1}(q) \in V$
+then $s(\varphi^{-1}(q)) \in A_{\varphi^{-1}(q)}$
+then $\varphi_q(s(\varphi^{-1}(q))) \in B_q$. 
+
+This gives the morphism of sheaves $f^\#: \O_{\spec A} \to f_*(\O_{\spec B})$. The induced maps on the stalks are just local homomorphisms $\varphi_\fp$, so $(f,f^\#)$ is a morphism of locally ringed spaces. 
+
+\item Conversely, suppose given a morphism of locally ringed spaces $(f,f^\#)$ from $\spec B$ to $\spec A$. Taking global sections $f^\#$ induces a homomorphism of rings, $\varphi: \Gamma(\spec A, \O_{\spec A}) \to \Gamma(\spec B, \O_{\spec B})$
+$f^\#(\spec A) \O_{\spec A}(\spec A) \to f_* \O_{\spec B}(\spec A) f_* \O_{\spec B}(\spec A)$
+
+$\Gamma(U,\mathcal{F})= \mathcal{F}(U)$
+$\O_{\spec B}(f^{-1} \spec A)= \spec B$
+
+2.2c $\Gamma(\spec A, \O_{\spec A})= A$
+$\Gamma(\spec B, \O_{\spec B})= B$
+
+Given $(f,f^\#)$, we get $\varphi: A \to B$. You need to check when you do the construction in (b) to $\varphi$ you get $(f,f\#)$ back. [Check] and Other way. 
+\end{enumerate}
+
+
+
+When we have a continuous map $f: X \to Y$ and a sheaf $\mathcal{F}$ on $Y$, we defined $f^{-1} \mathcal{F}$ as the sheaf associated to the presheaf $U \mapsto \lim_{V \supseteq f(U)} \mathcal{F}(V)$. When $f$ is the inclusion of an open set of $Y$ into $Y$ this becomes much simpler.
+
+$X= W$, $i: W \hookrightarrow Y$. Any $U$ open in $W$ is open in $Y$. $i(U)= U$ open in $Y$. $\lim_{V \supseteq i(U)} \mathcal{F}(U) = \mathcal{F}(U)$, $U= i(U)$ and it is already a sheaf. $i^{-1} \mathcal{F}$ often written $\mathcal{F} \big|_{X= W}$
+
+
+\begin{dfn}
+An affine scheme is a locally ringed space $(X, \O_X)$ which is isomorphic (as a locally ringed space) to the spectrum of some ring. A scheme is a locally ringed space $(X,\O_X)$ in which every point has an open neighborhood $U$ such that the topological space $U$ together with the restricted sheaf $\O_X\big|_U$ is an affine scheme. We call $X$ the underlying topological space of the scheme $(X, \O_X)$ and $\O_X$ its structure sheaf. By abuse of notation, we often simply write $X$ for the scheme $(X,\O_X)$. If we wish to refer to the underlying topological space without its scheme structure, we write $\undspace(X)$, read ``the space of $X$''. A morphism of schemes is a morphism of locally ringed spaces. An isomorphism is an isomorphism as locally ringed spaces. 
+\end{dfn}
+
+
+
+%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{rem}
+Remember that the same topological space can have many different structure sheaves on it and thus many different schemes.
+\end{rem}
+
+
+\begin{ex}
+1) $L,K$ two non-isomorphic fields, $\spec L$, $\spec K$, $\O(\spec L)= L$, $\O(\spec K)= K$
+
+2) $\spec k[x_1,\ldots,x_n]/I_1 \text{ or }I_2$, $I_1,I_2$ have same radical but $I_1 \neq I_2$.
+\end{ex}
+
+
+Alternate less
+
+(a) A scheme is a pair $(X, \O_X)$ of a topological space $X$ and a sheaf of rings $\O_X$ on $X$ such that there exists an open cover $\{ U_i \}$ of $X$ with the following property: there exists rings $A_i$ and homeomorphisms $f_i: \spec A_i \to U_i$ such that $f_{i*}(\O_{\spec A_i})= \O_X \big|_{U_i}$
+
+b) A morphism of schemes from $(X, \O_X)$ to $(Y, \O_Y)$ is a pair $(f,f^\#)$ where $f: X \to Y$ is a continuous map and $f^\#: \O_Y \to f_*\O_X$ is a morphism of sheaves that satisfies:
+
+there exists an open covering $\{ U_i \}$ of $Y$ and for each $i$ an open covering $\{ U_{i_j} \}$ of $f^{-1}(U_i)$ and well as rings $\{A_i\}$, $\{B_{i_j}\}$ with homeomorphisms $f_i: \spec A_i \to U_i$, $f_{ij}: \spec B_{ij} \to U_{ij}$ with $f_{i*} \O_{\spec A_i} \cong \O_Y \big|_{U_i}$, $f_{ij*} \O_{\spec B_{i_j}} \cong \O_X \big|_{U_{ij}}$. Furthermore for each $i,j$, we have a composition 
+	\[
+	\begin{tikzcd}
+	\spec B_{ij} \arrow{r}{f_{ij}} \arrow[bend left= 20]{rrr} &  U_{ij} \arrow{r}{f|_{U_{ij}}} & U_i \arrow{r}{f_i^{-1}} & \spec A_i 
+	\end{tikzcd}
+	\] 
+Call this composition $g_{ij}$. It is continuous. We construct a morphism of sheaves $g_{ij}^\#: \O_{\spec A_i} \to g_{ij*} \O_{\spec B_{ij}}$ as follows:
+	
+	\[
+	\begin{tikzcd}
+	\O_{\spec A_i} \arrow{rr}{g_{ij}^\#} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\cong$}} &&  g_{ij*} \O_{\spec B_{ij}} \arrow[draw=none]{d}[sloped,auto=false]{\scalebox{1.2}{$\cong$}} \\
+	\O_Y \big|_{U_i} \arrow[swap]{dr}{f^\# \big|_{U_{ij}}} && f_{i*}^{-1}f \big|_{U_{ij*}} \O_X \big|_{U_{ij}} \\
+	& f \big|_{U_{ij*}} \O_X \big|_{U_{ij}} \arrow[swap]{ur}{f_{i*}^{-1}} &
+	\end{tikzcd}
+	\]
+
+We have made a pair $(g_{ij}, g_{ij}^\#)$, $(\spec A_i, \O_{\spec A_I}) \to (\spec B_{ij}, \O_{\spec B_{ij}})$. We require that comes from a ring homomorphism $\phi_{ij}: A_i \to B_{ij}$.
+
+
+To prove the equivalency of these two, one would need:
+
+\begin{ex} Ex 2.1
+Let $A$ be a ring, let $X= \spec A$, let $f \in A$, and let $D(f) \subseteq X$ be the open complement of $V((f))$. Show that the locally ringed space $(D(f), \O_X \big|_{D(f)})$ is isomorphic to $\spec A_f$.
+\end{ex}
+
+
+\begin{ex} Ex. 2.2
+Let $(X, \O_X)$ be a scheme and let $U \subseteq X$ be any open subset. Show that $(U, \O_X \big|_U)$ is a scheme. Remember that the $D(f)$ are a base for the topology. 
+\end{ex}
+
+
+
+
+% Chapter 3
+
+% 1 Derived Functors
+% 2 Cohomology of sheaves
+
+If $0 \ma{} \cF' \ma{} \cF \ma{} \cF'' \ma{} 0$ is an exact sequence of sheaves, then setting $\cF(X):= \Gamma(X,\cF)$, we have that 
+	\[
+	0 \ma{} \Gamma(X,\cF') \ma{} \Gamma(X,\cF) \ma{} \Gamma(X,\cF'')
+	\]
+is exact. However, $0 \ma{} \Gamma(X,\cF') \ma{} \Gamma(X,\cF) \ma{} \Gamma(X,\cF'') \ma{} 0$ need not be exact. Therefore, $\Gamma(X, -)$ is left exact but not right exact. Denote $\Gamma(X,-)$ by $H^0(X,-)$. $H^0(X,\cF)= \cF(X)$. zeroth cohomology group of $\cF$.
+
+
+Cohomology deals with the question if $0 \ma{} \cF' \ma{} \cF \ma{} \cF'' \ma{} 0$ is an exact sequence of sheaves, how do you continue the exact sequence
+	\[
+	0 \ma{} H^0(X,\cF') \ma{} H^0(X,\cF) \ma{} H^0(X,\cF'') \ma{} ? \ma{} ? \ma{} \cdots
+	\]
+
+Sections 1 and 2 say the following: $H^0(X,-)$ is a functor from the category of sheaves of abelian groups to the category of abelian groups. Furthermore, it is a left exact functor (which we saw above). Various category theory and homological algebra facts say that when you have a left exact functor between two categories that you get left derived functors that give a long exact sequence. [Having enough injectives.] Thus, if you have a short exact sequence of sheaves on $X$, you get a long exact sequence of groups. 
+
+	\[
+	0 \ma{} H^0(X,\cF') \ma{} H^0(X,\cF) \ma{} H^0(X,\cF'') \ma{} H^1(X,\cF') \ma{} \cdots
+	\] % Extend this up to 2
+$H^i(X,\cF)$ is the $i$th cohomology group of $\cF$ on $X$.
+
+Very important fact: $H^i(X,\cF)$ depends only on $i$, $X$, $\cF$ not on which short exact sequence $\cF$ appeared in.
+
+
+
+% Cech Chomlogy
+
+A method for computing cohomology of groups. Let $X$ be a topological space and let $\mathcal{U}= (U_i)_{i \in I}$ be an open covering of $X$. Fix once and for all a well ordering of the index set $I$. For any finite set of indices $i_0,\ldots,i_p \in I$, we denote the intersection $U_{i_0} \cap \cdots \cap U_{i_p}$ by $U_{i_0,\ldots,i_p}$. Now let $\cF$ be a sheaf of abelian groups. We define a complex of abelian groups as follows. 
+
+
+
+
+
 
 
 
